@@ -1,0 +1,9 @@
+{
+  "domain": "suivi_elec",
+  "name": "Suivi Électrique",
+  "version": "1.0",
+  "requirements": ["requests"],
+  "dependencies": [],
+  "codeowners": ["@tonpseudo"],
+  "config_flow": false
+}

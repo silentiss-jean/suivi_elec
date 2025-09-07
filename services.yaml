@@ -1,0 +1,4 @@
+generate_suivi_elec:
+  name: Générer le suivi électrique
+  description: Lance la détection, le regroupement et la génération des fichiers.
+  fields: {}

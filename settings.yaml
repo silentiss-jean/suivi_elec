@@ -1,0 +1,34 @@
+ha_url: "http://homeassistant.local:8123"
+ha_token: "TON_TOKEN_ICI"
+
+fichier_capteurs: "capteurs_detectes.json"
+fichier_noms_personnalises: "noms_personnalises.yaml"
+
+fichier_groupes_energy: "groupes_capteurs_energy.py"
+fichier_groupes_power: "groupes_capteurs_power.py"
+
+device_classes_utilisees:
+  - energy
+  - power
+  - current
+  - voltage
+
+pieces_par_defaut:
+  salon: "Salon"
+  chambre: "Chambre"
+  cuisine: "Cuisine"
+  buanderie: "Buanderie"
+  bureau: "Bureau"
+  clim: "Climatisation"
+  radiateur: "Radiateur"
+
+input_text_entites:
+  - input_text.nom_emma
+  - input_text.nom_dalex
+  - input_text.nom_chambre
+  - input_text.nom_salon
+  - input_text.nom_cuisine
+  - input_text.nom_buanderie
+  - input_text.nom_bureau
+  - input_text.nom_radiateur
+  - input_text.nom_clim
