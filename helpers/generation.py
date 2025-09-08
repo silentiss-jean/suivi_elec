@@ -138,17 +138,17 @@ if __name__ == "__main__":
 
     if generate_yaml:
         yaml_config = generate_yaml_config(all_capteurs)
-        with open("data/suivi_elec.yaml", "w", encoding="utf-8") as f:
+        with open("/data/suivi_elec.yaml", "w", encoding="utf-8") as f:
             f.write(yaml_config)
 
     if generate_lovelace:
         lovelace_card = generate_lovelace_grid(groupes)
-        with open("data/lovelace_conso.yaml", "w", encoding="utf-8") as f:
+        with open("/data/lovelace_conso.yaml", "w", encoding="utf-8") as f:
             f.write(lovelace_card)
 
     if generate_history:
         history_card = generate_history_card(groupes)
-        with open("data/lovelace_history_conso.yaml", "w", encoding="utf-8") as f:
+        with open("/data/lovelace_history_conso.yaml", "w", encoding="utf-8") as f:
             f.write(history_card)
 
     print(f"✅ Fichiers générés automatiquement en mode '{mode}'")

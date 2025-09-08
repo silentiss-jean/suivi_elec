@@ -39,7 +39,7 @@ def detect_capteurs():
 
 if __name__ == "__main__":
     capteurs = detect_capteurs()
-    with open("data/capteurs_detectes.json", "w", encoding="utf-8") as f:
+    with open("/data/capteurs_detectes.json", "w", encoding="utf-8") as f:
         json.dump(capteurs, f, indent=2, ensure_ascii=False)
 
     print(f"✅ {len(capteurs)} capteurs détectés et enregistrés dans capteurs_detectes.json")

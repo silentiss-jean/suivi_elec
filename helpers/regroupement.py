@@ -2,7 +2,7 @@ import json
 import requests
 import yaml
 import os
-from helpers.config import (
+from ..config import (
     HA_URL,
     HA_TOKEN,
     FICHIER_CAPTEURS,
