@@ -50,8 +50,13 @@ jobs:
             fi
         
             # Liste des commits depuis le dernier stable
-            git log $LAST_STABLE..HEAD --pretty=format:"- %s" >> RELEASE.md
-            
+            git log "$LAST_STABLE"..HEAD --pretty=format:"- %s" >> RELEASE.md
+            if [ -z "$LAST_STABLE" ]; then
+              echo "- Aucun tag stable précédent trouvé." >> RELEASE.md
+            else
+              git log "$LAST_STABLE"..HEAD --pretty=format:"- %s" >> RELEASE.md
+            fi
+
       - name: 🚀 Créer la release GitHub
         uses: softprops/action-gh-release@v1
         with:
