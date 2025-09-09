@@ -3,7 +3,10 @@ name: 📦 Auto Release on Tag
 on:
   push:
     tags:
-      - 'v*'  # Déclenche sur tout tag commençant par "v"
+      - 'v*'
+
+permissions:
+  contents: write
 
 jobs:
   release:
