@@ -1,18 +1,23 @@
 #!/bin/bash
 
+# 🔧 Génère un tag stable unique
 NEW_TAG=$(./version_manager.sh)
 
+# 🕒 Horodatage
 TIMESTAMP=$(date +"%Y-%m-%d %H:%M")
 MANIFEST="custom_components/suivi_elec/manifest.json"
 
+# 📦 Met à jour manifest.json
 sed -i "s/\"version\": \".*\"/\"version\": \"${NEW_TAG#v}\"/" "$MANIFEST"
 
+# 🔍 Vérifie les changements
 CHANGES=$(git status --porcelain)
 if [ -z "$CHANGES" ]; then
   echo "⚠️ Aucun changement détecté. Rien à publier."
   exit 0
 fi
 
+# ✅ Commit + tag
 git add .
 git commit -m "🔧 Auto update $NEW_TAG — horodaté $TIMESTAMP"
 git tag -a "$NEW_TAG" -m "🧪 Version auto générée par update_git.sh ($TIMESTAMP)"
