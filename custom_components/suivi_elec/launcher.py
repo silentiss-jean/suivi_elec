@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Lanceur principal pour générer les fichiers de suivi élec
 
-from .helpers.generation import generate_all
+from .generation import generate_all
 
 # Exemple de structure de groupes (à adapter selon ton usage réel)
 groupes = {
