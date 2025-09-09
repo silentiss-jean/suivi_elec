@@ -1,21 +1,8 @@
+# -*- coding: utf-8 -*-
+# Script principal intelligent : choisit automatiquement le bon fichier de capteurs
+
+import os
 from .helpers import regroupement, loader
-
-regroupement.regroupe_capteurs()
-
-if generate_yaml:
-    groupes = loader.charger_groupes("groupes_capteurs_energy")
-    mode = "energy"
-else:
-    groupes = loader.charger_groupes("groupes_capteurs_power")
-    mode = "power"
-
-# 📦 Choix du fichier de capteurs
-if generate_yaml:
-    from .groupes_capteurs_energy import groupes
-    mode = "energy"
-else:
-    from .groupes_capteurs_power import groupes
-    mode = "power"
 
 def normalize_name(entity_id):
     base = entity_id.replace("sensor.", "").replace("_power", "").replace("_puissance", "")
@@ -72,7 +59,7 @@ def generate_yaml_config(capteurs):
 
     return "\n".join(lines)
 
-def generate_lovelace_grid(groupes):
+def generate_lovelace_grid(groupes, mode):
     lines = []
     lines.append("type: vertical-stack")
     lines.append(f"title: ⚡ Suivi {'instantané' if mode == 'power' else 'coût'} par pièce")
@@ -105,7 +92,7 @@ def generate_lovelace_grid(groupes):
 
     return "\n".join(lines)
 
-def generate_history_card(groupes):
+def generate_history_card(groupes, mode):
     lines = []
     lines.append("type: custom:history-explorer-card")
     lines.append(f'header: "📈 Historique des {"puissances" if mode == "power" else "coûts"} par pièce"')
@@ -134,7 +121,23 @@ def generate_history_card(groupes):
 
     return "\n".join(lines)
 
-if __name__ == "__main__":
+def run_all():
+    # 🔄 Mise à jour des fichiers de groupes
+    regroupement.regroupe_capteurs()
+
+    # 🔍 Détection du besoin selon les fichiers à générer
+    generate_yaml = True
+    generate_lovelace = True
+    generate_history = True
+
+    # 📦 Chargement dynamique du bon fichier
+    if generate_yaml:
+        groupes = loader.charger_groupes("groupes_capteurs_energy")
+        mode = "energy"
+    else:
+        groupes = loader.charger_groupes("groupes_capteurs_power")
+        mode = "power"
+
     all_capteurs = [item for sublist in groupes.values() for item in sublist]
 
     if generate_yaml:
@@ -143,12 +146,12 @@ if __name__ == "__main__":
             f.write(yaml_config)
 
     if generate_lovelace:
-        lovelace_card = generate_lovelace_grid(groupes)
+        lovelace_card = generate_lovelace_grid(groupes, mode)
         with open("/config/lovelace_conso.yaml", "w", encoding="utf-8") as f:
             f.write(lovelace_card)
 
     if generate_history:
-        history_card = generate_history_card(groupes)
+        history_card = generate_history_card(groupes, mode)
         with open("/config/lovelace_history_conso.yaml", "w", encoding="utf-8") as f:
             f.write(history_card)
 

@@ -1,12 +1,13 @@
-from .launcher import run_all
+"""Suivi Électrique - Custom Integration."""
+DOMAIN = "suivi_elec"
 
-async def async_setup(hass, config):
-    async def handle_generate(call):
+def setup(hass, config):
+    """Initialisation de l'intégration."""
+    try:
+        from .launcher import run_all
         run_all()
-        hass.components.persistent_notification.create(
-            "✅ Fichiers de suivi générés avec succès.",
-            title="Suivi Élec"
-        )
-
-    hass.services.async_register("suivi_elec", "generate_config", handle_generate)
-    return True
+        return True
+    except Exception as e:
+        # Log l'erreur dans Home Assistant
+        hass.components.logger.error(f"[suivi_elec] Erreur au lancement : {e}")
+        return False
