@@ -1,6 +1,10 @@
 #!/bin/bash
 
 NEW_TAG=$(./version_manager.sh dev)
+if [ -z "$NEW_TAG" ]; then
+  echo "❌ Erreur : aucun tag généré. Abandon."
+  exit 1
+fi
 
 echo "📦 Commit + tag : $NEW_TAG"
 

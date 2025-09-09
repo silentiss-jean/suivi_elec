@@ -1,6 +1,10 @@
 #!/bin/bash
 
 NEW_TAG=$(./version_manager.sh)
+if [ -z "$NEW_TAG" ]; then
+  echo "❌ Erreur : aucun tag généré. Abandon."
+  exit 1
+fi
 
 echo "📦 Version stable : $NEW_TAG"
 
