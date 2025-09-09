@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Script principal intelligent : choisit automatiquement le bon fichier de capteurs
+"""Script principal de génération pour l'intégration suivi_elec."""
 
 import os
-from .helpers import regroupement, loader
+from .helpers import regroupement, loader, install_helper
 
 def normalize_name(entity_id):
     base = entity_id.replace("sensor.", "").replace("_power", "").replace("_puissance", "")
@@ -121,38 +121,33 @@ def generate_history_card(groupes, mode):
 
     return "\n".join(lines)
 
-def run_all():
-    # 🔄 Mise à jour des fichiers de groupes
+def run_all(mode_force=None):
+    """Exécution principale du script de génération."""
+    print("🔄 Lancement du script suivi_elec")
+
+    # 🔁 Mise à jour des fichiers de regroupement
     regroupement.regroupe_capteurs()
 
-    # 🔍 Détection du besoin selon les fichiers à générer
-    generate_yaml = True
-    generate_lovelace = True
-    generate_history = True
-
-    # 📦 Chargement dynamique du bon fichier
-    if generate_yaml:
-        groupes = loader.charger_groupes("groupes_capteurs_energy")
-        mode = "energy"
-    else:
-        groupes = loader.charger_groupes("groupes_capteurs_power")
-        mode = "power"
+    # 📦 Chargement des groupes
+    groupes = loader.charger_groupes("groupes_capteurs_energy")
+    mode = "energy"
 
     all_capteurs = [item for sublist in groupes.values() for item in sublist]
 
-    if generate_yaml:
-        yaml_config = generate_yaml_config(all_capteurs)
-        with open("/config/suivi_elec.yaml", "w", encoding="utf-8") as f:
-            f.write(yaml_config)
+    # 📁 Choix du dossier cible selon configuration.yaml
+    dossier_cible = install_helper.choisir_emplacement_fichiers(mode_force=mode_force)
 
-    if generate_lovelace:
-        lovelace_card = generate_lovelace_grid(groupes, mode)
-        with open("/config/lovelace_conso.yaml", "w", encoding="utf-8") as f:
-            f.write(lovelace_card)
+    # 📝 Génération des fichiers
+    yaml_config = generate_yaml_config(all_capteurs)
+    with open(os.path.join(dossier_cible, "suivi_elec.yaml"), "w", encoding="utf-8") as f:
+        f.write(yaml_config)
 
-    if generate_history:
-        history_card = generate_history_card(groupes, mode)
-        with open("/config/lovelace_history_conso.yaml", "w", encoding="utf-8") as f:
-            f.write(history_card)
+    lovelace_card = generate_lovelace_grid(groupes, mode)
+    with open(os.path.join(dossier_cible, "lovelace_conso.yaml"), "w", encoding="utf-8") as f:
+        f.write(lovelace_card)
 
-    print(f"✅ Fichiers générés automatiquement en mode '{mode}'")
+    history_card = generate_history_card(groupes, mode)
+    with open(os.path.join(dossier_cible, "lovelace_history_conso.yaml"), "w", encoding="utf-8") as f:
+        f.write(history_card)
+
+    print(f"✅ Fichiers générés automatiquement en mode '{mode}' dans {dossier_cible}")
