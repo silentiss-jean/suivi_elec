@@ -1,25 +1,52 @@
 import os
 import importlib.util
+import logging
 
-def charger_groupes(nom_module):
-    """
-    Importe dynamiquement le fichier de groupes généré.
-    Args:
-        nom_module (str): Nom du fichier sans extension (ex: 'groupes_capteurs_energy')
-    Returns:
-        dict: Dictionnaire 'groupes' défini dans le module
-    """
-    dossier = os.path.dirname(os.path.dirname(__file__))  # remonte à suivi_elec/
+_LOGGER = logging.getLogger(__name__)
+
+def charger_groupes(nom_module, hass=None):
+    dossier = os.path.dirname(os.path.dirname(__file__))
     chemin = os.path.join(dossier, f"{nom_module}.py")
 
     if not os.path.exists(chemin):
-        raise FileNotFoundError(f"❌ Fichier {chemin} introuvable.")
+        _LOGGER.warning(f"[suivi_elec] ⚠️ Fichier {chemin} introuvable.")
+        return []
 
-    spec = importlib.util.spec_from_file_location(nom_module, chemin)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+    try:
+        spec = importlib.util.spec_from_file_location(nom_module, chemin)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
 
-    if not hasattr(module, "groupes"):
-        raise AttributeError(f"❌ Le module {nom_module} ne contient pas de variable 'groupes'.")
+        groupes = getattr(module, "groupes", None)
+        if not isinstance(groupes, list):
+            _LOGGER.error(f"[suivi_elec] ❌ 'groupes' doit être une liste, pas {type(groupes)}.")
+            return []
 
-    return module.groupes
+        groupes_valides = []
+        for i, groupe in enumerate(groupes):
+            if not isinstance(groupe, dict):
+                _LOGGER.warning(f"[suivi_elec] Groupe #{i} ignoré : type invalide.")
+                continue
+
+            nom = groupe.get("nom")
+            capteurs = groupe.get("capteurs")
+
+            if not isinstance(nom, str) or not isinstance(capteurs, list):
+                _LOGGER.warning(f"[suivi_elec] Groupe mal formé : {groupe}")
+                continue
+
+            capteurs_valides = [
+                c for c in capteurs
+                if isinstance(c, str) and (not hass or c in hass.states.async_entity_ids())
+            ]
+
+            if capteurs_valides:
+                groupes_valides.append({"nom": nom, "capteurs": capteurs_valides})
+            else:
+                _LOGGER.warning(f"[suivi_elec] Aucun capteur valide pour le groupe '{nom}'.")
+
+        return groupes_valides
+
+    except Exception as e:
+        _LOGGER.error(f"[suivi_elec] ❌ Erreur lors du chargement : {e}")
+        return []

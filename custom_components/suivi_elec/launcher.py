@@ -1,153 +1,16 @@
-# -*- coding: utf-8 -*-
-"""Script principal de génération pour l'intégration suivi_elec."""
+import logging
+from .helpers import loader
 
-import os
-from .helpers import regroupement, loader, install_helper
+_LOGGER = logging.getLogger(__name__)
 
-def normalize_name(entity_id):
-    base = entity_id.replace("sensor.", "").replace("_power", "").replace("_puissance", "")
-    return base.lower()
+def run_all(hass=None):
+    groupes = loader.charger_groupes("groupes_capteurs_energy", hass)
 
-def generate_yaml_config(capteurs):
-    lines = []
-    lines.append("####################################")
-    lines.append("# Package suivi électricité (auto)")
-    lines.append("####################################\n")
+    if not groupes:
+        _LOGGER.warning("[suivi_elec] Aucun groupe chargé.")
+        return
 
-    lines.append("input_number:")
-    lines.append("  prix_kwh:")
-    lines.append("    name: Prix du kWh")
-    lines.append("    min: 0")
-    lines.append("    max: 1")
-    lines.append("    step: 0.001")
-    lines.append("    unit_of_measurement: \"€/kWh\"")
-    lines.append("    initial: 0.25")
-    lines.append("    mode: box\n")
-
-    lines.append("sensor:")
-    for c in capteurs:
-        name = normalize_name(c)
-        lines.append(f"  - platform: integration")
-        lines.append(f"    source: {c}")
-        lines.append(f"    name: energy_{name}")
-        lines.append(f"    unit_prefix: k")
-        lines.append(f"    round: 2")
-        lines.append(f"    method: trapezoidal\n")
-
-    lines.append("utility_meter:")
-    cycle_map = {'jour': 'daily', 'semaine': 'weekly', 'mois': 'monthly', 'annee': 'yearly'}
-    for c in capteurs:
-        name = normalize_name(c)
-        for cycle, cycle_value in cycle_map.items():
-            lines.append(f"  energy_{name}_{cycle}:")
-            lines.append(f"    source: sensor.energy_{name}")
-            lines.append(f"    cycle: {cycle_value}\n")
-
-    lines.append("template:")
-    lines.append("  - sensor:")
-    titre_map = {"jour": "aujourdhui", "semaine": "semaine", "mois": "mois", "annee": "annee"}
-    for c in capteurs:
-        name = normalize_name(c)
-        pretty = name.replace("_", " ").title()
-        for cycle, titre in titre_map.items():
-            lines.append(f"      - name: \"Cout {pretty} {titre}\"")
-            lines.append(f"        unit_of_measurement: \"€\"")
-            lines.append("        state: >")
-            lines.append("          {% set prix = states('input_number.prix_kwh') | float(0) %}")
-            lines.append(f"          {{% set conso = states('sensor.energy_{name}_{cycle}') | float(0) %}}")
-            lines.append(f"          {{ (prix * conso) | round(2) }}\n")
-
-    return "\n".join(lines)
-
-def generate_lovelace_grid(groupes, mode):
-    lines = []
-    lines.append("type: vertical-stack")
-    lines.append(f"title: ⚡ Suivi {'instantané' if mode == 'power' else 'coût'} par pièce")
-    lines.append("cards:")
-
-    titre_map = {"jour": "Jour", "semaine": "Semaine", "mois": "Mois", "annee": "Année"}
-
-    for groupe, capteurs in groupes.items():
-        lines.append(f"  - type: grid")
-        lines.append(f"    title: {groupe}")
-        lines.append("    columns: 2")
-        lines.append("    cards:")
-
-        for c in capteurs:
-            name = normalize_name(c)
-            pretty = name.replace("_", " ").title()
-
-            for cycle, titre in titre_map.items():
-                lines.append("      - type: entities")
-                lines.append(f"        title: {pretty} – {titre}")
-                lines.append("        entities:")
-                if mode == "energy":
-                    lines.append(f"          - entity: sensor.energy_{name}_{cycle}")
-                    lines.append(f"            name: Consommation {titre}")
-                    lines.append(f"          - entity: sensor.cout_{name}_{'aujourdhui' if cycle == 'jour' else cycle}")
-                    lines.append(f"            name: Coût {titre}")
-                else:
-                    lines.append(f"          - entity: {c}")
-                    lines.append(f"            name: Puissance")
-
-    return "\n".join(lines)
-
-def generate_history_card(groupes, mode):
-    lines = []
-    lines.append("type: custom:history-explorer-card")
-    lines.append(f'header: "📈 Historique des {"puissances" if mode == "power" else "coûts"} par pièce"')
-    lines.append("graphs:")
-
-    for groupe, capteurs in groupes.items():
-        lines.append("  - type: bar")
-        lines.append(f"    title: {groupe}")
-        lines.append("    options:")
-        lines.append("      interval: hour")
-        lines.append("      stacked: true")
-        lines.append("    entities:")
-
-        for c in capteurs:
-            name = normalize_name(c)
-            label = name.replace("_", " ").title()
-            if mode == "energy":
-                lines.append(f"      - entity: sensor.cout_{name}_aujourdhui")
-            else:
-                lines.append(f"      - entity: {c}")
-            lines.append(f"        name: {label}")
-
-    lines.append("grid_options:")
-    lines.append("  columns: 3")
-    lines.append("  rows: null")
-
-    return "\n".join(lines)
-
-def run_all(mode_force=None):
-    """Exécution principale du script de génération."""
-    print("🔄 Lancement du script suivi_elec")
-
-    # 🔁 Mise à jour des fichiers de regroupement
-    regroupement.regroupe_capteurs()
-
-    # 📦 Chargement des groupes
-    groupes = loader.charger_groupes("groupes_capteurs_energy")
-    mode = "energy"
-
-    all_capteurs = [item for sublist in groupes.values() for item in sublist]
-
-    # 📁 Choix du dossier cible selon configuration.yaml
-    dossier_cible = install_helper.choisir_emplacement_fichiers(mode_force=mode_force)
-
-    # 📝 Génération des fichiers
-    yaml_config = generate_yaml_config(all_capteurs)
-    with open(os.path.join(dossier_cible, "suivi_elec.yaml"), "w", encoding="utf-8") as f:
-        f.write(yaml_config)
-
-    lovelace_card = generate_lovelace_grid(groupes, mode)
-    with open(os.path.join(dossier_cible, "lovelace_conso.yaml"), "w", encoding="utf-8") as f:
-        f.write(lovelace_card)
-
-    history_card = generate_history_card(groupes, mode)
-    with open(os.path.join(dossier_cible, "lovelace_history_conso.yaml"), "w", encoding="utf-8") as f:
-        f.write(history_card)
-
-    print(f"✅ Fichiers générés automatiquement en mode '{mode}' dans {dossier_cible}")
+    for groupe in groupes:
+        nom = groupe.get("nom")
+        capteurs = groupe.get("capteurs")
+        _LOGGER.info(f"[suivi_elec] Groupe '{nom}' avec {len(capteurs)} capteurs.")
