@@ -1,4 +1,4 @@
-# 📊 Suivi Électrique — Intégration Home Assistant
+# 📊 Suivi Électrique — NE FONCTIONNE PAS .... simple curiosité
 
 **Suivi Électrique** est une intégration personnalisée pour Home Assistant qui permet de détecter automatiquement les capteurs liés à la consommation électrique, de les regrouper par pièce, et de générer les fichiers YAML et Lovelace nécessaires au suivi énergétique.
 
