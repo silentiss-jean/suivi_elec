@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 🔍 Trouve le dernier tag SemVer pur
+# 📌 Trouve le dernier tag SemVer pur
 LAST_TAG=$(git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | tail -n 1)
 
 if [ -z "$LAST_TAG" ]; then
@@ -27,6 +27,11 @@ TIMESTAMP=$(date +"%Y-%m-%d %H:%M")
 
 # 📦 Met à jour manifest.json
 MANIFEST="custom_components/suivi_elec/manifest.json"
+if [ ! -f "$MANIFEST" ]; then
+  echo "❌ manifest.json introuvable à l'emplacement attendu : $MANIFEST"
+  exit 1
+fi
+
 sed -i "s/\"version\": \".*\"/\"version\": \"${NEW_TAG#v}\"/" "$MANIFEST"
 
 # 🔍 Vérifie les changements
