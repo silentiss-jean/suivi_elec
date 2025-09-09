@@ -11,6 +11,6 @@ def run_all(hass=None):
         return
 
     for groupe in groupes:
-        nom = groupe.get("nom")
-        capteurs = groupe.get("capteurs")
+        nom = groupe.get("nom", "SansNom")
+        capteurs = groupe.get("capteurs", [])
         _LOGGER.info(f"[suivi_elec] Groupe '{nom}' avec {len(capteurs)} capteurs.")
