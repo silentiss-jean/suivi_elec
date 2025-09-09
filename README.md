@@ -21,7 +21,7 @@
 
 1. Copiez le dossier `suivi_elec` dans `/config/custom_components/`
 2. Redémarrez Home Assistant
-3. Vérifiez que le service `suivi_elec.generate_suivi_elec` est disponible
+3. Vérifiez que le service `suivi_elec.generate_suivi_elec` est disponible (ne fonctionne pas)
 
 ---
 
@@ -30,7 +30,7 @@
 ### 🔧 Via l’interface Home Assistant
 
 1. Allez dans **Outils de développement > Services**
-2. Recherchez le service : `suivi_elec.generate_suivi_elec`
+2. Recherchez le service : `suivi_elec.generate_suivi_elec`  (ne fonctionne pas)
 3. Cliquez sur **Appeler le service**
 
 ### 📁 Fichiers générés
