@@ -1,21 +1,17 @@
-import json
-import requests
-import yaml
 import os
+import json
+import yaml
+import requests
 from ..config import (
     HA_URL,
     HA_TOKEN,
     FICHIER_CAPTEURS,
     FICHIER_NOMS_PERSONNALISES,
-    FICHIER_GROUPES_ENERGY,
-    FICHIER_GROUPES_POWER,
     INPUT_TEXT_ENTITES
 )
 
 def charger_noms_personnalises():
     mapping = {}
-
-    # 🔍 Lecture depuis Home Assistant (input_text)
     headers = {"Authorization": f"Bearer {HA_TOKEN}"}
     for entite in INPUT_TEXT_ENTITES:
         try:
@@ -24,9 +20,8 @@ def charger_noms_personnalises():
                 cle = entite.replace("input_text.nom_", "")
                 mapping[cle] = r.json()["state"]
         except Exception:
-            pass  # Ignore les erreurs réseau
+            pass
 
-    # 📄 Complément avec le fichier YAML
     try:
         with open(FICHIER_NOMS_PERSONNALISES, "r", encoding="utf-8") as f:
             yaml_mapping = yaml.safe_load(f) or {}
@@ -44,8 +39,18 @@ def detect_piece(nom_capteur, mapping):
             return nom_final
     return "Autres"
 
+def ecrit_groupes(groupes, nom_fichier):
+    os.makedirs(os.path.dirname(nom_fichier), exist_ok=True)
+    with open(nom_fichier, "w", encoding="utf-8") as f:
+        f.write("groupes = {\n")
+        for piece, liste in groupes.items():
+            f.write(f'    "{piece}": [\n')
+            for capteur in liste:
+                f.write(f'        "{capteur}",\n')
+            f.write("    ],\n")
+        f.write("}\n")
+
 def regroupe_capteurs():
-    # 📥 Lecture des capteurs détectés
     try:
         with open(FICHIER_CAPTEURS, "r", encoding="utf-8") as f:
             capteurs = json.load(f)
@@ -67,19 +72,15 @@ def regroupe_capteurs():
         elif device_class == "power":
             groupes_power.setdefault(piece, []).append(entity_id)
 
-    # 📤 Écriture des fichiers dans le dossier data/
-    def ecrit_groupes(groupes, nom_fichier):
-        os.makedirs("data", exist_ok=True)
-        with open(nom_fichier, "w", encoding="utf-8") as f:
-            f.write("groupes = {\n")
-            for piece, liste in groupes.items():
-                f.write(f'    "{piece}": [\n')
-                for capteur in liste:
-                    f.write(f'        "{capteur}",\n')
-                f.write("    ],\n")
-            f.write("}\n")
+    # 📦 Dossier de l'intégration
+    dossier_integration = os.path.dirname(__file__)
+    fichier_energy = os.path.join(dossier_integration, "groupes_capteurs_energy.py")
+    fichier_power = os.path.join(dossier_integration, "groupes_capteurs_power.py")
 
-    ecrit_groupes(groupes_energy, FICHIER_GROUPES_ENERGY)
-    ecrit_groupes(groupes_power, FICHIER_GROUPES_POWER)
+    ecrit_groupes(groupes_energy, fichier_energy)
+    ecrit_groupes(groupes_power, fichier_power)
 
-    print("✅ Regroupement terminé. Fichiers générés dans /data")
+    print("✅ Fichiers générés dans le dossier de l'intégration")
+
+if __name__ == "__main__":
+    regroupe_capteurs()
