@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# 🔧 Génère un tag stable unique
 NEW_TAG=$(./version_manager.sh)
 
-# 🕒 Horodatage
 TIMESTAMP=$(date +"%Y-%m-%d %H:%M")
 MANIFEST="custom_components/suivi_elec/manifest.json"
 
