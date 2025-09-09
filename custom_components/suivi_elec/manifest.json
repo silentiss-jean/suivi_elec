@@ -1,7 +1,7 @@
 {
   "domain": "suivi_elec",
   "name": "Suivi Électrique",
-  "version": "2025.09.09-1157",
+  "version": "2025.09.09-1226",
   "requirements": ["requests"],
   "dependencies": [],
   "codeowners": ["@tonpseudo"],
