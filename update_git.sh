@@ -1,13 +1,14 @@
 #!/bin/bash
 
-DATE_TAG=$(date +"v%Y.%m.%d-%H%M")
-MESSAGE="Auto release $DATE_TAG"
+NEW_TAG=$(./version_manager.sh dev)
 
-echo "📦 Commit + tag : $DATE_TAG"
+echo "📦 Commit + tag : $NEW_TAG"
+
 git add .
-git commit -m "$MESSAGE"
-git tag "$DATE_TAG"
+git commit -m "Auto release $NEW_TAG"
+git tag -a "$NEW_TAG" -m "Auto release $NEW_TAG"
 git push origin dev
-git push origin "$DATE_TAG"
+git push origin "$NEW_TAG"
 
-echo "✅ Release auto déclenchée via GitHub Actions"
+# Met à jour manifest.json
+sed -i "s/\"version\": \".*\"/\"version\": \"${NEW_TAG#v}\"/" custom_components/suivi_elec/manifest.json

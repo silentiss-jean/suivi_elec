@@ -4,6 +4,11 @@
 
 Cette intégration est publiée automatiquement à chaque `git push` avec un tag `vYYYY.MM.DD-HHMM`.
 
+### 📦 Dernière version
+
+[![Dernière version](https://img.shields.io/github/v/tag/silentiss-jean/suivi_elec?label=version&sort=semver)](https://github.com/silentiss-jean/suivi_elec/releases/latest)
+📜 [Voir le changelog complet](https://github.com/silentiss-jean/suivi_elec/releases)
+
 ### 🔧 Workflow
 
 1. Modifiez le code localement

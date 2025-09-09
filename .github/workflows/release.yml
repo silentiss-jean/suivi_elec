@@ -11,13 +11,52 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+
     steps:
       - name: ⬇️ Checkout code
         uses: actions/checkout@v3
 
-      - name: 📝 Create GitHub Release
+      - name: 🧠 Extraire la version depuis le tag
+        id: extract
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/v}"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: 📝 Mettre à jour manifest.json
+        run: |
+          sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" custom_components/suivi_elec/manifest.json
+
+      - name: 📝 Générer changelog minimal
+        run: |
+          echo "## Version ${VERSION}" > RELEASE.md
+          echo "" >> RELEASE.md
+          git log -1 --pretty=format:"- %s" >> RELEASE.md
+          - name: 📝 Générer changelog enrichi
+          id: changelog
+          run: |
+            # Récupère le dernier tag stable (sans -dev)
+            LAST_STABLE=$(git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -n 1)
+            echo "Dernier tag stable : $LAST_STABLE"
+        
+            VERSION="${GITHUB_REF#refs/tags/v}"
+        
+            echo "## Version ${VERSION}" > RELEASE.md
+            echo "" >> RELEASE.md
+        
+            # Ajoute un indicateur si version dev
+            if [[ "$VERSION" == *-dev* ]]; then
+              echo "⚠️ Version de développement — instable, sujette à changement." >> RELEASE.md
+              echo "" >> RELEASE.md
+            fi
+        
+            # Liste des commits depuis le dernier stable
+            git log $LAST_STABLE..HEAD --pretty=format:"- %s" >> RELEASE.md
+            
+      - name: 🚀 Créer la release GitHub
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          body_path: RELEASE.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
