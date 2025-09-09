@@ -1,16 +1,13 @@
-# -*- coding: utf-8 -*-
-# Script principal intelligent : choisit automatiquement le bon fichier de capteurs
+from .helpers import regroupement, loader
 
-import os
-from .helpers import regroupement
-
-# 🔄 Mise à jour des fichiers de groupes
 regroupement.regroupe_capteurs()
 
-# 🔍 Détection du besoin selon les fichiers à générer
-generate_yaml = True      # Génère suivi_elec.yaml
-generate_lovelace = True  # Génère lovelace_conso.yaml
-generate_history = True   # Génère lovelace_history_conso.yaml
+if generate_yaml:
+    groupes = loader.charger_groupes("groupes_capteurs_energy")
+    mode = "energy"
+else:
+    groupes = loader.charger_groupes("groupes_capteurs_power")
+    mode = "power"
 
 # 📦 Choix du fichier de capteurs
 if generate_yaml:
