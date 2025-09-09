@@ -1,15 +1,24 @@
-from helpers.detect import detect_capteurs
-from helpers.regroupement import regroupe_capteurs
-from helpers.generation import generate_all
+# -*- coding: utf-8 -*-
+# Lanceur principal pour générer les fichiers de suivi élec
+
+from .helpers.generation import generate_all
+
+# Exemple de structure de groupes (à adapter selon ton usage réel)
+groupes = {
+    "Salon": ["sensor.salon_power", "sensor.tv_power"],
+    "Cuisine": ["sensor.fridge_power", "sensor.oven_power"]
+}
 
 def run_all():
-    print("🔍 Étape 1 : Détection des capteurs...")
-    detect_capteurs()
+    resultats = generate_all(groupes)
 
-    print("📦 Étape 2 : Regroupement par pièce (automatique + personnalisé)...")
-    regroupe_capteurs()
+    with open("/data/suivi_elec.yaml", "w", encoding="utf-8") as f:
+        f.write(resultats["yaml"])
 
-    print("⚡ Étape 3 : Génération des fichiers YAML et Lovelace...")
-    generate_all()
+    with open("/data/lovelace_conso.yaml", "w", encoding="utf-8") as f:
+        f.write(resultats["lovelace"])
+
+    with open("/data/lovelace_history_conso.yaml", "w", encoding="utf-8") as f:
+        f.write(resultats["history"])
 
     print("✅ Tous les fichiers ont été générés avec succès.")

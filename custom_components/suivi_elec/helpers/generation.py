@@ -152,3 +152,16 @@ if __name__ == "__main__":
             f.write(history_card)
 
     print(f"✅ Fichiers générés automatiquement en mode '{mode}'")
+
+def generate_all(groupes):
+    all_capteurs = [item for sublist in groupes.values() for item in sublist]
+
+    yaml_config = generate_yaml_config(all_capteurs)
+    lovelace_card = generate_lovelace_grid(groupes)
+    history_card = generate_history_card(groupes)
+
+    return {
+        "yaml": yaml_config,
+        "lovelace": lovelace_card,
+        "history": history_card
+    }

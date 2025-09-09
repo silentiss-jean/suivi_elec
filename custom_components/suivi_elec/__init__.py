@@ -1,7 +1,12 @@
-from custom_components.suivi_elec.launcher import run_all
+from .launcher import run_all
 
-def setup(hass, config):
-    def handle_service(call):
+async def async_setup(hass, config):
+    async def handle_generate(call):
         run_all()
-    hass.services.register("suivi_elec", "generate_suivi_elec", handle_service)
+        hass.components.persistent_notification.create(
+            "✅ Fichiers de suivi générés avec succès.",
+            title="Suivi Élec"
+        )
+
+    hass.services.async_register("suivi_elec", "generate_config", handle_generate)
     return True
