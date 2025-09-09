@@ -5,13 +5,7 @@ MODE=$1
 if [ "$MODE" == "dev" ]; then
   # 🔧 Génère une version de dev basée sur le dernier tag stable
   LAST_TAG=$(git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | tail -n 1)
-
-  if [ -z "$LAST_TAG" ]; then
-    BASE="v0.9.0"
-  else
-    BASE="$LAST_TAG"
-  fi
-
+  BASE=${LAST_TAG:-v0.9.0}
   DATE=$(date +"%Y%m%d.%H%M")
   echo "${BASE}-dev.${DATE}"
 
