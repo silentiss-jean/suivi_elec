@@ -1,0 +1,47 @@
+[
+  {
+    "entity_id": "script.lancer_suivi_elec",
+    "state": "off",
+    "attributes": {
+      "last_triggered": "2025-09-09T14:02:19.875443+00:00",
+      "mode": "single",
+      "current": 0,
+      "friendly_name": "Lancer Suivi Électrique"
+    },
+    "last_changed": "2025-09-10T14:38:42.706381+00:00",
+    "last_reported": "2025-09-10T14:38:42.706381+00:00",
+    "last_updated": "2025-09-10T14:38:42.706381+00:00",
+    "context": {
+      "id": "01K4T1120JVS3D3C4VHG1PEFEN",
+      "parent_id": null,
+      "user_id": null
+    }
+  },
+  {
+    "entity_id": "update.suivi_electrique_update",
+    "state": "off",
+    "attributes": {
+      "auto_update": false,
+      "display_precision": 0,
+      "installed_version": "v0.9.10",
+      "in_progress": false,
+      "latest_version": "v0.9.10",
+      "release_summary": null,
+      "release_url": "https://github.com/silentiss-jean/suivi_elec/releases/v0.9.10",
+      "skipped_version": null,
+      "title": null,
+      "update_percentage": null,
+      "entity_picture": "https://brands.home-assistant.io/_/suivi_elec/icon.png",
+      "friendly_name": "Suivi Électrique update",
+      "supported_features": 23
+    },
+    "last_changed": "2025-09-10T14:38:50.390091+00:00",
+    "last_reported": "2025-09-10T14:38:50.390091+00:00",
+    "last_updated": "2025-09-10T14:38:50.390091+00:00",
+    "context": {
+      "id": "01K4T119GP0JRYR8XGDCN0MM4R",
+      "parent_id": null,
+      "user_id": null
+    }
+  }
+]
