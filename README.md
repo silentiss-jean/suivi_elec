@@ -11,7 +11,9 @@
 - [Structure du projet](#structure-du-projet)
 - [Documentation technique](#documentation-technique)
 - [Maintenance](#maintenance)
+- [Historique des versions](docs/changelog.md)
 - [Contribuer](#contribuer)
+- [Feuille de route du projet](docs/roadmap.md)
 - [Licence](#licence)
 - [Auteur](#auteur)
 
