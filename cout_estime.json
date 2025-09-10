@@ -1,0 +1,4237 @@
+{
+  "date": "2025-09-10",
+  "resultats": [
+    {
+      "entity_id": "sensor.energy_salon_prise_radiateur_canape_current",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_salon_prise_radiateur_tv_current",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_salon",
+      "energie_kwh": 0.13,
+      "cout_ht": 0.0226,
+      "cout_ttc": 0.0271,
+      "total_ht": 17.5226,
+      "total_ttc": 19.6271
+    },
+    {
+      "entity_id": "sensor.energy_chambre_tv_prise_connectee_current",
+      "energie_kwh": 3.75,
+      "cout_ht": 0.6525,
+      "cout_ttc": 0.783,
+      "total_ht": 18.1525,
+      "total_ttc": 20.383
+    },
+    {
+      "entity_id": "sensor.energy_chambre_ordinateur_prise_connectee_current",
+      "energie_kwh": 3.86,
+      "cout_ht": 0.6716,
+      "cout_ttc": 0.806,
+      "total_ht": 18.1716,
+      "total_ttc": 20.406
+    },
+    {
+      "entity_id": "sensor.energy_chambre_dalex_prise_pc_current",
+      "energie_kwh": 13.28,
+      "cout_ht": 2.3107,
+      "cout_ttc": 2.7729,
+      "total_ht": 19.8107,
+      "total_ttc": 22.3729
+    },
+    {
+      "entity_id": "sensor.energy_chambre_prise_radiateur_current",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_chambre",
+      "energie_kwh": 0.04,
+      "cout_ht": 0.007,
+      "cout_ttc": 0.0084,
+      "total_ht": 17.507,
+      "total_ttc": 19.6084
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_chambre_emma",
+      "energie_kwh": 0.12,
+      "cout_ht": 0.0209,
+      "cout_ttc": 0.0251,
+      "total_ht": 17.5209,
+      "total_ttc": 19.6251
+    },
+    {
+      "entity_id": "sensor.energy_plaque_electrique_cuisine_wifi_commutateur",
+      "energie_kwh": 2.5,
+      "cout_ht": 0.435,
+      "cout_ttc": 0.522,
+      "total_ht": 17.935,
+      "total_ttc": 20.122
+    },
+    {
+      "entity_id": "sensor.energy_four_cuisine_wifi_commutateur",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_cafe_prise_intelligente",
+      "energie_kwh": 0.17,
+      "cout_ht": 0.0296,
+      "cout_ttc": 0.0355,
+      "total_ht": 17.5296,
+      "total_ttc": 19.6355
+    },
+    {
+      "entity_id": "sensor.energy_frigo_prise_intelligente",
+      "energie_kwh": 4.04,
+      "cout_ht": 0.703,
+      "cout_ttc": 0.8436,
+      "total_ht": 18.203,
+      "total_ttc": 20.4436
+    },
+    {
+      "entity_id": "sensor.energy_prise_micro_onde",
+      "energie_kwh": 0.26,
+      "cout_ht": 0.0452,
+      "cout_ttc": 0.0543,
+      "total_ht": 17.5452,
+      "total_ttc": 19.6543
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_nas_prise_connectee_current",
+      "energie_kwh": 11.06,
+      "cout_ht": 1.9244,
+      "cout_ttc": 2.3093,
+      "total_ht": 19.4244,
+      "total_ttc": 21.9093
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_machines_current",
+      "energie_kwh": 1.14,
+      "cout_ht": 0.1984,
+      "cout_ttc": 0.238,
+      "total_ht": 17.6984,
+      "total_ttc": 19.838
+    },
+    {
+      "entity_id": "sensor.energy_prise_datac_buanderie",
+      "energie_kwh": 1.3,
+      "cout_ht": 0.2262,
+      "cout_ttc": 0.2714,
+      "total_ht": 17.7262,
+      "total_ttc": 19.8714
+    },
+    {
+      "entity_id": "sensor.energy_ballon_buanderie_commutateur_avec_mesure_3",
+      "energie_kwh": 16.22,
+      "cout_ht": 2.8223,
+      "cout_ttc": 3.3867,
+      "total_ht": 20.3223,
+      "total_ttc": 22.9867
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_buanderie",
+      "energie_kwh": 0.13,
+      "cout_ht": 0.0226,
+      "cout_ttc": 0.0271,
+      "total_ht": 17.5226,
+      "total_ttc": 19.6271
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_ordinateur_current",
+      "energie_kwh": 1.49,
+      "cout_ht": 0.2593,
+      "cout_ttc": 0.3111,
+      "total_ht": 17.7593,
+      "total_ttc": 19.9111
+    },
+    {
+      "entity_id": "sensor.energy_bureau_pc_synthe_current",
+      "energie_kwh": 2.38,
+      "cout_ht": 0.4141,
+      "cout_ttc": 0.4969,
+      "total_ht": 17.9141,
+      "total_ttc": 20.0969
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_porte_current",
+      "energie_kwh": 2.96,
+      "cout_ht": 0.515,
+      "cout_ttc": 0.618,
+      "total_ht": 18.015,
+      "total_ttc": 20.218
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_connecte_studio_device",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_bureau",
+      "energie_kwh": 0.05,
+      "cout_ht": 0.0087,
+      "cout_ttc": 0.0104,
+      "total_ht": 17.5087,
+      "total_ttc": 19.6104
+    },
+    {
+      "entity_id": "sensor.energy_atome_live",
+      "energie_kwh": 126.4,
+      "cout_ht": 21.9936,
+      "cout_ttc": 26.3923,
+      "total_ht": 39.4936,
+      "total_ttc": 45.9923
+    },
+    {
+      "entity_id": "sensor.energy_wifi_commutateur_sur_rail_din_avec_mesure",
+      "energie_kwh": 7.72,
+      "cout_ht": 1.3433,
+      "cout_ttc": 1.6119,
+      "total_ht": 18.8433,
+      "total_ttc": 21.2119
+    },
+    {
+      "entity_id": "sensor.energy_clim_appart1_wifi_commutateur_sur_rail_din",
+      "energie_kwh": 1.63,
+      "cout_ht": 0.2836,
+      "cout_ttc": 0.3403,
+      "total_ht": 17.7836,
+      "total_ttc": 19.9403
+    },
+    {
+      "entity_id": "sensor.energy_clim2",
+      "energie_kwh": 2272.49,
+      "cout_ht": 395.4133,
+      "cout_ttc": 474.4959,
+      "total_ht": 412.9133,
+      "total_ttc": 494.0959
+    },
+    {
+      "entity_id": "sensor.energy_clim1",
+      "energie_kwh": 1994.32,
+      "cout_ht": 347.0117,
+      "cout_ttc": 416.414,
+      "total_ht": 364.5117,
+      "total_ttc": 436.014
+    },
+    {
+      "entity_id": "sensor.cout_atome",
+      "energie_kwh": 7205.13,
+      "cout_ht": 1253.6926,
+      "cout_ttc": 1504.4311,
+      "total_ht": 1271.1926,
+      "total_ttc": 1524.0311
+    },
+    {
+      "entity_id": "sensor.cout_nas",
+      "energie_kwh": 721.3,
+      "cout_ht": 125.5062,
+      "cout_ttc": 150.6074,
+      "total_ht": 143.0062,
+      "total_ttc": 170.2074
+    },
+    {
+      "entity_id": "sensor.cout_bureau_ordinateur",
+      "energie_kwh": 388.57,
+      "cout_ht": 67.6112,
+      "cout_ttc": 81.1334,
+      "total_ht": 85.1112,
+      "total_ttc": 100.7334
+    },
+    {
+      "entity_id": "sensor.cout_bureau_synthe_pc",
+      "energie_kwh": 170.39,
+      "cout_ht": 29.6479,
+      "cout_ttc": 35.5774,
+      "total_ht": 47.1479,
+      "total_ttc": 55.1774
+    },
+    {
+      "entity_id": "sensor.cout_bureau_porte_home_cinema",
+      "energie_kwh": 283.4,
+      "cout_ht": 49.3116,
+      "cout_ttc": 59.1739,
+      "total_ht": 66.8116,
+      "total_ttc": 78.7739
+    },
+    {
+      "entity_id": "sensor.cout_bureau_studio",
+      "energie_kwh": 1.12,
+      "cout_ht": 0.1949,
+      "cout_ttc": 0.2339,
+      "total_ht": 17.6949,
+      "total_ttc": 19.8339
+    },
+    {
+      "entity_id": "sensor.cout_buanderie_machine",
+      "energie_kwh": 266.33,
+      "cout_ht": 46.3414,
+      "cout_ttc": 55.6097,
+      "total_ht": 63.8414,
+      "total_ttc": 75.2097
+    },
+    {
+      "entity_id": "sensor.cout_salon_tv",
+      "energie_kwh": 679.42,
+      "cout_ht": 118.2191,
+      "cout_ttc": 141.8629,
+      "total_ht": 135.7191,
+      "total_ttc": 161.4629
+    },
+    {
+      "entity_id": "sensor.cout_chambre_tv",
+      "energie_kwh": 277.28,
+      "cout_ht": 48.2467,
+      "cout_ttc": 57.8961,
+      "total_ht": 65.7467,
+      "total_ttc": 77.4961
+    },
+    {
+      "entity_id": "sensor.cout_chambre_mac_os",
+      "energie_kwh": 265.22,
+      "cout_ht": 46.1483,
+      "cout_ttc": 55.3779,
+      "total_ht": 63.6483,
+      "total_ttc": 74.9779
+    },
+    {
+      "entity_id": "sensor.cout_chambre_alex_pc_tv",
+      "energie_kwh": 616.12,
+      "cout_ht": 107.2049,
+      "cout_ttc": 128.6459,
+      "total_ht": 124.7049,
+      "total_ttc": 148.2459
+    },
+    {
+      "entity_id": "sensor.cout_salon_radiateur_canape",
+      "energie_kwh": 38.61,
+      "cout_ht": 6.7181,
+      "cout_ttc": 8.0618,
+      "total_ht": 24.2181,
+      "total_ttc": 27.6618
+    },
+    {
+      "entity_id": "sensor.cout_salon_radiateur_tv",
+      "energie_kwh": 49.87,
+      "cout_ht": 8.6774,
+      "cout_ttc": 10.4129,
+      "total_ht": 26.1774,
+      "total_ttc": 30.0129
+    },
+    {
+      "entity_id": "sensor.cout_chambre_radiateur",
+      "energie_kwh": 33.35,
+      "cout_ht": 5.8029,
+      "cout_ttc": 6.9635,
+      "total_ht": 23.3029,
+      "total_ttc": 26.5635
+    },
+    {
+      "entity_id": "sensor.cout_salon_lumiere",
+      "energie_kwh": 22.83,
+      "cout_ht": 3.9724,
+      "cout_ttc": 4.7669,
+      "total_ht": 21.4724,
+      "total_ttc": 24.3669
+    },
+    {
+      "entity_id": "sensor.cout_chambre_lumiere",
+      "energie_kwh": 9.39,
+      "cout_ht": 1.6339,
+      "cout_ttc": 1.9606,
+      "total_ht": 19.1339,
+      "total_ttc": 21.5606
+    },
+    {
+      "entity_id": "sensor.cout_chambre_emma_lumiere",
+      "energie_kwh": 8.39,
+      "cout_ht": 1.4599,
+      "cout_ttc": 1.7518,
+      "total_ht": 18.9599,
+      "total_ttc": 21.3518
+    },
+    {
+      "entity_id": "sensor.cout_bureau_lumiere",
+      "energie_kwh": 12.17,
+      "cout_ht": 2.1176,
+      "cout_ttc": 2.5411,
+      "total_ht": 19.6176,
+      "total_ttc": 22.1411
+    },
+    {
+      "entity_id": "sensor.cout_buanderie_lumiere",
+      "energie_kwh": 14.86,
+      "cout_ht": 2.5856,
+      "cout_ttc": 3.1028,
+      "total_ht": 20.0856,
+      "total_ttc": 22.7028
+    },
+    {
+      "entity_id": "sensor.cout_toilette_lumiere",
+      "energie_kwh": 4.57,
+      "cout_ht": 0.7952,
+      "cout_ttc": 0.9542,
+      "total_ht": 18.2952,
+      "total_ttc": 20.5542
+    },
+    {
+      "entity_id": "sensor.cout_terrasse_lumiere",
+      "energie_kwh": 39.01,
+      "cout_ht": 6.7877,
+      "cout_ttc": 8.1453,
+      "total_ht": 24.2877,
+      "total_ttc": 27.7453
+    },
+    {
+      "entity_id": "sensor.energy_ballon_buanderie",
+      "energie_kwh": 2102.92,
+      "cout_ht": 365.9081,
+      "cout_ttc": 439.0897,
+      "total_ht": 383.4081,
+      "total_ttc": 458.6897
+    },
+    {
+      "entity_id": "sensor.energy_plaque_electrique",
+      "energie_kwh": 115.74,
+      "cout_ht": 20.1388,
+      "cout_ttc": 24.1665,
+      "total_ht": 37.6388,
+      "total_ttc": 43.7665
+    },
+    {
+      "entity_id": "sensor.energy_four_cuisine",
+      "energie_kwh": 35.09,
+      "cout_ht": 6.1057,
+      "cout_ttc": 7.3268,
+      "total_ht": 23.6057,
+      "total_ttc": 26.9268
+    },
+    {
+      "entity_id": "sensor.cafe_prise_cuisine",
+      "energie_kwh": 14.97,
+      "cout_ht": 2.6048,
+      "cout_ttc": 3.1257,
+      "total_ht": 20.1048,
+      "total_ttc": 22.7257
+    },
+    {
+      "entity_id": "sensor.frigo_prise_cuisine",
+      "energie_kwh": 428.16,
+      "cout_ht": 74.4998,
+      "cout_ttc": 89.3998,
+      "total_ht": 91.9998,
+      "total_ttc": 108.9998
+    },
+    {
+      "entity_id": "sensor.micro_onde_prise_cuisine",
+      "energie_kwh": 20.4,
+      "cout_ht": 3.5496,
+      "cout_ttc": 4.2595,
+      "total_ht": 21.0496,
+      "total_ttc": 23.8595
+    },
+    {
+      "entity_id": "sensor.datac_prise_buanderie",
+      "energie_kwh": 170.97,
+      "cout_ht": 29.7488,
+      "cout_ttc": 35.6985,
+      "total_ht": 47.2488,
+      "total_ttc": 55.2985
+    },
+    {
+      "entity_id": "sensor.bitax_prise_buanderie",
+      "energie_kwh": 48.63,
+      "cout_ht": 8.4616,
+      "cout_ttc": 10.1539,
+      "total_ht": 25.9616,
+      "total_ttc": 29.7539
+    },
+    {
+      "entity_id": "sensor.energy_salon_tv_prise_connectee_current",
+      "energie_kwh": 6.34,
+      "cout_ht": 1.1032,
+      "cout_ttc": 1.3238,
+      "total_ht": 18.6032,
+      "total_ttc": 20.9238
+    },
+    {
+      "entity_id": "sensor.daily_autre_energie_mesure_hp",
+      "energie_kwh": 7944.23018489577,
+      "cout_ht": 1382.2961,
+      "cout_ttc": 1658.7553,
+      "total_ht": 1399.7961,
+      "total_ttc": 1678.3553
+    },
+    {
+      "entity_id": "sensor.daily_autre_energie_mesure_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_salon_tv_prise_connectee_current_jour",
+      "energie_kwh": 1.83,
+      "cout_ht": 0.3184,
+      "cout_ttc": 0.3821,
+      "total_ht": 17.8184,
+      "total_ttc": 19.9821
+    },
+    {
+      "entity_id": "sensor.energy_salon_tv_prise_connectee_current_semaine",
+      "energie_kwh": 5.63,
+      "cout_ht": 0.9796,
+      "cout_ttc": 1.1755,
+      "total_ht": 18.4796,
+      "total_ttc": 20.7755
+    },
+    {
+      "entity_id": "sensor.energy_salon_tv_prise_connectee_current_mois",
+      "energie_kwh": 6.33,
+      "cout_ht": 1.1014,
+      "cout_ttc": 1.3217,
+      "total_ht": 18.6014,
+      "total_ttc": 20.9217
+    },
+    {
+      "entity_id": "sensor.energy_salon_tv_prise_connectee_current_annee",
+      "energie_kwh": 6.33,
+      "cout_ht": 1.1014,
+      "cout_ttc": 1.3217,
+      "total_ht": 18.6014,
+      "total_ttc": 20.9217
+    },
+    {
+      "entity_id": "sensor.energy_salon_prise_radiateur_canape_current_jour",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_salon_prise_radiateur_canape_current_semaine",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_salon_prise_radiateur_canape_current_mois",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_salon_prise_radiateur_canape_current_annee",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_salon_prise_radiateur_tv_current_jour",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_salon_prise_radiateur_tv_current_semaine",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_salon_prise_radiateur_tv_current_mois",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_salon_prise_radiateur_tv_current_annee",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_salon_jour",
+      "energie_kwh": 0.03,
+      "cout_ht": 0.0052,
+      "cout_ttc": 0.0063,
+      "total_ht": 17.5052,
+      "total_ttc": 19.6063
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_salon_semaine",
+      "energie_kwh": 0.1,
+      "cout_ht": 0.0174,
+      "cout_ttc": 0.0209,
+      "total_ht": 17.5174,
+      "total_ttc": 19.6209
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_salon_mois",
+      "energie_kwh": 0.13,
+      "cout_ht": 0.0226,
+      "cout_ttc": 0.0271,
+      "total_ht": 17.5226,
+      "total_ttc": 19.6271
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_salon_annee",
+      "energie_kwh": 0.13,
+      "cout_ht": 0.0226,
+      "cout_ttc": 0.0271,
+      "total_ht": 17.5226,
+      "total_ttc": 19.6271
+    },
+    {
+      "entity_id": "sensor.energy_chambre_tv_prise_connectee_current_jour",
+      "energie_kwh": 0.46,
+      "cout_ht": 0.08,
+      "cout_ttc": 0.096,
+      "total_ht": 17.58,
+      "total_ttc": 19.696
+    },
+    {
+      "entity_id": "sensor.energy_chambre_tv_prise_connectee_current_semaine",
+      "energie_kwh": 3.23,
+      "cout_ht": 0.562,
+      "cout_ttc": 0.6744,
+      "total_ht": 18.062,
+      "total_ttc": 20.2744
+    },
+    {
+      "entity_id": "sensor.energy_chambre_tv_prise_connectee_current_mois",
+      "energie_kwh": 3.75,
+      "cout_ht": 0.6525,
+      "cout_ttc": 0.783,
+      "total_ht": 18.1525,
+      "total_ttc": 20.383
+    },
+    {
+      "entity_id": "sensor.energy_chambre_tv_prise_connectee_current_annee",
+      "energie_kwh": 3.75,
+      "cout_ht": 0.6525,
+      "cout_ttc": 0.783,
+      "total_ht": 18.1525,
+      "total_ttc": 20.383
+    },
+    {
+      "entity_id": "sensor.energy_chambre_ordinateur_prise_connectee_current_jour",
+      "energie_kwh": 1.04,
+      "cout_ht": 0.181,
+      "cout_ttc": 0.2172,
+      "total_ht": 17.681,
+      "total_ttc": 19.8172
+    },
+    {
+      "entity_id": "sensor.energy_chambre_ordinateur_prise_connectee_current_semaine",
+      "energie_kwh": 3.31,
+      "cout_ht": 0.5759,
+      "cout_ttc": 0.6911,
+      "total_ht": 18.0759,
+      "total_ttc": 20.2911
+    },
+    {
+      "entity_id": "sensor.energy_chambre_ordinateur_prise_connectee_current_mois",
+      "energie_kwh": 3.86,
+      "cout_ht": 0.6716,
+      "cout_ttc": 0.806,
+      "total_ht": 18.1716,
+      "total_ttc": 20.406
+    },
+    {
+      "entity_id": "sensor.energy_chambre_ordinateur_prise_connectee_current_annee",
+      "energie_kwh": 3.86,
+      "cout_ht": 0.6716,
+      "cout_ttc": 0.806,
+      "total_ht": 18.1716,
+      "total_ttc": 20.406
+    },
+    {
+      "entity_id": "sensor.energy_chambre_dalex_prise_pc_current_jour",
+      "energie_kwh": 5.42,
+      "cout_ht": 0.9431,
+      "cout_ttc": 1.1317,
+      "total_ht": 18.4431,
+      "total_ttc": 20.7317
+    },
+    {
+      "entity_id": "sensor.energy_chambre_dalex_prise_pc_current_semaine",
+      "energie_kwh": 9.3,
+      "cout_ht": 1.6182,
+      "cout_ttc": 1.9418,
+      "total_ht": 19.1182,
+      "total_ttc": 21.5418
+    },
+    {
+      "entity_id": "sensor.energy_chambre_dalex_prise_pc_current_mois",
+      "energie_kwh": 13.27,
+      "cout_ht": 2.309,
+      "cout_ttc": 2.7708,
+      "total_ht": 19.809,
+      "total_ttc": 22.3708
+    },
+    {
+      "entity_id": "sensor.energy_chambre_dalex_prise_pc_current_annee",
+      "energie_kwh": 13.27,
+      "cout_ht": 2.309,
+      "cout_ttc": 2.7708,
+      "total_ht": 19.809,
+      "total_ttc": 22.3708
+    },
+    {
+      "entity_id": "sensor.energy_chambre_prise_radiateur_current_jour",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_chambre_prise_radiateur_current_semaine",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_chambre_prise_radiateur_current_mois",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_chambre_prise_radiateur_current_annee",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_chambre_jour",
+      "energie_kwh": 0.01,
+      "cout_ht": 0.0017,
+      "cout_ttc": 0.0021,
+      "total_ht": 17.5017,
+      "total_ttc": 19.6021
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_chambre_semaine",
+      "energie_kwh": 0.04,
+      "cout_ht": 0.007,
+      "cout_ttc": 0.0084,
+      "total_ht": 17.507,
+      "total_ttc": 19.6084
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_chambre_mois",
+      "energie_kwh": 0.04,
+      "cout_ht": 0.007,
+      "cout_ttc": 0.0084,
+      "total_ht": 17.507,
+      "total_ttc": 19.6084
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_chambre_annee",
+      "energie_kwh": 0.04,
+      "cout_ht": 0.007,
+      "cout_ttc": 0.0084,
+      "total_ht": 17.507,
+      "total_ttc": 19.6084
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_chambre_emma_jour",
+      "energie_kwh": 0.02,
+      "cout_ht": 0.0035,
+      "cout_ttc": 0.0042,
+      "total_ht": 17.5035,
+      "total_ttc": 19.6042
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_chambre_emma_semaine",
+      "energie_kwh": 0.11,
+      "cout_ht": 0.0191,
+      "cout_ttc": 0.023,
+      "total_ht": 17.5191,
+      "total_ttc": 19.623
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_chambre_emma_mois",
+      "energie_kwh": 0.12,
+      "cout_ht": 0.0209,
+      "cout_ttc": 0.0251,
+      "total_ht": 17.5209,
+      "total_ttc": 19.6251
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_chambre_emma_annee",
+      "energie_kwh": 0.12,
+      "cout_ht": 0.0209,
+      "cout_ttc": 0.0251,
+      "total_ht": 17.5209,
+      "total_ttc": 19.6251
+    },
+    {
+      "entity_id": "sensor.energy_plaque_electrique_cuisine_wifi_commutateur_jour",
+      "energie_kwh": 0.11,
+      "cout_ht": 0.0191,
+      "cout_ttc": 0.023,
+      "total_ht": 17.5191,
+      "total_ttc": 19.623
+    },
+    {
+      "entity_id": "sensor.energy_plaque_electrique_cuisine_wifi_commutateur_semaine",
+      "energie_kwh": 1.69,
+      "cout_ht": 0.2941,
+      "cout_ttc": 0.3529,
+      "total_ht": 17.7941,
+      "total_ttc": 19.9529
+    },
+    {
+      "entity_id": "sensor.energy_plaque_electrique_cuisine_wifi_commutateur_mois",
+      "energie_kwh": 2.5,
+      "cout_ht": 0.435,
+      "cout_ttc": 0.522,
+      "total_ht": 17.935,
+      "total_ttc": 20.122
+    },
+    {
+      "entity_id": "sensor.energy_plaque_electrique_cuisine_wifi_commutateur_annee",
+      "energie_kwh": 2.5,
+      "cout_ht": 0.435,
+      "cout_ttc": 0.522,
+      "total_ht": 17.935,
+      "total_ttc": 20.122
+    },
+    {
+      "entity_id": "sensor.energy_four_cuisine_wifi_commutateur_jour",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_four_cuisine_wifi_commutateur_semaine",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_four_cuisine_wifi_commutateur_mois",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_four_cuisine_wifi_commutateur_annee",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_cafe_prise_intelligente_jour",
+      "energie_kwh": 0.15,
+      "cout_ht": 0.0261,
+      "cout_ttc": 0.0313,
+      "total_ht": 17.5261,
+      "total_ttc": 19.6313
+    },
+    {
+      "entity_id": "sensor.energy_cafe_prise_intelligente_semaine",
+      "energie_kwh": 0.17,
+      "cout_ht": 0.0296,
+      "cout_ttc": 0.0355,
+      "total_ht": 17.5296,
+      "total_ttc": 19.6355
+    },
+    {
+      "entity_id": "sensor.energy_cafe_prise_intelligente_mois",
+      "energie_kwh": 0.17,
+      "cout_ht": 0.0296,
+      "cout_ttc": 0.0355,
+      "total_ht": 17.5296,
+      "total_ttc": 19.6355
+    },
+    {
+      "entity_id": "sensor.energy_cafe_prise_intelligente_annee",
+      "energie_kwh": 0.17,
+      "cout_ht": 0.0296,
+      "cout_ttc": 0.0355,
+      "total_ht": 17.5296,
+      "total_ttc": 19.6355
+    },
+    {
+      "entity_id": "sensor.energy_frigo_prise_intelligente_jour",
+      "energie_kwh": 1.0,
+      "cout_ht": 0.174,
+      "cout_ttc": 0.2088,
+      "total_ht": 17.674,
+      "total_ttc": 19.8088
+    },
+    {
+      "entity_id": "sensor.energy_frigo_prise_intelligente_semaine",
+      "energie_kwh": 3.28,
+      "cout_ht": 0.5707,
+      "cout_ttc": 0.6849,
+      "total_ht": 18.0707,
+      "total_ttc": 20.2849
+    },
+    {
+      "entity_id": "sensor.energy_frigo_prise_intelligente_mois",
+      "energie_kwh": 4.03,
+      "cout_ht": 0.7012,
+      "cout_ttc": 0.8415,
+      "total_ht": 18.2012,
+      "total_ttc": 20.4415
+    },
+    {
+      "entity_id": "sensor.energy_frigo_prise_intelligente_annee",
+      "energie_kwh": 4.03,
+      "cout_ht": 0.7012,
+      "cout_ttc": 0.8415,
+      "total_ht": 18.2012,
+      "total_ttc": 20.4415
+    },
+    {
+      "entity_id": "sensor.energy_prise_micro_onde_jour",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_prise_micro_onde_semaine",
+      "energie_kwh": 0.22,
+      "cout_ht": 0.0383,
+      "cout_ttc": 0.0459,
+      "total_ht": 17.5383,
+      "total_ttc": 19.6459
+    },
+    {
+      "entity_id": "sensor.energy_prise_micro_onde_mois",
+      "energie_kwh": 0.26,
+      "cout_ht": 0.0452,
+      "cout_ttc": 0.0543,
+      "total_ht": 17.5452,
+      "total_ttc": 19.6543
+    },
+    {
+      "entity_id": "sensor.energy_prise_micro_onde_annee",
+      "energie_kwh": 0.26,
+      "cout_ht": 0.0452,
+      "cout_ttc": 0.0543,
+      "total_ht": 17.5452,
+      "total_ttc": 19.6543
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_nas_prise_connectee_current_jour",
+      "energie_kwh": 2.76,
+      "cout_ht": 0.4802,
+      "cout_ttc": 0.5763,
+      "total_ht": 17.9802,
+      "total_ttc": 20.1763
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_nas_prise_connectee_current_semaine",
+      "energie_kwh": 9.67,
+      "cout_ht": 1.6826,
+      "cout_ttc": 2.0191,
+      "total_ht": 19.1826,
+      "total_ttc": 21.6191
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_nas_prise_connectee_current_mois",
+      "energie_kwh": 11.06,
+      "cout_ht": 1.9244,
+      "cout_ttc": 2.3093,
+      "total_ht": 19.4244,
+      "total_ttc": 21.9093
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_nas_prise_connectee_current_annee",
+      "energie_kwh": 11.06,
+      "cout_ht": 1.9244,
+      "cout_ttc": 2.3093,
+      "total_ht": 19.4244,
+      "total_ttc": 21.9093
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_machines_current_jour",
+      "energie_kwh": 1.11,
+      "cout_ht": 0.1931,
+      "cout_ttc": 0.2318,
+      "total_ht": 17.6931,
+      "total_ttc": 19.8318
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_machines_current_semaine",
+      "energie_kwh": 1.13,
+      "cout_ht": 0.1966,
+      "cout_ttc": 0.2359,
+      "total_ht": 17.6966,
+      "total_ttc": 19.8359
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_machines_current_mois",
+      "energie_kwh": 1.14,
+      "cout_ht": 0.1984,
+      "cout_ttc": 0.238,
+      "total_ht": 17.6984,
+      "total_ttc": 19.838
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_machines_current_annee",
+      "energie_kwh": 1.14,
+      "cout_ht": 0.1984,
+      "cout_ttc": 0.238,
+      "total_ht": 17.6984,
+      "total_ttc": 19.838
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_aspirateur_jour",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_aspirateur_semaine",
+      "energie_kwh": 0.03,
+      "cout_ht": 0.0052,
+      "cout_ttc": 0.0063,
+      "total_ht": 17.5052,
+      "total_ttc": 19.6063
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_aspirateur_mois",
+      "energie_kwh": 0.27,
+      "cout_ht": 0.047,
+      "cout_ttc": 0.0564,
+      "total_ht": 17.547,
+      "total_ttc": 19.6564
+    },
+    {
+      "entity_id": "sensor.energy_buanderie_aspirateur_annee",
+      "energie_kwh": 0.27,
+      "cout_ht": 0.047,
+      "cout_ttc": 0.0564,
+      "total_ht": 17.547,
+      "total_ttc": 19.6564
+    },
+    {
+      "entity_id": "sensor.energy_prise_datac_buanderie_jour",
+      "energie_kwh": 0.34,
+      "cout_ht": 0.0592,
+      "cout_ttc": 0.071,
+      "total_ht": 17.5592,
+      "total_ttc": 19.671
+    },
+    {
+      "entity_id": "sensor.energy_prise_datac_buanderie_semaine",
+      "energie_kwh": 1.16,
+      "cout_ht": 0.2018,
+      "cout_ttc": 0.2422,
+      "total_ht": 17.7018,
+      "total_ttc": 19.8422
+    },
+    {
+      "entity_id": "sensor.energy_prise_datac_buanderie_mois",
+      "energie_kwh": 1.3,
+      "cout_ht": 0.2262,
+      "cout_ttc": 0.2714,
+      "total_ht": 17.7262,
+      "total_ttc": 19.8714
+    },
+    {
+      "entity_id": "sensor.energy_prise_datac_buanderie_annee",
+      "energie_kwh": 1.3,
+      "cout_ht": 0.2262,
+      "cout_ttc": 0.2714,
+      "total_ht": 17.7262,
+      "total_ttc": 19.8714
+    },
+    {
+      "entity_id": "sensor.energy_ballon_buanderie_commutateur_avec_mesure_3_jour",
+      "energie_kwh": 3.27,
+      "cout_ht": 0.569,
+      "cout_ttc": 0.6828,
+      "total_ht": 18.069,
+      "total_ttc": 20.2828
+    },
+    {
+      "entity_id": "sensor.energy_ballon_buanderie_commutateur_avec_mesure_3_semaine",
+      "energie_kwh": 12.92,
+      "cout_ht": 2.2481,
+      "cout_ttc": 2.6977,
+      "total_ht": 19.7481,
+      "total_ttc": 22.2977
+    },
+    {
+      "entity_id": "sensor.energy_ballon_buanderie_commutateur_avec_mesure_3_mois",
+      "energie_kwh": 16.22,
+      "cout_ht": 2.8223,
+      "cout_ttc": 3.3867,
+      "total_ht": 20.3223,
+      "total_ttc": 22.9867
+    },
+    {
+      "entity_id": "sensor.energy_ballon_buanderie_commutateur_avec_mesure_3_annee",
+      "energie_kwh": 16.22,
+      "cout_ht": 2.8223,
+      "cout_ttc": 3.3867,
+      "total_ht": 20.3223,
+      "total_ttc": 22.9867
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_buanderie_jour",
+      "energie_kwh": 0.04,
+      "cout_ht": 0.007,
+      "cout_ttc": 0.0084,
+      "total_ht": 17.507,
+      "total_ttc": 19.6084
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_buanderie_semaine",
+      "energie_kwh": 0.1,
+      "cout_ht": 0.0174,
+      "cout_ttc": 0.0209,
+      "total_ht": 17.5174,
+      "total_ttc": 19.6209
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_buanderie_mois",
+      "energie_kwh": 0.13,
+      "cout_ht": 0.0226,
+      "cout_ttc": 0.0271,
+      "total_ht": 17.5226,
+      "total_ttc": 19.6271
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_buanderie_annee",
+      "energie_kwh": 0.13,
+      "cout_ht": 0.0226,
+      "cout_ttc": 0.0271,
+      "total_ht": 17.5226,
+      "total_ttc": 19.6271
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_ordinateur_current_jour",
+      "energie_kwh": 0.06,
+      "cout_ht": 0.0104,
+      "cout_ttc": 0.0125,
+      "total_ht": 17.5104,
+      "total_ttc": 19.6125
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_ordinateur_current_semaine",
+      "energie_kwh": 0.19,
+      "cout_ht": 0.0331,
+      "cout_ttc": 0.0397,
+      "total_ht": 17.5331,
+      "total_ttc": 19.6397
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_ordinateur_current_mois",
+      "energie_kwh": 1.49,
+      "cout_ht": 0.2593,
+      "cout_ttc": 0.3111,
+      "total_ht": 17.7593,
+      "total_ttc": 19.9111
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_ordinateur_current_annee",
+      "energie_kwh": 1.49,
+      "cout_ht": 0.2593,
+      "cout_ttc": 0.3111,
+      "total_ht": 17.7593,
+      "total_ttc": 19.9111
+    },
+    {
+      "entity_id": "sensor.energy_bureau_pc_synthe_current_jour",
+      "energie_kwh": 0.36,
+      "cout_ht": 0.0626,
+      "cout_ttc": 0.0752,
+      "total_ht": 17.5626,
+      "total_ttc": 19.6752
+    },
+    {
+      "entity_id": "sensor.energy_bureau_pc_synthe_current_semaine",
+      "energie_kwh": 1.2,
+      "cout_ht": 0.2088,
+      "cout_ttc": 0.2506,
+      "total_ht": 17.7088,
+      "total_ttc": 19.8506
+    },
+    {
+      "entity_id": "sensor.energy_bureau_pc_synthe_current_mois",
+      "energie_kwh": 2.38,
+      "cout_ht": 0.4141,
+      "cout_ttc": 0.4969,
+      "total_ht": 17.9141,
+      "total_ttc": 20.0969
+    },
+    {
+      "entity_id": "sensor.energy_bureau_pc_synthe_current_annee",
+      "energie_kwh": 2.38,
+      "cout_ht": 0.4141,
+      "cout_ttc": 0.4969,
+      "total_ht": 17.9141,
+      "total_ttc": 20.0969
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_porte_current_jour",
+      "energie_kwh": 0.66,
+      "cout_ht": 0.1148,
+      "cout_ttc": 0.1378,
+      "total_ht": 17.6148,
+      "total_ttc": 19.7378
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_porte_current_semaine",
+      "energie_kwh": 2.3,
+      "cout_ht": 0.4002,
+      "cout_ttc": 0.4802,
+      "total_ht": 17.9002,
+      "total_ttc": 20.0802
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_porte_current_mois",
+      "energie_kwh": 2.96,
+      "cout_ht": 0.515,
+      "cout_ttc": 0.618,
+      "total_ht": 18.015,
+      "total_ttc": 20.218
+    },
+    {
+      "entity_id": "sensor.energy_bureau_prise_porte_current_annee",
+      "energie_kwh": 2.96,
+      "cout_ht": 0.515,
+      "cout_ttc": 0.618,
+      "total_ht": 18.015,
+      "total_ttc": 20.218
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_bureau_jour",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_bureau_semaine",
+      "energie_kwh": 0.03,
+      "cout_ht": 0.0052,
+      "cout_ttc": 0.0063,
+      "total_ht": 17.5052,
+      "total_ttc": 19.6063
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_bureau_mois",
+      "energie_kwh": 0.05,
+      "cout_ht": 0.0087,
+      "cout_ttc": 0.0104,
+      "total_ht": 17.5087,
+      "total_ttc": 19.6104
+    },
+    {
+      "entity_id": "sensor.energy_lumiere_bureau_annee",
+      "energie_kwh": 0.05,
+      "cout_ht": 0.0087,
+      "cout_ttc": 0.0104,
+      "total_ht": 17.5087,
+      "total_ttc": 19.6104
+    },
+    {
+      "entity_id": "sensor.energy_atome_live_jour",
+      "energie_kwh": 31.76,
+      "cout_ht": 5.5262,
+      "cout_ttc": 6.6315,
+      "total_ht": 23.0262,
+      "total_ttc": 26.2315
+    },
+    {
+      "entity_id": "sensor.energy_atome_live_semaine",
+      "energie_kwh": 103.28,
+      "cout_ht": 17.9707,
+      "cout_ttc": 21.5649,
+      "total_ht": 35.4707,
+      "total_ttc": 41.1649
+    },
+    {
+      "entity_id": "sensor.energy_atome_live_mois",
+      "energie_kwh": 125.73,
+      "cout_ht": 21.877,
+      "cout_ttc": 26.2524,
+      "total_ht": 39.377,
+      "total_ttc": 45.8524
+    },
+    {
+      "entity_id": "sensor.energy_atome_live_annee",
+      "energie_kwh": 125.73,
+      "cout_ht": 21.877,
+      "cout_ttc": 26.2524,
+      "total_ht": 39.377,
+      "total_ttc": 45.8524
+    },
+    {
+      "entity_id": "sensor.energy_electricite_mesuree_total_jour",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.energy_electricite_mesuree_total_semaine",
+      "energie_kwh": 35.28,
+      "cout_ht": 6.1387,
+      "cout_ttc": 7.3665,
+      "total_ht": 23.6387,
+      "total_ttc": 26.9665
+    },
+    {
+      "entity_id": "sensor.energy_electricite_mesuree_total_mois",
+      "energie_kwh": 42.9,
+      "cout_ht": 7.4646,
+      "cout_ttc": 8.9575,
+      "total_ht": 24.9646,
+      "total_ttc": 28.5575
+    },
+    {
+      "entity_id": "sensor.energy_electricite_mesuree_total_annee",
+      "energie_kwh": 42.9,
+      "cout_ht": 7.4646,
+      "cout_ttc": 8.9575,
+      "total_ht": 24.9646,
+      "total_ttc": 28.5575
+    },
+    {
+      "entity_id": "sensor.energy_clim_total_jour",
+      "energie_kwh": 1.48,
+      "cout_ht": 0.2575,
+      "cout_ttc": 0.309,
+      "total_ht": 17.7575,
+      "total_ttc": 19.909
+    },
+    {
+      "entity_id": "sensor.energy_clim_total_semaine",
+      "energie_kwh": 5.28,
+      "cout_ht": 0.9187,
+      "cout_ttc": 1.1025,
+      "total_ht": 18.4187,
+      "total_ttc": 20.7025
+    },
+    {
+      "entity_id": "sensor.energy_clim_total_mois",
+      "energie_kwh": 8.38,
+      "cout_ht": 1.4581,
+      "cout_ttc": 1.7497,
+      "total_ht": 18.9581,
+      "total_ttc": 21.3497
+    },
+    {
+      "entity_id": "sensor.energy_clim_total_annee",
+      "energie_kwh": 8.38,
+      "cout_ht": 1.4581,
+      "cout_ttc": 1.7497,
+      "total_ht": 18.9581,
+      "total_ttc": 21.3497
+    },
+    {
+      "entity_id": "sensor.energy_electricite_chambre_jour",
+      "energie_kwh": 1.49,
+      "cout_ht": 0.2593,
+      "cout_ttc": 0.3111,
+      "total_ht": 17.7593,
+      "total_ttc": 19.9111
+    },
+    {
+      "entity_id": "sensor.energy_electricite_chambre_semaine",
+      "energie_kwh": 6.52,
+      "cout_ht": 1.1345,
+      "cout_ttc": 1.3614,
+      "total_ht": 18.6345,
+      "total_ttc": 20.9614
+    },
+    {
+      "entity_id": "sensor.energy_electricite_chambre_mois",
+      "energie_kwh": 7.57,
+      "cout_ht": 1.3172,
+      "cout_ttc": 1.5806,
+      "total_ht": 18.8172,
+      "total_ttc": 21.1806
+    },
+    {
+      "entity_id": "sensor.energy_electricite_chambre_annee",
+      "energie_kwh": 7.57,
+      "cout_ht": 1.3172,
+      "cout_ttc": 1.5806,
+      "total_ht": 18.8172,
+      "total_ttc": 21.1806
+    },
+    {
+      "entity_id": "sensor.energy_electricite_bureau_jour",
+      "energie_kwh": 1.12,
+      "cout_ht": 0.1949,
+      "cout_ttc": 0.2339,
+      "total_ht": 17.6949,
+      "total_ttc": 19.8339
+    },
+    {
+      "entity_id": "sensor.energy_electricite_bureau_semaine",
+      "energie_kwh": 3.85,
+      "cout_ht": 0.6699,
+      "cout_ttc": 0.8039,
+      "total_ht": 18.1699,
+      "total_ttc": 20.4039
+    },
+    {
+      "entity_id": "sensor.energy_electricite_bureau_mois",
+      "energie_kwh": 7.01,
+      "cout_ht": 1.2197,
+      "cout_ttc": 1.4637,
+      "total_ht": 18.7197,
+      "total_ttc": 21.0637
+    },
+    {
+      "entity_id": "sensor.energy_electricite_bureau_annee",
+      "energie_kwh": 7.01,
+      "cout_ht": 1.2197,
+      "cout_ttc": 1.4637,
+      "total_ht": 18.7197,
+      "total_ttc": 21.0637
+    },
+    {
+      "entity_id": "sensor.energy_wifi_commutateur_sur_rail_din_avec_mesure_jour",
+      "energie_kwh": 1.17,
+      "cout_ht": 0.2036,
+      "cout_ttc": 0.2443,
+      "total_ht": 17.7036,
+      "total_ttc": 19.8443
+    },
+    {
+      "entity_id": "sensor.energy_wifi_commutateur_sur_rail_din_avec_mesure_semaine",
+      "energie_kwh": 3.96,
+      "cout_ht": 0.689,
+      "cout_ttc": 0.8268,
+      "total_ht": 18.189,
+      "total_ttc": 20.4268
+    },
+    {
+      "entity_id": "sensor.energy_wifi_commutateur_sur_rail_din_avec_mesure_mois",
+      "energie_kwh": 7.72,
+      "cout_ht": 1.3433,
+      "cout_ttc": 1.6119,
+      "total_ht": 18.8433,
+      "total_ttc": 21.2119
+    },
+    {
+      "entity_id": "sensor.energy_wifi_commutateur_sur_rail_din_avec_mesure_annee",
+      "energie_kwh": 7.72,
+      "cout_ht": 1.3433,
+      "cout_ttc": 1.6119,
+      "total_ht": 18.8433,
+      "total_ttc": 21.2119
+    },
+    {
+      "entity_id": "sensor.energy_clim_appart1_wifi_commutateur_sur_rail_din_jour",
+      "energie_kwh": 0.34,
+      "cout_ht": 0.0592,
+      "cout_ttc": 0.071,
+      "total_ht": 17.5592,
+      "total_ttc": 19.671
+    },
+    {
+      "entity_id": "sensor.energy_clim_appart1_wifi_commutateur_sur_rail_din_semaine",
+      "energie_kwh": 1.44,
+      "cout_ht": 0.2506,
+      "cout_ttc": 0.3007,
+      "total_ht": 17.7506,
+      "total_ttc": 19.9007
+    },
+    {
+      "entity_id": "sensor.energy_clim_appart1_wifi_commutateur_sur_rail_din_mois",
+      "energie_kwh": 1.62,
+      "cout_ht": 0.2819,
+      "cout_ttc": 0.3383,
+      "total_ht": 17.7819,
+      "total_ttc": 19.9383
+    },
+    {
+      "entity_id": "sensor.energy_clim_appart1_wifi_commutateur_sur_rail_din_annee",
+      "energie_kwh": 1.62,
+      "cout_ht": 0.2819,
+      "cout_ttc": 0.3383,
+      "total_ht": 17.7819,
+      "total_ttc": 19.9383
+    },
+    {
+      "entity_id": "sensor.daily_cout_atome_hp",
+      "energie_kwh": 31.76,
+      "cout_ht": 5.5262,
+      "cout_ttc": 6.6315,
+      "total_ht": 23.0262,
+      "total_ttc": 26.2315
+    },
+    {
+      "entity_id": "sensor.daily_cout_atome_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_buanderie_lumiere_hp",
+      "energie_kwh": 0.03,
+      "cout_ht": 0.0052,
+      "cout_ttc": 0.0063,
+      "total_ht": 17.5052,
+      "total_ttc": 19.6063
+    },
+    {
+      "entity_id": "sensor.daily_cout_buanderie_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_buanderie_machine_hp",
+      "energie_kwh": 1.11,
+      "cout_ht": 0.1931,
+      "cout_ttc": 0.2318,
+      "total_ht": 17.6931,
+      "total_ttc": 19.8318
+    },
+    {
+      "entity_id": "sensor.daily_cout_buanderie_machine_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_hp",
+      "energie_kwh": 1.12,
+      "cout_ht": 0.1949,
+      "cout_ttc": 0.2339,
+      "total_ht": 17.6949,
+      "total_ttc": 19.8339
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_lumiere_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_ordinateur_hp",
+      "energie_kwh": 0.06,
+      "cout_ht": 0.0104,
+      "cout_ttc": 0.0125,
+      "total_ht": 17.5104,
+      "total_ttc": 19.6125
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_ordinateur_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_porte_home_cinema_hp",
+      "energie_kwh": 0.66,
+      "cout_ht": 0.1148,
+      "cout_ttc": 0.1378,
+      "total_ht": 17.6148,
+      "total_ttc": 19.7378
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_porte_home_cinema_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_studio_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_studio_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_synthe_pc_hp",
+      "energie_kwh": 0.36,
+      "cout_ht": 0.0626,
+      "cout_ttc": 0.0752,
+      "total_ht": 17.5626,
+      "total_ttc": 19.6752
+    },
+    {
+      "entity_id": "sensor.daily_cout_bureau_synthe_pc_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_hp",
+      "energie_kwh": 1.49,
+      "cout_ht": 0.2593,
+      "cout_ttc": 0.3111,
+      "total_ht": 17.7593,
+      "total_ttc": 19.9111
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_alex_lumiere_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_alex_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_alex_pc_tv_hp",
+      "energie_kwh": 5.42,
+      "cout_ht": 0.9431,
+      "cout_ttc": 1.1317,
+      "total_ht": 18.4431,
+      "total_ttc": 20.7317
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_alex_pc_tv_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_emma_lumiere_hp",
+      "energie_kwh": 0.01,
+      "cout_ht": 0.0017,
+      "cout_ttc": 0.0021,
+      "total_ht": 17.5017,
+      "total_ttc": 19.6021
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_emma_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_lumiere_hp",
+      "energie_kwh": 0.01,
+      "cout_ht": 0.0017,
+      "cout_ttc": 0.0021,
+      "total_ht": 17.5017,
+      "total_ttc": 19.6021
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_mac_os_hp",
+      "energie_kwh": 1.04,
+      "cout_ht": 0.181,
+      "cout_ttc": 0.2172,
+      "total_ht": 17.681,
+      "total_ttc": 19.8172
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_mac_os_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_radiateur_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_radiateur_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_tv_hp",
+      "energie_kwh": 0.46,
+      "cout_ht": 0.08,
+      "cout_ttc": 0.096,
+      "total_ht": 17.58,
+      "total_ttc": 19.696
+    },
+    {
+      "entity_id": "sensor.daily_cout_chambre_tv_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_clim_hp",
+      "energie_kwh": 1.65,
+      "cout_ht": 0.2871,
+      "cout_ttc": 0.3445,
+      "total_ht": 17.7871,
+      "total_ttc": 19.9445
+    },
+    {
+      "entity_id": "sensor.daily_cout_clim_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_clim1_hp",
+      "energie_kwh": 0.59,
+      "cout_ht": 0.1027,
+      "cout_ttc": 0.1232,
+      "total_ht": 17.6027,
+      "total_ttc": 19.7232
+    },
+    {
+      "entity_id": "sensor.daily_cout_clim1_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_clim2_hp",
+      "energie_kwh": 1.13,
+      "cout_ht": 0.1966,
+      "cout_ttc": 0.2359,
+      "total_ht": 17.6966,
+      "total_ttc": 19.8359
+    },
+    {
+      "entity_id": "sensor.daily_cout_clim2_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_couloir_lumiere_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_couloir_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_cuisine_lumiere_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_cuisine_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_electricite_mesuree_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_electricite_mesuree_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_electricite_non_mesuree_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_electricite_non_mesuree_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_nas_hp",
+      "energie_kwh": 2.76,
+      "cout_ht": 0.4802,
+      "cout_ttc": 0.5763,
+      "total_ht": 17.9802,
+      "total_ttc": 20.1763
+    },
+    {
+      "entity_id": "sensor.daily_cout_nas_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_radiateur_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_radiateur_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_salle_de_bain_lumiere_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_salle_de_bain_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_salon_lumiere_hp",
+      "energie_kwh": 0.02,
+      "cout_ht": 0.0035,
+      "cout_ttc": 0.0042,
+      "total_ht": 17.5035,
+      "total_ttc": 19.6042
+    },
+    {
+      "entity_id": "sensor.daily_cout_salon_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_salon_radiateur_canape_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_salon_radiateur_canape_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_salon_radiateur_tv_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_salon_radiateur_tv_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_salon_tv_hp",
+      "energie_kwh": 1.83,
+      "cout_ht": 0.3184,
+      "cout_ttc": 0.3821,
+      "total_ht": 17.8184,
+      "total_ttc": 19.9821
+    },
+    {
+      "entity_id": "sensor.daily_cout_salon_tv_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_terrasse_lumiere_hp",
+      "energie_kwh": 0.01,
+      "cout_ht": 0.0017,
+      "cout_ttc": 0.0021,
+      "total_ht": 17.5017,
+      "total_ttc": 19.6021
+    },
+    {
+      "entity_id": "sensor.daily_cout_terrasse_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_toilette_lumiere_hp",
+      "energie_kwh": 0.01,
+      "cout_ht": 0.0017,
+      "cout_ttc": 0.0021,
+      "total_ht": 17.5017,
+      "total_ttc": 19.6021
+    },
+    {
+      "entity_id": "sensor.daily_cout_toilette_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_plaque_electrique_hp",
+      "energie_kwh": 0.08,
+      "cout_ht": 0.0139,
+      "cout_ttc": 0.0167,
+      "total_ht": 17.5139,
+      "total_ttc": 19.6167
+    },
+    {
+      "entity_id": "sensor.daily_cout_plaque_electrique_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_ballon_buanderie_hp",
+      "energie_kwh": 3.28,
+      "cout_ht": 0.5707,
+      "cout_ttc": 0.6849,
+      "total_ht": 18.0707,
+      "total_ttc": 20.2849
+    },
+    {
+      "entity_id": "sensor.daily_cout_ballon_buanderie_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_four_cuisine_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_four_cuisine_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_cafe_prise_cuisine_hp",
+      "energie_kwh": 0.08,
+      "cout_ht": 0.0139,
+      "cout_ttc": 0.0167,
+      "total_ht": 17.5139,
+      "total_ttc": 19.6167
+    },
+    {
+      "entity_id": "sensor.daily_cout_cafe_prise_cuisine_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_frigo_prise_cuisine_hp",
+      "energie_kwh": 1.37,
+      "cout_ht": 0.2384,
+      "cout_ttc": 0.2861,
+      "total_ht": 17.7384,
+      "total_ttc": 19.8861
+    },
+    {
+      "entity_id": "sensor.daily_cout_frigo_prise_cuisine_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_micro_onde_prise_cuisine_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_micro_onde_prise_cuisine_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_datac_prise_buanderie_hp",
+      "energie_kwh": 0.47,
+      "cout_ht": 0.0818,
+      "cout_ttc": 0.0981,
+      "total_ht": 17.5818,
+      "total_ttc": 19.6981
+    },
+    {
+      "entity_id": "sensor.daily_cout_datac_prise_buanderie_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_aspirateur_prise_buanderie_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.daily_cout_aspirateur_prise_buanderie_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_aspirateur_prise_buanderie_hp",
+      "energie_kwh": 0.46,
+      "cout_ht": 0.08,
+      "cout_ttc": 0.096,
+      "total_ht": 17.58,
+      "total_ttc": 19.696
+    },
+    {
+      "entity_id": "sensor.monthly_cout_aspirateur_prise_buanderie_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_datac_prise_buanderie_hp",
+      "energie_kwh": 5.51,
+      "cout_ht": 0.9587,
+      "cout_ttc": 1.1505,
+      "total_ht": 18.4587,
+      "total_ttc": 20.7505
+    },
+    {
+      "entity_id": "sensor.monthly_cout_datac_prise_buanderie_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_micro_onde_prise_cuisine_hp",
+      "energie_kwh": 0.72,
+      "cout_ht": 0.1253,
+      "cout_ttc": 0.1503,
+      "total_ht": 17.6253,
+      "total_ttc": 19.7503
+    },
+    {
+      "entity_id": "sensor.monthly_cout_micro_onde_prise_cuisine_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_frigo_prise_cuisine_hp",
+      "energie_kwh": 15.64,
+      "cout_ht": 2.7214,
+      "cout_ttc": 3.2656,
+      "total_ht": 20.2214,
+      "total_ttc": 22.8656
+    },
+    {
+      "entity_id": "sensor.monthly_cout_frigo_prise_cuisine_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_cafe_prise_cuisine_hp",
+      "energie_kwh": 0.22,
+      "cout_ht": 0.0383,
+      "cout_ttc": 0.0459,
+      "total_ht": 17.5383,
+      "total_ttc": 19.6459
+    },
+    {
+      "entity_id": "sensor.monthly_cout_cafe_prise_cuisine_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_four_cuisine_hp",
+      "energie_kwh": 1.16,
+      "cout_ht": 0.2018,
+      "cout_ttc": 0.2422,
+      "total_ht": 17.7018,
+      "total_ttc": 19.8422
+    },
+    {
+      "entity_id": "sensor.monthly_cout_four_cuisine_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_ballon_buanderie_hp",
+      "energie_kwh": 34.71,
+      "cout_ht": 6.0395,
+      "cout_ttc": 7.2474,
+      "total_ht": 23.5395,
+      "total_ttc": 26.8474
+    },
+    {
+      "entity_id": "sensor.monthly_cout_ballon_buanderie_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_plaque_electrique_hp",
+      "energie_kwh": 3.42,
+      "cout_ht": 0.5951,
+      "cout_ttc": 0.7141,
+      "total_ht": 18.0951,
+      "total_ttc": 20.3141
+    },
+    {
+      "entity_id": "sensor.monthly_cout_plaque_electrique_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_autre_energie_mesuree_hp",
+      "energie_kwh": 80.92656371216748,
+      "cout_ht": 14.0812,
+      "cout_ttc": 16.8975,
+      "total_ht": 31.5812,
+      "total_ttc": 36.4975
+    },
+    {
+      "entity_id": "sensor.monthly_autre_energie_mesuree_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_atome_hp",
+      "energie_kwh": 370.87,
+      "cout_ht": 64.5314,
+      "cout_ttc": 77.4377,
+      "total_ht": 82.0314,
+      "total_ttc": 97.0377
+    },
+    {
+      "entity_id": "sensor.monthly_cout_atome_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_buanderie_lumiere_hp",
+      "energie_kwh": 0.32,
+      "cout_ht": 0.0557,
+      "cout_ttc": 0.0668,
+      "total_ht": 17.5557,
+      "total_ttc": 19.6668
+    },
+    {
+      "entity_id": "sensor.monthly_cout_buanderie_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_buanderie_machine_hp",
+      "energie_kwh": 5.31,
+      "cout_ht": 0.9239,
+      "cout_ttc": 1.1087,
+      "total_ht": 18.4239,
+      "total_ttc": 20.7087
+    },
+    {
+      "entity_id": "sensor.monthly_cout_buanderie_machine_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_hp",
+      "energie_kwh": 43.56,
+      "cout_ht": 7.5794,
+      "cout_ttc": 9.0953,
+      "total_ht": 25.0794,
+      "total_ttc": 28.6953
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_lumiere_hp",
+      "energie_kwh": 0.19,
+      "cout_ht": 0.0331,
+      "cout_ttc": 0.0397,
+      "total_ht": 17.5331,
+      "total_ttc": 19.6397
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_ordinateur_hp",
+      "energie_kwh": 29.83,
+      "cout_ht": 5.1904,
+      "cout_ttc": 6.2285,
+      "total_ht": 22.6904,
+      "total_ttc": 25.8285
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_ordinateur_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_porte_home_cinema_hp",
+      "energie_kwh": 8.04,
+      "cout_ht": 1.399,
+      "cout_ttc": 1.6788,
+      "total_ht": 18.899,
+      "total_ttc": 21.2788
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_porte_home_cinema_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_studio_hp",
+      "energie_kwh": 0.03,
+      "cout_ht": 0.0052,
+      "cout_ttc": 0.0063,
+      "total_ht": 17.5052,
+      "total_ttc": 19.6063
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_studio_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_synthe_pc_hp",
+      "energie_kwh": 5.41,
+      "cout_ht": 0.9413,
+      "cout_ttc": 1.1296,
+      "total_ht": 18.4413,
+      "total_ttc": 20.7296
+    },
+    {
+      "entity_id": "sensor.monthly_cout_bureau_synthe_pc_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_hp",
+      "energie_kwh": 19.33,
+      "cout_ht": 3.3634,
+      "cout_ttc": 4.0361,
+      "total_ht": 20.8634,
+      "total_ttc": 23.6361
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_alex_lumiere_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_alex_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_alex_pc_tv_hp",
+      "energie_kwh": 26.14,
+      "cout_ht": 4.5484,
+      "cout_ttc": 5.458,
+      "total_ht": 22.0484,
+      "total_ttc": 25.058
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_alex_pc_tv_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_emma_lumiere_hp",
+      "energie_kwh": 0.19,
+      "cout_ht": 0.0331,
+      "cout_ttc": 0.0397,
+      "total_ht": 17.5331,
+      "total_ttc": 19.6397
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_emma_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_lumiere_hp",
+      "energie_kwh": 0.07,
+      "cout_ht": 0.0122,
+      "cout_ttc": 0.0146,
+      "total_ht": 17.5122,
+      "total_ttc": 19.6146
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_mac_os_hp",
+      "energie_kwh": 10.48,
+      "cout_ht": 1.8235,
+      "cout_ttc": 2.1882,
+      "total_ht": 19.3235,
+      "total_ttc": 21.7882
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_mac_os_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_radiateur_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_radiateur_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_tv_hp",
+      "energie_kwh": 8.96,
+      "cout_ht": 1.559,
+      "cout_ttc": 1.8708,
+      "total_ht": 19.059,
+      "total_ttc": 21.4708
+    },
+    {
+      "entity_id": "sensor.monthly_cout_chambre_tv_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_clim_hp",
+      "energie_kwh": 17.27,
+      "cout_ht": 3.005,
+      "cout_ttc": 3.606,
+      "total_ht": 20.505,
+      "total_ttc": 23.206
+    },
+    {
+      "entity_id": "sensor.monthly_cout_clim_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_clim1_hp",
+      "energie_kwh": 6.2,
+      "cout_ht": 1.0788,
+      "cout_ttc": 1.2946,
+      "total_ht": 18.5788,
+      "total_ttc": 20.8946
+    },
+    {
+      "entity_id": "sensor.monthly_cout_clim1_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_clim2_hp",
+      "energie_kwh": 13.35,
+      "cout_ht": 2.3229,
+      "cout_ttc": 2.7875,
+      "total_ht": 19.8229,
+      "total_ttc": 22.3875
+    },
+    {
+      "entity_id": "sensor.monthly_cout_clim2_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_couloir_lumiere_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_couloir_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_cuisine_lumiere_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_cuisine_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_electricite_mesuree_hp",
+      "energie_kwh": 80.9,
+      "cout_ht": 14.0766,
+      "cout_ttc": 16.8919,
+      "total_ht": 31.5766,
+      "total_ttc": 36.4919
+    },
+    {
+      "entity_id": "sensor.monthly_cout_electricite_mesuree_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_electricite_non_mesuree_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_electricite_non_mesuree_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_nas_hp",
+      "energie_kwh": 33.55,
+      "cout_ht": 5.8377,
+      "cout_ttc": 7.0052,
+      "total_ht": 23.3377,
+      "total_ttc": 26.6052
+    },
+    {
+      "entity_id": "sensor.monthly_cout_nas_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_radiateur_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_radiateur_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_salle_de_bain_lumiere_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_salle_de_bain_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_salon_lumiere_hp",
+      "energie_kwh": 0.31,
+      "cout_ht": 0.0539,
+      "cout_ttc": 0.0647,
+      "total_ht": 17.5539,
+      "total_ttc": 19.6647
+    },
+    {
+      "entity_id": "sensor.monthly_cout_salon_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_salon_radiateur_canape_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_salon_radiateur_canape_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_salon_radiateur_tv_hp",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_salon_radiateur_tv_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_salon_tv_hp",
+      "energie_kwh": 22.99,
+      "cout_ht": 4.0003,
+      "cout_ttc": 4.8003,
+      "total_ht": 21.5003,
+      "total_ttc": 24.4003
+    },
+    {
+      "entity_id": "sensor.monthly_cout_salon_tv_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_terrasse_lumiere_hp",
+      "energie_kwh": 0.78,
+      "cout_ht": 0.1357,
+      "cout_ttc": 0.1629,
+      "total_ht": 17.6357,
+      "total_ttc": 19.7629
+    },
+    {
+      "entity_id": "sensor.monthly_cout_terrasse_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.monthly_cout_toilette_lumiere_hp",
+      "energie_kwh": 0.1,
+      "cout_ht": 0.0174,
+      "cout_ttc": 0.0209,
+      "total_ht": 17.5174,
+      "total_ttc": 19.6209
+    },
+    {
+      "entity_id": "sensor.monthly_cout_toilette_lumiere_hc",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.buanderie_ambiance_lamp_2_energy",
+      "energie_kwh": 3.8775,
+      "cout_ht": 0.6747,
+      "cout_ttc": 0.8096,
+      "total_ht": 18.1747,
+      "total_ttc": 20.4096
+    },
+    {
+      "entity_id": "sensor.buanderie_ambiance_lamp_2_energy_weekly",
+      "energie_kwh": 0.0302,
+      "cout_ht": 0.0053,
+      "cout_ttc": 0.0063,
+      "total_ht": 17.5053,
+      "total_ttc": 19.6063
+    },
+    {
+      "entity_id": "sensor.bureau_color_lamp_14_energy",
+      "energie_kwh": 4.2299,
+      "cout_ht": 0.736,
+      "cout_ttc": 0.8832,
+      "total_ht": 18.236,
+      "total_ttc": 20.4832
+    },
+    {
+      "entity_id": "sensor.bureau_color_lamp_14_energy_weekly",
+      "energie_kwh": 0.0363,
+      "cout_ht": 0.0063,
+      "cout_ttc": 0.0076,
+      "total_ht": 17.5063,
+      "total_ttc": 19.6076
+    },
+    {
+      "entity_id": "sensor.buanderie_white_lamp_4_energy",
+      "energie_kwh": 4.5611,
+      "cout_ht": 0.7936,
+      "cout_ttc": 0.9524,
+      "total_ht": 18.2936,
+      "total_ttc": 20.5524
+    },
+    {
+      "entity_id": "sensor.buanderie_white_lamp_4_energy_weekly",
+      "energie_kwh": 0.0341,
+      "cout_ht": 0.0059,
+      "cout_ttc": 0.0071,
+      "total_ht": 17.5059,
+      "total_ttc": 19.6071
+    },
+    {
+      "entity_id": "sensor.bureau_color_lamp_15_energy",
+      "energie_kwh": 3.5953,
+      "cout_ht": 0.6256,
+      "cout_ttc": 0.7507,
+      "total_ht": 18.1256,
+      "total_ttc": 20.3507
+    },
+    {
+      "entity_id": "sensor.bureau_color_lamp_15_energy_weekly",
+      "energie_kwh": 0.0327,
+      "cout_ht": 0.0057,
+      "cout_ttc": 0.0068,
+      "total_ht": 17.5057,
+      "total_ttc": 19.6068
+    },
+    {
+      "entity_id": "sensor.buanderie_ambiance_lamp_1_energy",
+      "energie_kwh": 3.8784,
+      "cout_ht": 0.6748,
+      "cout_ttc": 0.8098,
+      "total_ht": 18.1748,
+      "total_ttc": 20.4098
+    },
+    {
+      "entity_id": "sensor.buanderie_ambiance_lamp_1_energy_weekly",
+      "energie_kwh": 0.0302,
+      "cout_ht": 0.0053,
+      "cout_ttc": 0.0063,
+      "total_ht": 17.5053,
+      "total_ttc": 19.6063
+    },
+    {
+      "entity_id": "sensor.chambre_energy",
+      "energie_kwh": 4.6119,
+      "cout_ht": 0.8025,
+      "cout_ttc": 0.963,
+      "total_ht": 18.3025,
+      "total_ttc": 20.563
+    },
+    {
+      "entity_id": "sensor.chambre_energy_weekly",
+      "energie_kwh": 0.0386,
+      "cout_ht": 0.0067,
+      "cout_ttc": 0.0081,
+      "total_ht": 17.5067,
+      "total_ttc": 19.6081
+    },
+    {
+      "entity_id": "sensor.chambre_color_candle_2_energy",
+      "energie_kwh": 3.5502,
+      "cout_ht": 0.6177,
+      "cout_ttc": 0.7413,
+      "total_ht": 18.1177,
+      "total_ttc": 20.3413
+    },
+    {
+      "entity_id": "sensor.chambre_color_candle_2_energy_weekly",
+      "energie_kwh": 0.0396,
+      "cout_ht": 0.0069,
+      "cout_ttc": 0.0083,
+      "total_ht": 17.5069,
+      "total_ttc": 19.6083
+    },
+    {
+      "entity_id": "sensor.hue_discover_outdoor_wall_3_energy",
+      "energie_kwh": 7.4403,
+      "cout_ht": 1.2946,
+      "cout_ttc": 1.5535,
+      "total_ht": 18.7946,
+      "total_ttc": 21.1535
+    },
+    {
+      "entity_id": "sensor.hue_discover_outdoor_wall_3_energy_weekly",
+      "energie_kwh": 0.1298,
+      "cout_ht": 0.0226,
+      "cout_ttc": 0.0271,
+      "total_ht": 17.5226,
+      "total_ttc": 19.6271
+    },
+    {
+      "entity_id": "sensor.emma_hue_play_1_energy",
+      "energie_kwh": 1.9647,
+      "cout_ht": 0.3419,
+      "cout_ttc": 0.4102,
+      "total_ht": 17.8419,
+      "total_ttc": 20.0102
+    },
+    {
+      "entity_id": "sensor.emma_hue_play_1_energy_weekly",
+      "energie_kwh": 0.0609,
+      "cout_ht": 0.0106,
+      "cout_ttc": 0.0127,
+      "total_ht": 17.5106,
+      "total_ttc": 19.6127
+    },
+    {
+      "entity_id": "sensor.hue_discover_outdoor_wall_2_energy",
+      "energie_kwh": 7.2443,
+      "cout_ht": 1.2605,
+      "cout_ttc": 1.5126,
+      "total_ht": 18.7605,
+      "total_ttc": 21.1126
+    },
+    {
+      "entity_id": "sensor.hue_discover_outdoor_wall_2_energy_weekly",
+      "energie_kwh": 0.1299,
+      "cout_ht": 0.0226,
+      "cout_ttc": 0.0271,
+      "total_ht": 17.5226,
+      "total_ttc": 19.6271
+    },
+    {
+      "entity_id": "sensor.hue_lightstrip_outdoor_4_energy",
+      "energie_kwh": 10.5246,
+      "cout_ht": 1.8313,
+      "cout_ttc": 2.1975,
+      "total_ht": 19.3313,
+      "total_ttc": 21.7975
+    },
+    {
+      "entity_id": "sensor.hue_lightstrip_outdoor_4_energy_weekly",
+      "energie_kwh": 0.1585,
+      "cout_ht": 0.0276,
+      "cout_ttc": 0.0331,
+      "total_ht": 17.5276,
+      "total_ttc": 19.6331
+    },
+    {
+      "entity_id": "sensor.salon_hue_color_lamp_1_energy_2",
+      "energie_kwh": 6.7777,
+      "cout_ht": 1.1793,
+      "cout_ttc": 1.4152,
+      "total_ht": 18.6793,
+      "total_ttc": 21.0152
+    },
+    {
+      "entity_id": "sensor.salon_hue_color_lamp_1_energy_2_weekly",
+      "energie_kwh": 0.0651,
+      "cout_ht": 0.0113,
+      "cout_ttc": 0.0136,
+      "total_ht": 17.5113,
+      "total_ttc": 19.6136
+    },
+    {
+      "entity_id": "sensor.emma_hue_play_2_energy",
+      "energie_kwh": 1.9378,
+      "cout_ht": 0.3372,
+      "cout_ttc": 0.4046,
+      "total_ht": 17.8372,
+      "total_ttc": 20.0046
+    },
+    {
+      "entity_id": "sensor.emma_hue_play_2_energy_weekly",
+      "energie_kwh": 0.0503,
+      "cout_ht": 0.0088,
+      "cout_ttc": 0.0105,
+      "total_ht": 17.5088,
+      "total_ttc": 19.6105
+    },
+    {
+      "entity_id": "sensor.hue_lightstrip_outdoor_3_energy",
+      "energie_kwh": 7.6568,
+      "cout_ht": 1.3323,
+      "cout_ttc": 1.5987,
+      "total_ht": 18.8323,
+      "total_ttc": 21.1987
+    },
+    {
+      "entity_id": "sensor.hue_lightstrip_outdoor_3_energy_weekly",
+      "energie_kwh": 0.0144,
+      "cout_ht": 0.0025,
+      "cout_ttc": 0.003,
+      "total_ht": 17.5025,
+      "total_ttc": 19.603
+    },
+    {
+      "entity_id": "sensor.homepod_energy",
+      "energie_kwh": 7.1679,
+      "cout_ht": 1.2472,
+      "cout_ttc": 1.4967,
+      "total_ht": 18.7472,
+      "total_ttc": 21.0967
+    },
+    {
+      "entity_id": "sensor.homepod_energy_weekly",
+      "energie_kwh": 0.0607,
+      "cout_ht": 0.0106,
+      "cout_ttc": 0.0127,
+      "total_ht": 17.5106,
+      "total_ttc": 19.6127
+    },
+    {
+      "entity_id": "sensor.bureau_hue_lightstrip_plus_1_energy",
+      "energie_kwh": 2.866,
+      "cout_ht": 0.4987,
+      "cout_ttc": 0.5984,
+      "total_ht": 17.9987,
+      "total_ttc": 20.1984
+    },
+    {
+      "entity_id": "sensor.bureau_hue_lightstrip_plus_1_energy_weekly",
+      "energie_kwh": 0.0314,
+      "cout_ht": 0.0055,
+      "cout_ttc": 0.0066,
+      "total_ht": 17.5055,
+      "total_ttc": 19.6066
+    },
+    {
+      "entity_id": "sensor.homepod_mini_energy",
+      "energie_kwh": 4.0046,
+      "cout_ht": 0.6968,
+      "cout_ttc": 0.8362,
+      "total_ht": 18.1968,
+      "total_ttc": 20.4362
+    },
+    {
+      "entity_id": "sensor.homepod_mini_energy_weekly",
+      "energie_kwh": 0.0386,
+      "cout_ht": 0.0067,
+      "cout_ttc": 0.0081,
+      "total_ht": 17.5067,
+      "total_ttc": 19.6081
+    },
+    {
+      "entity_id": "sensor.toilettes_white_lamp_2_energy",
+      "energie_kwh": 4.7499,
+      "cout_ht": 0.8265,
+      "cout_ttc": 0.9918,
+      "total_ht": 18.3265,
+      "total_ttc": 20.5918
+    },
+    {
+      "entity_id": "sensor.toilettes_white_lamp_2_energy_weekly",
+      "energie_kwh": 0.0373,
+      "cout_ht": 0.0065,
+      "cout_ttc": 0.0078,
+      "total_ht": 17.5065,
+      "total_ttc": 19.6078
+    },
+    {
+      "entity_id": "sensor.chambre_hue_color_candle_3_energy",
+      "energie_kwh": 2.3272,
+      "cout_ht": 0.4049,
+      "cout_ttc": 0.4859,
+      "total_ht": 17.9049,
+      "total_ttc": 20.0859
+    },
+    {
+      "entity_id": "sensor.chambre_hue_color_candle_3_energy_weekly",
+      "energie_kwh": 0.0396,
+      "cout_ht": 0.0069,
+      "cout_ttc": 0.0083,
+      "total_ht": 17.5069,
+      "total_ttc": 19.6083
+    },
+    {
+      "entity_id": "sensor.bureau_prise_connecte_studio_device_energy",
+      "energie_kwh": 1.1441,
+      "cout_ht": 0.1991,
+      "cout_ttc": 0.2389,
+      "total_ht": 17.6991,
+      "total_ttc": 19.8389
+    },
+    {
+      "entity_id": "sensor.bureau_prise_connecte_studio_device_energy_weekly",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.cuisine_hue_color_spot_1_energy_2",
+      "energie_kwh": 4.5285,
+      "cout_ht": 0.788,
+      "cout_ttc": 0.9456,
+      "total_ht": 18.288,
+      "total_ttc": 20.5456
+    },
+    {
+      "entity_id": "sensor.cuisine_hue_color_spot_1_energy_2_weekly",
+      "energie_kwh": 0.0558,
+      "cout_ht": 0.0097,
+      "cout_ttc": 0.0117,
+      "total_ht": 17.5097,
+      "total_ttc": 19.6117
+    },
+    {
+      "entity_id": "sensor.salon_hue_lightstrip_plus_1_energy_4",
+      "energie_kwh": 3.5823,
+      "cout_ht": 0.6233,
+      "cout_ttc": 0.748,
+      "total_ht": 18.1233,
+      "total_ttc": 20.348
+    },
+    {
+      "entity_id": "sensor.salon_hue_lightstrip_plus_1_energy_4_weekly",
+      "energie_kwh": 0.0838,
+      "cout_ht": 0.0146,
+      "cout_ttc": 0.0175,
+      "total_ht": 17.5146,
+      "total_ttc": 19.6175
+    },
+    {
+      "entity_id": "sensor.salon_hue_color_lamp_2_energy_3",
+      "energie_kwh": 3.4733,
+      "cout_ht": 0.6044,
+      "cout_ttc": 0.7252,
+      "total_ht": 18.1044,
+      "total_ttc": 20.3252
+    },
+    {
+      "entity_id": "sensor.salon_hue_color_lamp_2_energy_3_weekly",
+      "energie_kwh": 0.0631,
+      "cout_ht": 0.011,
+      "cout_ttc": 0.0132,
+      "total_ht": 17.511,
+      "total_ttc": 19.6132
+    },
+    {
+      "entity_id": "sensor.terrass_hue_lightstrip_outdoor_4_energy",
+      "energie_kwh": 8.0392,
+      "cout_ht": 1.3988,
+      "cout_ttc": 1.6786,
+      "total_ht": 18.8988,
+      "total_ttc": 21.2786
+    },
+    {
+      "entity_id": "sensor.terrass_hue_lightstrip_outdoor_4_energy_weekly",
+      "energie_kwh": 0.1585,
+      "cout_ht": 0.0276,
+      "cout_ttc": 0.0331,
+      "total_ht": 17.5276,
+      "total_ttc": 19.6331
+    },
+    {
+      "entity_id": "sensor.cuisine_hue_color_spot_2_energy",
+      "energie_kwh": 4.4418,
+      "cout_ht": 0.7729,
+      "cout_ttc": 0.9274,
+      "total_ht": 18.2729,
+      "total_ttc": 20.5274
+    },
+    {
+      "entity_id": "sensor.cuisine_hue_color_spot_2_energy_weekly",
+      "energie_kwh": 0.0557,
+      "cout_ht": 0.0097,
+      "cout_ttc": 0.0116,
+      "total_ht": 17.5097,
+      "total_ttc": 19.6116
+    },
+    {
+      "entity_id": "sensor.cuisine_hue_color_spot_4_energy",
+      "energie_kwh": 4.5301,
+      "cout_ht": 0.7882,
+      "cout_ttc": 0.9459,
+      "total_ht": 18.2882,
+      "total_ttc": 20.5459
+    },
+    {
+      "entity_id": "sensor.cuisine_hue_color_spot_4_energy_weekly",
+      "energie_kwh": 0.0559,
+      "cout_ht": 0.0097,
+      "cout_ttc": 0.0117,
+      "total_ht": 17.5097,
+      "total_ttc": 19.6117
+    },
+    {
+      "entity_id": "sensor.bureau_prise_ordinateur_device_energy",
+      "energie_kwh": 4.0221,
+      "cout_ht": 0.6998,
+      "cout_ttc": 0.8398,
+      "total_ht": 18.1998,
+      "total_ttc": 20.4398
+    },
+    {
+      "entity_id": "sensor.bureau_prise_ordinateur_device_energy_weekly",
+      "energie_kwh": 0.0591,
+      "cout_ht": 0.0103,
+      "cout_ttc": 0.0123,
+      "total_ht": 17.5103,
+      "total_ttc": 19.6123
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_canape_device_energy",
+      "energie_kwh": 2.6165,
+      "cout_ht": 0.4553,
+      "cout_ttc": 0.5463,
+      "total_ht": 17.9553,
+      "total_ttc": 20.1463
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_canape_device_energy_weekly",
+      "energie_kwh": 0.0356,
+      "cout_ht": 0.0062,
+      "cout_ttc": 0.0074,
+      "total_ht": 17.5062,
+      "total_ttc": 19.6074
+    },
+    {
+      "entity_id": "sensor.salon_tv_prise_connectee_device_energy",
+      "energie_kwh": 4.1716,
+      "cout_ht": 0.7259,
+      "cout_ttc": 0.871,
+      "total_ht": 18.2259,
+      "total_ttc": 20.471
+    },
+    {
+      "entity_id": "sensor.salon_tv_prise_connectee_device_energy_weekly",
+      "energie_kwh": 0.0583,
+      "cout_ht": 0.0101,
+      "cout_ttc": 0.0122,
+      "total_ht": 17.5101,
+      "total_ttc": 19.6122
+    },
+    {
+      "entity_id": "sensor.chambre_hue_color_candle_1_energy_2",
+      "energie_kwh": 1.5364,
+      "cout_ht": 0.2673,
+      "cout_ttc": 0.3208,
+      "total_ht": 17.7673,
+      "total_ttc": 19.9208
+    },
+    {
+      "entity_id": "sensor.chambre_hue_color_candle_1_energy_2_weekly",
+      "energie_kwh": 0.0396,
+      "cout_ht": 0.0069,
+      "cout_ttc": 0.0083,
+      "total_ht": 17.5069,
+      "total_ttc": 19.6083
+    },
+    {
+      "entity_id": "sensor.cuisine_hue_color_spot_1_energy_3",
+      "energie_kwh": 4.5339,
+      "cout_ht": 0.7889,
+      "cout_ttc": 0.9467,
+      "total_ht": 18.2889,
+      "total_ttc": 20.5467
+    },
+    {
+      "entity_id": "sensor.cuisine_hue_color_spot_1_energy_3_weekly",
+      "energie_kwh": 0.0561,
+      "cout_ht": 0.0098,
+      "cout_ttc": 0.0117,
+      "total_ht": 17.5098,
+      "total_ttc": 19.6117
+    },
+    {
+      "entity_id": "sensor.sdb_hue_color_candle_1_energy_2",
+      "energie_kwh": 2.3084,
+      "cout_ht": 0.4017,
+      "cout_ttc": 0.482,
+      "total_ht": 17.9017,
+      "total_ttc": 20.082
+    },
+    {
+      "entity_id": "sensor.sdb_hue_color_candle_1_energy_2_weekly",
+      "energie_kwh": 0.0293,
+      "cout_ht": 0.0051,
+      "cout_ttc": 0.0061,
+      "total_ht": 17.5051,
+      "total_ttc": 19.6061
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_tv_device_energy",
+      "energie_kwh": 2.5624,
+      "cout_ht": 0.4459,
+      "cout_ttc": 0.535,
+      "total_ht": 17.9459,
+      "total_ttc": 20.135
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_tv_device_energy_weekly",
+      "energie_kwh": 0.0353,
+      "cout_ht": 0.0061,
+      "cout_ttc": 0.0074,
+      "total_ht": 17.5061,
+      "total_ttc": 19.6074
+    },
+    {
+      "entity_id": "sensor.chambre_dalex_prise_pc_device_energy",
+      "energie_kwh": 3.4028,
+      "cout_ht": 0.5921,
+      "cout_ttc": 0.7105,
+      "total_ht": 18.0921,
+      "total_ttc": 20.3105
+    },
+    {
+      "entity_id": "sensor.chambre_dalex_prise_pc_device_energy_weekly",
+      "energie_kwh": 0.0597,
+      "cout_ht": 0.0104,
+      "cout_ttc": 0.0125,
+      "total_ht": 17.5104,
+      "total_ttc": 19.6125
+    },
+    {
+      "entity_id": "sensor.buanderie_prise_connectee_device_energy",
+      "energie_kwh": 4.26,
+      "cout_ht": 0.7412,
+      "cout_ttc": 0.8895,
+      "total_ht": 18.2412,
+      "total_ttc": 20.4895
+    },
+    {
+      "entity_id": "sensor.buanderie_prise_connectee_device_energy_weekly",
+      "energie_kwh": 0.0583,
+      "cout_ht": 0.0101,
+      "cout_ttc": 0.0122,
+      "total_ht": 17.5101,
+      "total_ttc": 19.6122
+    },
+    {
+      "entity_id": "sensor.cuisine_hue_lightstrip_plus_1_energy",
+      "energie_kwh": 14.7589,
+      "cout_ht": 2.568,
+      "cout_ttc": 3.0817,
+      "total_ht": 20.068,
+      "total_ttc": 22.6817
+    },
+    {
+      "entity_id": "sensor.cuisine_hue_lightstrip_plus_1_energy_weekly",
+      "energie_kwh": 0.1776,
+      "cout_ht": 0.0309,
+      "cout_ttc": 0.0371,
+      "total_ht": 17.5309,
+      "total_ttc": 19.6371
+    },
+    {
+      "entity_id": "sensor.chambre_prise_radiateur_device_energy",
+      "energie_kwh": 2.5509,
+      "cout_ht": 0.4439,
+      "cout_ttc": 0.5326,
+      "total_ht": 17.9439,
+      "total_ttc": 20.1326
+    },
+    {
+      "entity_id": "sensor.chambre_prise_radiateur_device_energy_weekly",
+      "energie_kwh": 0.0356,
+      "cout_ht": 0.0062,
+      "cout_ttc": 0.0074,
+      "total_ht": 17.5062,
+      "total_ttc": 19.6074
+    },
+    {
+      "entity_id": "sensor.chambre_tv_prise_connectee_device_energy",
+      "energie_kwh": 4.186,
+      "cout_ht": 0.7284,
+      "cout_ttc": 0.874,
+      "total_ht": 18.2284,
+      "total_ttc": 20.474
+    },
+    {
+      "entity_id": "sensor.chambre_tv_prise_connectee_device_energy_weekly",
+      "energie_kwh": 0.0588,
+      "cout_ht": 0.0102,
+      "cout_ttc": 0.0123,
+      "total_ht": 17.5102,
+      "total_ttc": 19.6123
+    },
+    {
+      "entity_id": "sensor.chambre_ordinateur_prise_connectee_device_energy",
+      "energie_kwh": 4.1881,
+      "cout_ht": 0.7287,
+      "cout_ttc": 0.8745,
+      "total_ht": 18.2287,
+      "total_ttc": 20.4745
+    },
+    {
+      "entity_id": "sensor.chambre_ordinateur_prise_connectee_device_energy_weekly",
+      "energie_kwh": 0.0588,
+      "cout_ht": 0.0102,
+      "cout_ttc": 0.0123,
+      "total_ht": 17.5102,
+      "total_ttc": 19.6123
+    },
+    {
+      "entity_id": "sensor.bureau_pc_synthese_prise_device_energy",
+      "energie_kwh": 3.778,
+      "cout_ht": 0.6574,
+      "cout_ttc": 0.7888,
+      "total_ht": 18.1574,
+      "total_ttc": 20.3888
+    },
+    {
+      "entity_id": "sensor.bureau_pc_synthese_prise_device_energy_weekly",
+      "energie_kwh": 0.0599,
+      "cout_ht": 0.0104,
+      "cout_ttc": 0.0125,
+      "total_ht": 17.5104,
+      "total_ttc": 19.6125
+    },
+    {
+      "entity_id": "sensor.sonos_arc_airplay_energy_weekly",
+      "energie_kwh": 0.1441,
+      "cout_ht": 0.0251,
+      "cout_ttc": 0.0301,
+      "total_ht": 17.5251,
+      "total_ttc": 19.6301
+    },
+    {
+      "entity_id": "sensor.sonos_beam_airplay_energy_weekly",
+      "energie_kwh": 0.1969,
+      "cout_ht": 0.0343,
+      "cout_ttc": 0.0411,
+      "total_ht": 17.5343,
+      "total_ttc": 19.6411
+    },
+    {
+      "entity_id": "sensor.chambre_energy_4_weekly",
+      "energie_kwh": 0.0208,
+      "cout_ht": 0.0036,
+      "cout_ttc": 0.0043,
+      "total_ht": 17.5036,
+      "total_ttc": 19.6043
+    },
+    {
+      "entity_id": "sensor.couloir_color_lamp_energy",
+      "energie_kwh": 1.5162,
+      "cout_ht": 0.2638,
+      "cout_ttc": 0.3166,
+      "total_ht": 17.7638,
+      "total_ttc": 19.9166
+    },
+    {
+      "entity_id": "sensor.couloir_color_lamp_energy_weekly",
+      "energie_kwh": 0.0748,
+      "cout_ht": 0.013,
+      "cout_ttc": 0.0156,
+      "total_ht": 17.513,
+      "total_ttc": 19.6156
+    },
+    {
+      "entity_id": "sensor.bureau_prise_porte_device_energy",
+      "energie_kwh": 0.2157,
+      "cout_ht": 0.0375,
+      "cout_ttc": 0.045,
+      "total_ht": 17.5375,
+      "total_ttc": 19.645
+    },
+    {
+      "entity_id": "sensor.bureau_prise_porte_device_energy_weekly",
+      "energie_kwh": 0.0599,
+      "cout_ht": 0.0104,
+      "cout_ttc": 0.0125,
+      "total_ht": 17.5104,
+      "total_ttc": 19.6125
+    },
+    {
+      "entity_id": "sensor.bureau_color_lamp_14_energy_2",
+      "energie_kwh": 4.2283,
+      "cout_ht": 0.7357,
+      "cout_ttc": 0.8829,
+      "total_ht": 18.2357,
+      "total_ttc": 20.4829
+    },
+    {
+      "entity_id": "sensor.bureau_color_lamp_14_energy_2_weekly",
+      "energie_kwh": 0.0363,
+      "cout_ht": 0.0063,
+      "cout_ttc": 0.0076,
+      "total_ht": 17.5063,
+      "total_ttc": 19.6076
+    },
+    {
+      "entity_id": "sensor.bureau_color_lamp_15_energy_2",
+      "energie_kwh": 3.5941,
+      "cout_ht": 0.6254,
+      "cout_ttc": 0.7504,
+      "total_ht": 18.1254,
+      "total_ttc": 20.3504
+    },
+    {
+      "entity_id": "sensor.bureau_color_lamp_15_energy_2_weekly",
+      "energie_kwh": 0.0327,
+      "cout_ht": 0.0057,
+      "cout_ttc": 0.0068,
+      "total_ht": 17.5057,
+      "total_ttc": 19.6068
+    },
+    {
+      "entity_id": "sensor.lumiere_bureau_energy",
+      "energie_kwh": 10.0823,
+      "cout_ht": 1.7543,
+      "cout_ttc": 2.1052,
+      "total_ht": 19.2543,
+      "total_ttc": 21.7052
+    },
+    {
+      "entity_id": "sensor.lumiere_bureau_energy_weekly",
+      "energie_kwh": 0.0696,
+      "cout_ht": 0.0121,
+      "cout_ttc": 0.0145,
+      "total_ht": 17.5121,
+      "total_ttc": 19.6145
+    },
+    {
+      "entity_id": "sensor.lumiere_alex_energy_weekly",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.lumiere_couloir_energy_weekly",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.lumiere_cuisine_energy_weekly",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.buanderie_white_lamp_4_energy_2",
+      "energie_kwh": 4.5598,
+      "cout_ht": 0.7934,
+      "cout_ttc": 0.9521,
+      "total_ht": 18.2934,
+      "total_ttc": 20.5521
+    },
+    {
+      "entity_id": "sensor.buanderie_white_lamp_4_energy_2_weekly",
+      "energie_kwh": 0.0341,
+      "cout_ht": 0.0059,
+      "cout_ttc": 0.0071,
+      "total_ht": 17.5059,
+      "total_ttc": 19.6071
+    },
+    {
+      "entity_id": "sensor.buanderie_ambiance_lamp_2_energy_2",
+      "energie_kwh": 3.8763,
+      "cout_ht": 0.6745,
+      "cout_ttc": 0.8094,
+      "total_ht": 18.1745,
+      "total_ttc": 20.4094
+    },
+    {
+      "entity_id": "sensor.buanderie_ambiance_lamp_2_energy_2_weekly",
+      "energie_kwh": 0.0302,
+      "cout_ht": 0.0053,
+      "cout_ttc": 0.0063,
+      "total_ht": 17.5053,
+      "total_ttc": 19.6063
+    },
+    {
+      "entity_id": "sensor.buanderie_ambiance_lamp_1_energy_2",
+      "energie_kwh": 3.877,
+      "cout_ht": 0.6746,
+      "cout_ttc": 0.8095,
+      "total_ht": 18.1746,
+      "total_ttc": 20.4095
+    },
+    {
+      "entity_id": "sensor.buanderie_ambiance_lamp_1_energy_2_weekly",
+      "energie_kwh": 0.0302,
+      "cout_ht": 0.0053,
+      "cout_ttc": 0.0063,
+      "total_ht": 17.5053,
+      "total_ttc": 19.6063
+    },
+    {
+      "entity_id": "sensor.lumiere_buanderie_energy",
+      "energie_kwh": 12.3137,
+      "cout_ht": 2.1426,
+      "cout_ttc": 2.5711,
+      "total_ht": 19.6426,
+      "total_ttc": 22.1711
+    },
+    {
+      "entity_id": "sensor.lumiere_buanderie_energy_weekly",
+      "energie_kwh": 0.0948,
+      "cout_ht": 0.0165,
+      "cout_ttc": 0.0198,
+      "total_ht": 17.5165,
+      "total_ttc": 19.6198
+    },
+    {
+      "entity_id": "sensor.chambre_color_candle_2_energy_2",
+      "energie_kwh": 3.5361,
+      "cout_ht": 0.6153,
+      "cout_ttc": 0.7383,
+      "total_ht": 18.1153,
+      "total_ttc": 20.3383
+    },
+    {
+      "entity_id": "sensor.chambre_color_candle_2_energy_2_weekly",
+      "energie_kwh": 0.0396,
+      "cout_ht": 0.0069,
+      "cout_ttc": 0.0083,
+      "total_ht": 17.5069,
+      "total_ttc": 19.6083
+    },
+    {
+      "entity_id": "sensor.lumiere_chambre_energy",
+      "energie_kwh": 8.4983,
+      "cout_ht": 1.4787,
+      "cout_ttc": 1.7744,
+      "total_ht": 18.9787,
+      "total_ttc": 21.3744
+    },
+    {
+      "entity_id": "sensor.lumiere_chambre_energy_weekly",
+      "energie_kwh": 0.0397,
+      "cout_ht": 0.0069,
+      "cout_ttc": 0.0083,
+      "total_ht": 17.5069,
+      "total_ttc": 19.6083
+    },
+    {
+      "entity_id": "sensor.hue_color_lamp_1_energy",
+      "energie_kwh": 7.3418,
+      "cout_ht": 1.2775,
+      "cout_ttc": 1.533,
+      "total_ht": 18.7775,
+      "total_ttc": 21.133
+    },
+    {
+      "entity_id": "sensor.hue_color_lamp_1_energy_weekly",
+      "energie_kwh": 0.063,
+      "cout_ht": 0.011,
+      "cout_ttc": 0.0132,
+      "total_ht": 17.511,
+      "total_ttc": 19.6132
+    },
+    {
+      "entity_id": "sensor.hue_color_lamp_1_energy_2",
+      "energie_kwh": 2.9097,
+      "cout_ht": 0.5063,
+      "cout_ttc": 0.6075,
+      "total_ht": 18.0063,
+      "total_ttc": 20.2075
+    },
+    {
+      "entity_id": "sensor.hue_color_lamp_1_energy_weekly_2",
+      "energie_kwh": 0.0651,
+      "cout_ht": 0.0113,
+      "cout_ttc": 0.0136,
+      "total_ht": 17.5113,
+      "total_ttc": 19.6136
+    },
+    {
+      "entity_id": "sensor.lumiere_salon_energy",
+      "energie_kwh": 21.5357,
+      "cout_ht": 3.7472,
+      "cout_ttc": 4.4967,
+      "total_ht": 21.2472,
+      "total_ttc": 24.0967
+    },
+    {
+      "entity_id": "sensor.lumiere_salon_energy_weekly",
+      "energie_kwh": 0.1282,
+      "cout_ht": 0.0223,
+      "cout_ttc": 0.0268,
+      "total_ht": 17.5223,
+      "total_ttc": 19.6268
+    },
+    {
+      "entity_id": "sensor.toilettes_white_lamp_2_energy_2",
+      "energie_kwh": 4.7471,
+      "cout_ht": 0.826,
+      "cout_ttc": 0.9912,
+      "total_ht": 18.326,
+      "total_ttc": 20.5912
+    },
+    {
+      "entity_id": "sensor.toilettes_white_lamp_2_energy_2_weekly",
+      "energie_kwh": 0.0375,
+      "cout_ht": 0.0065,
+      "cout_ttc": 0.0078,
+      "total_ht": 17.5065,
+      "total_ttc": 19.6078
+    },
+    {
+      "entity_id": "sensor.lumiere_toilette_energy",
+      "energie_kwh": 4.7484,
+      "cout_ht": 0.8262,
+      "cout_ttc": 0.9915,
+      "total_ht": 18.3262,
+      "total_ttc": 20.5915
+    },
+    {
+      "entity_id": "sensor.lumiere_toilette_energy_weekly",
+      "energie_kwh": 0.0376,
+      "cout_ht": 0.0065,
+      "cout_ttc": 0.0079,
+      "total_ht": 17.5065,
+      "total_ttc": 19.6079
+    },
+    {
+      "entity_id": "sensor.emma_hue_play_2_energy_2",
+      "energie_kwh": 1.9209,
+      "cout_ht": 0.3342,
+      "cout_ttc": 0.4011,
+      "total_ht": 17.8342,
+      "total_ttc": 20.0011
+    },
+    {
+      "entity_id": "sensor.emma_hue_play_2_energy_2_weekly",
+      "energie_kwh": 0.0503,
+      "cout_ht": 0.0088,
+      "cout_ttc": 0.0105,
+      "total_ht": 17.5088,
+      "total_ttc": 19.6105
+    },
+    {
+      "entity_id": "sensor.emma_hue_play_1_energy_2",
+      "energie_kwh": 1.9512,
+      "cout_ht": 0.3395,
+      "cout_ttc": 0.4074,
+      "total_ht": 17.8395,
+      "total_ttc": 20.0074
+    },
+    {
+      "entity_id": "sensor.emma_hue_play_1_energy_2_weekly",
+      "energie_kwh": 0.0639,
+      "cout_ht": 0.0111,
+      "cout_ttc": 0.0133,
+      "total_ht": 17.5111,
+      "total_ttc": 19.6133
+    },
+    {
+      "entity_id": "sensor.lumiere_chambre_emma_energy",
+      "energie_kwh": 7.5728,
+      "cout_ht": 1.3177,
+      "cout_ttc": 1.5812,
+      "total_ht": 18.8177,
+      "total_ttc": 21.1812
+    },
+    {
+      "entity_id": "sensor.lumiere_chambre_emma_energy_weekly",
+      "energie_kwh": 0.1152,
+      "cout_ht": 0.02,
+      "cout_ttc": 0.0241,
+      "total_ht": 17.52,
+      "total_ttc": 19.6241
+    },
+    {
+      "entity_id": "sensor.hue_discover_outdoor_wall_2_energy_2",
+      "energie_kwh": 7.2385,
+      "cout_ht": 1.2595,
+      "cout_ttc": 1.5114,
+      "total_ht": 18.7595,
+      "total_ttc": 21.1114
+    },
+    {
+      "entity_id": "sensor.hue_discover_outdoor_wall_2_energy_2_weekly",
+      "energie_kwh": 0.1299,
+      "cout_ht": 0.0226,
+      "cout_ttc": 0.0271,
+      "total_ht": 17.5226,
+      "total_ttc": 19.6271
+    },
+    {
+      "entity_id": "sensor.hue_lightstrip_outdoor_3_energy_2",
+      "energie_kwh": 7.7591,
+      "cout_ht": 1.3501,
+      "cout_ttc": 1.6201,
+      "total_ht": 18.8501,
+      "total_ttc": 21.2201
+    },
+    {
+      "entity_id": "sensor.hue_lightstrip_outdoor_3_energy_2_weekly",
+      "energie_kwh": 0.0144,
+      "cout_ht": 0.0025,
+      "cout_ttc": 0.003,
+      "total_ht": 17.5025,
+      "total_ttc": 19.603
+    },
+    {
+      "entity_id": "sensor.hue_lightstrip_outdoor_4_energy_2_2",
+      "energie_kwh": 8.0804,
+      "cout_ht": 1.406,
+      "cout_ttc": 1.6872,
+      "total_ht": 18.906,
+      "total_ttc": 21.2872
+    },
+    {
+      "entity_id": "sensor.hue_lightstrip_outdoor_4_energy_2_weekly_2",
+      "energie_kwh": 0.1585,
+      "cout_ht": 0.0276,
+      "cout_ttc": 0.0331,
+      "total_ht": 17.5276,
+      "total_ttc": 19.6331
+    },
+    {
+      "entity_id": "sensor.lumiere_terrasse_energy",
+      "energie_kwh": 29.2593,
+      "cout_ht": 5.0911,
+      "cout_ttc": 6.1093,
+      "total_ht": 22.5911,
+      "total_ttc": 25.7093
+    },
+    {
+      "entity_id": "sensor.lumiere_terrasse_energy_weekly",
+      "energie_kwh": 0.3156,
+      "cout_ht": 0.0549,
+      "cout_ttc": 0.0659,
+      "total_ht": 17.5549,
+      "total_ttc": 19.6659
+    },
+    {
+      "entity_id": "sensor.all_lights_energy",
+      "energie_kwh": 123.189,
+      "cout_ht": 21.4349,
+      "cout_ttc": 25.7219,
+      "total_ht": 38.9349,
+      "total_ttc": 45.3219
+    },
+    {
+      "entity_id": "sensor.all_lights_energy_weekly",
+      "energie_kwh": 0.7838,
+      "cout_ht": 0.1364,
+      "cout_ttc": 0.1637,
+      "total_ht": 17.6364,
+      "total_ttc": 19.7637
+    },
+    {
+      "entity_id": "sensor.chambre_tv_prise_connectee_today_energy",
+      "energie_kwh": 0.462,
+      "cout_ht": 0.0804,
+      "cout_ttc": 0.0965,
+      "total_ht": 17.5804,
+      "total_ttc": 19.6965
+    },
+    {
+      "entity_id": "sensor.chambre_tv_prise_connectee_month_energy",
+      "energie_kwh": 9.329,
+      "cout_ht": 1.6232,
+      "cout_ttc": 1.9479,
+      "total_ht": 19.1232,
+      "total_ttc": 21.5479
+    },
+    {
+      "entity_id": "sensor.buanderie_machines_today_energy",
+      "energie_kwh": 1.104,
+      "cout_ht": 0.1921,
+      "cout_ttc": 0.2305,
+      "total_ht": 17.6921,
+      "total_ttc": 19.8305
+    },
+    {
+      "entity_id": "sensor.buanderie_machines_month_energy",
+      "energie_kwh": 5.614,
+      "cout_ht": 0.9768,
+      "cout_ttc": 1.1722,
+      "total_ht": 18.4768,
+      "total_ttc": 20.7722
+    },
+    {
+      "entity_id": "sensor.bureau_prise_porte_today_energy",
+      "energie_kwh": 0.669,
+      "cout_ht": 0.1164,
+      "cout_ttc": 0.1397,
+      "total_ht": 17.6164,
+      "total_ttc": 19.7397
+    },
+    {
+      "entity_id": "sensor.bureau_prise_porte_month_energy",
+      "energie_kwh": 8.263,
+      "cout_ht": 1.4378,
+      "cout_ttc": 1.7253,
+      "total_ht": 18.9378,
+      "total_ttc": 21.3253
+    },
+    {
+      "entity_id": "sensor.buanderie_nas_prise_connectee_today_energy",
+      "energie_kwh": 2.786,
+      "cout_ht": 0.4848,
+      "cout_ttc": 0.5817,
+      "total_ht": 17.9848,
+      "total_ttc": 20.1817
+    },
+    {
+      "entity_id": "sensor.buanderie_nas_prise_connectee_month_energy",
+      "energie_kwh": 34.585,
+      "cout_ht": 6.0178,
+      "cout_ttc": 7.2213,
+      "total_ht": 23.5178,
+      "total_ttc": 26.8213
+    },
+    {
+      "entity_id": "sensor.chambre_dalex_prise_pc_consommation_d_aujourd_hui",
+      "energie_kwh": 5.471,
+      "cout_ht": 0.952,
+      "cout_ttc": 1.1423,
+      "total_ht": 18.452,
+      "total_ttc": 20.7423
+    },
+    {
+      "entity_id": "sensor.chambre_dalex_prise_pc_la_consommation_de_ce_mois_ci",
+      "energie_kwh": 26.616,
+      "cout_ht": 4.6312,
+      "cout_ttc": 5.5574,
+      "total_ht": 22.1312,
+      "total_ttc": 25.1574
+    },
+    {
+      "entity_id": "sensor.bureau_prise_porte_consommation_d_aujourd_hui",
+      "energie_kwh": 0.669,
+      "cout_ht": 0.1164,
+      "cout_ttc": 0.1397,
+      "total_ht": 17.6164,
+      "total_ttc": 19.7397
+    },
+    {
+      "entity_id": "sensor.bureau_prise_porte_la_consommation_de_ce_mois_ci",
+      "energie_kwh": 8.263,
+      "cout_ht": 1.4378,
+      "cout_ttc": 1.7253,
+      "total_ht": 18.9378,
+      "total_ttc": 21.3253
+    },
+    {
+      "entity_id": "sensor.chambre_prise_radiateur_today_energy",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.chambre_prise_radiateur_month_energy",
+      "energie_kwh": 0.001,
+      "cout_ht": 0.0002,
+      "cout_ttc": 0.0002,
+      "total_ht": 17.5002,
+      "total_ttc": 19.6002
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_canape_live_box_consommation_d_aujourd_hui",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_canape_live_box_la_consommation_de_ce_mois_ci",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.chambre_ordinateur_prise_connectee_today_energy",
+      "energie_kwh": 1.037,
+      "cout_ht": 0.1804,
+      "cout_ttc": 0.2165,
+      "total_ht": 17.6804,
+      "total_ttc": 19.8165
+    },
+    {
+      "entity_id": "sensor.chambre_ordinateur_prise_connectee_month_energy",
+      "energie_kwh": 10.923,
+      "cout_ht": 1.9006,
+      "cout_ttc": 2.2807,
+      "total_ht": 19.4006,
+      "total_ttc": 21.8807
+    },
+    {
+      "entity_id": "sensor.bureau_pc_synthe_consommation_d_aujourd_hui",
+      "energie_kwh": 0.364,
+      "cout_ht": 0.0633,
+      "cout_ttc": 0.076,
+      "total_ht": 17.5633,
+      "total_ttc": 19.676
+    },
+    {
+      "entity_id": "sensor.bureau_pc_synthe_la_consommation_de_ce_mois_ci",
+      "energie_kwh": 5.59,
+      "cout_ht": 0.9727,
+      "cout_ttc": 1.1672,
+      "total_ht": 18.4727,
+      "total_ttc": 20.7672
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_tv_consommation_d_aujourd_hui",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_tv_la_consommation_de_ce_mois_ci",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.bureau_prise_ordinateur_today_energy",
+      "energie_kwh": 0.071,
+      "cout_ht": 0.0124,
+      "cout_ttc": 0.0148,
+      "total_ht": 17.5124,
+      "total_ttc": 19.6148
+    },
+    {
+      "entity_id": "sensor.bureau_prise_ordinateur_month_energy",
+      "energie_kwh": 30.813,
+      "cout_ht": 5.3615,
+      "cout_ttc": 6.4338,
+      "total_ht": 22.8615,
+      "total_ttc": 26.0338
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_tv_today_energy",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_tv_month_energy",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_canape_today_energy",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.salon_prise_radiateur_canape_month_energy",
+      "energie_kwh": 0.0,
+      "cout_ht": 0.0,
+      "cout_ttc": 0.0,
+      "total_ht": 17.5,
+      "total_ttc": 19.6
+    },
+    {
+      "entity_id": "sensor.chambre_dalex_prise_pc_today_energy",
+      "energie_kwh": 5.469,
+      "cout_ht": 0.9516,
+      "cout_ttc": 1.1419,
+      "total_ht": 18.4516,
+      "total_ttc": 20.7419
+    },
+    {
+      "entity_id": "sensor.chambre_dalex_prise_pc_month_energy",
+      "energie_kwh": 26.614,
+      "cout_ht": 4.6308,
+      "cout_ttc": 5.557,
+      "total_ht": 22.1308,
+      "total_ttc": 25.157
+    },
+    {
+      "entity_id": "sensor.bureau_pc_synthe_today_energy",
+      "energie_kwh": 0.364,
+      "cout_ht": 0.0633,
+      "cout_ttc": 0.076,
+      "total_ht": 17.5633,
+      "total_ttc": 19.676
+    },
+    {
+      "entity_id": "sensor.bureau_pc_synthe_month_energy",
+      "energie_kwh": 5.59,
+      "cout_ht": 0.9727,
+      "cout_ttc": 1.1672,
+      "total_ht": 18.4727,
+      "total_ttc": 20.7672
+    },
+    {
+      "entity_id": "sensor.salon_tv_prise_connectee_today_energy",
+      "energie_kwh": 1.851,
+      "cout_ht": 0.3221,
+      "cout_ttc": 0.3865,
+      "total_ht": 17.8221,
+      "total_ttc": 19.9865
+    },
+    {
+      "entity_id": "sensor.salon_tv_prise_connectee_month_energy",
+      "energie_kwh": 24.134,
+      "cout_ht": 4.1993,
+      "cout_ttc": 5.0392,
+      "total_ht": 21.6993,
+      "total_ttc": 24.6392
+    },
+    {
+      "entity_id": "sensor.salon_nous_extender_energy",
+      "energie_kwh": 2.46,
+      "cout_ht": 0.428,
+      "cout_ttc": 0.5136,
+      "total_ht": 17.928,
+      "total_ttc": 20.1136
+    },
+    {
+      "entity_id": "sensor.bureau_nous_extender_energy",
+      "energie_kwh": 53.69,
+      "cout_ht": 9.3421,
+      "cout_ttc": 11.2105,
+      "total_ht": 26.8421,
+      "total_ttc": 30.8105
+    },
+    {
+      "entity_id": "sensor.atome_weekly",
+      "energie_kwh": 77.561,
+      "cout_ht": 13.4956,
+      "cout_ttc": 16.1947,
+      "total_ht": 30.9956,
+      "total_ttc": 35.7947
+    },
+    {
+      "entity_id": "sensor.atome_monthly",
+      "energie_kwh": 303.785,
+      "cout_ht": 52.8586,
+      "cout_ttc": 63.4303,
+      "total_ht": 70.3586,
+      "total_ttc": 83.0303
+    },
+    {
+      "entity_id": "sensor.atome_daily",
+      "energie_kwh": 24.397,
+      "cout_ht": 4.2451,
+      "cout_ttc": 5.0941,
+      "total_ht": 21.7451,
+      "total_ttc": 24.6941
+    },
+    {
+      "entity_id": "sensor.all_standby_energy",
+      "energie_kwh": 179.8352,
+      "cout_ht": 31.2913,
+      "cout_ttc": 37.5496,
+      "total_ht": 48.7913,
+      "total_ttc": 57.1496
+    }
+  ]
+}

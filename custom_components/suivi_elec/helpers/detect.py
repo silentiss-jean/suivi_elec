@@ -1,65 +1,23 @@
+import sys
 import os
-import requests
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
 import json
+from datetime import datetime
 
-def load_env(path):
-    print(f"📂 Chargement du fichier .env depuis : {path}")
-    if not os.path.exists(path):
-        print("❌ Fichier .env introuvable")
-        return False
-    with open(path, "r", encoding="utf-8") as f:
-        for line in f:
-            if "=" in line and not line.strip().startswith("#"):
-                key, value = line.strip().split("=", 1)
-                os.environ[key] = value
-                print(f"🔑 {key} = {value[:40]}{'...' if len(value) > 40 else ''}")
-    return True
+from helpers.env_loader import load_env
+from helpers.api_client import test_api_connection, get_energy_entities
+from helpers.tarif_loader import load_tarifs
+from helpers.calculateur import calculer_cout
+from helpers.historique import update_historique
 
-def test_token(url, token):
-    headers = {
-        "Authorization": f"Bearer {token.strip()}",
-        "Accept": "application/json"
-    }
-    try:
-        response = requests.get(f"{url}/api/", headers=headers, timeout=5)
-        print(f"📡 Test API : {response.status_code}")
-        return response.status_code == 200
-    except Exception as e:
-        print(f"❌ Erreur de connexion : {e}")
-        return False
-
-def detect_entities(url, token):
-    headers = {
-        "Authorization": f"Bearer {token.strip()}",
-        "Content-Type": "application/json"
-    }
-    try:
-        response = requests.get(f"{url}/api/states", headers=headers, timeout=10)
-        if response.status_code != 200:
-            print(f"❌ Erreur API /states : {response.status_code}")
-            return []
-        entities = response.json()
-        filtered = [e for e in entities if "suivi_elec" in e["entity_id"]]
-        print(f"🔍 {len(filtered)} entités détectées contenant 'suivi_elec'")
-        for e in filtered[:3]:
-            print(f"   • {e['entity_id']}")
-        return filtered
-    except Exception as e:
-        print(f"❌ Erreur lors de la détection : {e}")
-        return []
-
-def save_entities(entities, path):
-    try:
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(entities, f, indent=2, ensure_ascii=False)
-        print(f"📁 {len(entities)} entités enregistrées dans {path}")
-    except Exception as e:
-        print(f"❌ Erreur lors de l’écriture du fichier : {e}")
-
-# 📍 Chemin vers le .env
+# 📍 Chemins
 ENV_PATH = "/config/suivi_elec/.env"
-OUTPUT_PATH = "/config/suivi_elec/capteurs_detectes.json"
+TARIF_PATH = "/config/suivi_elec/tarif.json"
+OUTPUT_PATH = "/config/suivi_elec/cout_estime.json"
+HISTO_PATH = "/config/suivi_elec/historique_cout.json"
 
+# 🔧 Chargement des variables d’environnement
 if not load_env(ENV_PATH):
     exit(1)
 
@@ -70,14 +28,51 @@ if not HA_URL or not HA_TOKEN:
     print("❌ HA_URL ou HA_TOKEN manquant")
     exit(1)
 
-if not test_token(HA_URL, HA_TOKEN):
+# 🌐 Vérification de l’accès à l’API
+if not test_api_connection(HA_URL, HA_TOKEN):
     print("🛑 Token invalide ou API inaccessible")
     exit(1)
 
 print("🚀 detect.py lancé")
 
-entities = detect_entities(HA_URL, HA_TOKEN)
-if entities:
-    save_entities(entities, OUTPUT_PATH)
-else:
-    print("⚠️ Aucune entité détectée")
+# 🔍 Récupération des entités énergétiques
+entities = get_energy_entities(HA_URL, HA_TOKEN)
+if not entities:
+    print("⚠️ Aucune entité énergétique détectée")
+    exit(1)
+
+print(f"🔋 {len(entities)} entités énergétiques détectées")
+
+# 💶 Chargement des tarifs
+tarifs = load_tarifs(TARIF_PATH)
+if not tarifs:
+    print("❌ Tarifs non disponibles")
+    exit(1)
+
+# 🧮 Calcul des coûts
+resultats = []
+for entity in entities:
+    cout = calculer_cout(entity, tarifs)
+    if cout:
+        resultats.append(cout)
+
+# 🕰️ Ajout de la date
+date_str = datetime.now().strftime("%Y-%m-%d")
+output = {
+    "date": date_str,
+    "resultats": resultats
+}
+
+# 📁 Sauvegarde du fichier de coût estimé
+try:
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+    print(f"📁 Coût estimé enregistré dans {OUTPUT_PATH}")
+except Exception as e:
+    print(f"❌ Erreur lors de l’écriture du fichier : {e}")
+
+# 🗂️ Mise à jour de l’historique
+total_ttc = sum(r["total_ttc"] for r in resultats)
+energie_kwh = sum(r["energie_kwh"] for r in resultats)
+
+update_historique(HISTO_PATH, total_ttc, energie_kwh)
