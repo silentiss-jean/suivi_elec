@@ -1,32 +1,94 @@
-# Suivi Elec – Intégration Home Assistant
+# ⚡ Suivi Élec – Intégration Home Assistant
 
-## 🚀 Déploiement via Git + HACS
+**Suivi Élec** est une intégration personnalisée pour Home Assistant permettant de suivre votre consommation électrique, vos tarifs, et vos historiques de manière automatisée et intelligente.
 
-Cette intégration est publiée automatiquement à chaque `git push` avec un tag `vYYYY.MM.DD-HHMM`.
-
-### 📦 Dernière version
-
-[![Dernière version](https://img.shields.io/github/v/tag/silentiss-jean/suivi_elec?label=version&sort=semver)](https://github.com/silentiss-jean/suivi_elec/releases/latest)
-📜 [Voir le changelog complet](https://github.com/silentiss-jean/suivi_elec/releases)
-
-### 🔧 Workflow
-
-1. Modifiez le code localement
-2. Lancez `./update_git.sh`
-3. Le script :
-   - Commit les changements
-   - Crée un tag horodaté
-   - Pousse vers GitHub
-4. GitHub Actions crée automatiquement une release publique
-5. Installez ou mettez à jour via HACS
-
-### 📦 Structure minimale requise
-
-- `custom_components/suivi_elec/__init__.py`
-- `manifest.json`
-- `launcher.py`
-- `helpers/` avec tous les modules nécessaires
-
-
-📘 [Guide de maintenance](MAINTENANCE.md)
 ---
+
+## 📑 Sommaire
+
+- [Fonctionnalités](#fonctionnalités)
+- [Installation](#installation)
+- [Structure du projet](#structure-du-projet)
+- [Documentation technique](#documentation-technique)
+- [Maintenance](#maintenance)
+- [Contribuer](#contribuer)
+- [Licence](#licence)
+- [Auteur](#auteur)
+
+---
+
+## 🚀 Fonctionnalités
+
+- Détection automatique des entités liées à l’électricité
+- Connexion à l’API fournisseur (ex. EDF)
+- Calcul des coûts énergétiques en fonction des tarifs
+- Mise à jour de l’historique de consommation
+- Traductions intégrées pour l’interface Home Assistant
+
+---
+
+## 🛠️ Installation
+
+### Via HACS (recommandé)
+
+1. Ajouter ce dépôt comme dépôt personnalisé dans HACS
+2. Installer l’intégration `suivi_elec`
+3. Redémarrer Home Assistant
+4. Configurer via l’interface ou fichier YAML
+
+### Manuellement via Git
+
+```bash
+cd custom_components/
+git clone https://github.com/silentiss-jean/suivi_elec.git
+
+📁 Structure du projet
+suivi_elec/
+├── custom_components/
+│   └── suivi_elec/
+│       ├── __init__.py
+│       ├── manifest.json
+│       ├── launcher.py
+│       ├── generator.py
+│       ├── helpers/
+│       └── translations/
+├── .github/
+│   └── workflows/
+├── update_git.sh
+├── README.md
+├── docs/
+
+
+📚 Documentation technique
+
+•  Composants principaux
+•  Modules utilitaires (helpers/)
+•  Installation détaillée
+•  Maintenance & mise à jour
+
+🔧 Maintenance
+
+•  Releases automatisées via GitHub Actions
+•  Script local update_git.sh (optionnel)
+•  Nettoyage régulier des fichiers inutilisés
+
+➡️ Voir docs/maintenance.md
+
+🤝 Contribuer
+
+Les contributions sont les bienvenues ! Tu peux :
+
+•  Proposer des améliorations
+•  Corriger des bugs
+•  Ajouter des traductions
+•  Documenter les modules
+
+📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus d’informations.
+
+👤 Auteur
+
+Jean · GitHub @silentiss-jean
+
+Dernière mise à jour : 10 septembre 2025
