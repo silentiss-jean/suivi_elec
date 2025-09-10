@@ -1,14 +1,57 @@
 import os
 import json
 import requests
+def load_env(path):
+    if not os.path.exists(path):
+        print(f"⚠️ Fichier .env non trouvé à {path}")
+        return
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            if "=" in line and not line.strip().startswith("#"):
+                key, value = line.strip().split("=", 1)
+                os.environ[key] = value
+    print(f"✅ Variables d’environnement chargées depuis {path}")
+import os
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ENV_PATHS = [
+    os.path.join(SCRIPT_DIR, "../../../.env"),
+    os.path.join(SCRIPT_DIR, "../.env")
+]
+
+for path in ENV_PATHS:
+    if os.path.exists(path):
+        load_env(path)
+        break
+    
 from datetime import datetime
+print("🚀 detect.py lancé")
+
 
 # 📁 Chemin du log
 LOG_PATH = "/config/custom_components/suivi_elec/data/detect.log"
-
+def test_token_validity(url, token):
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
+    }
+    try:
+        response = requests.get(f"{url}/api/", headers=headers, timeout=5)
+        if response.status_code == 200:
+            print("🔐 Token valide ✅")
+            return True
+        elif response.status_code == 401:
+            print("❌ Token invalide ou expiré (401 Unauthorized)")
+        else:
+            print(f"⚠️ Réponse inattendue : {response.status_code}")
+    except Exception as e:
+        print(f"❌ Erreur lors du test du token : {e}")
+    return False
+    
 def log(message):
     with open(LOG_PATH, "a", encoding="utf-8") as f:
         f.write(f"[{datetime.now()}] {message}\n")
+# ✅ Maintenant que log() est défini, on peut l’utiliser
+log("🚀 detect.py lancé")
 
 def load_env(path):
     if not os.path.exists(path):
@@ -34,8 +77,11 @@ log(f"HA_URL = {HA_URL}")
 log(f"HA_TOKEN = {'présent' if HA_TOKEN else 'absent'}")
 
 if not HA_URL or not HA_TOKEN:
-    log("❌ Variables HA_URL ou HA_TOKEN manquantes")
     print("❌ Variables HA_URL ou HA_TOKEN manquantes")
+    exit(1)
+
+if not test_token_validity(HA_URL, HA_TOKEN):
+    print("🛑 Arrêt du script : token non valide")
     exit(1)
 
 HEADERS = {
