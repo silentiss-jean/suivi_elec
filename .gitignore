@@ -1,2 +1,9 @@
 .env
 .env
+# 🔐 Fichiers sensibles
+custom_components/suivi_elec/.env
+# 🧹 Fichiers compilés Python
+__pycache__/
+*.pyc
+custom_components/suivi_elec/data/
+custom_components/suivi_elec/.env

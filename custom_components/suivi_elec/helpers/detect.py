@@ -1,9 +1,10 @@
-import sys
 import os
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-
+import sys
 import json
 from datetime import datetime
+
+# 📦 Ajout du dossier helpers au path
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from helpers.env_loader import load_env
 from helpers.api_client import test_api_connection, get_energy_entities
@@ -11,68 +12,89 @@ from helpers.tarif_loader import load_tarifs
 from helpers.calculateur import calculer_cout
 from helpers.historique import update_historique
 
-# 📍 Chemins
-ENV_PATH = "/config/suivi_elec/.env"
-TARIF_PATH = "/config/suivi_elec/tarif.json"
-OUTPUT_PATH = "/config/suivi_elec/cout_estime.json"
-HISTO_PATH = "/config/suivi_elec/historique_cout.json"
+# 📂 Dossier suivi_elec
+SUITELEC_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+DATA_DIR = os.path.join(SUITELEC_DIR, "data")
+
+# 📄 Chemins des fichiers
+ENV_PATH       = os.path.join(SUITELEC_DIR, ".env")
+TARIF_PATH     = os.path.join(DATA_DIR, "tarif.json")
+OUTPUT_PATH    = os.path.join(DATA_DIR, "cout_estime.json")
+HISTO_PATH     = os.path.join(DATA_DIR, "historique_cout.json")
+CAPTEURS_PATH  = os.path.join(DATA_DIR, "capteurs_detectes.json")
 
 # 🔧 Chargement des variables d’environnement
+print(f"📂 Chargement du fichier .env depuis : {ENV_PATH}")
 if not load_env(ENV_PATH):
+    print("❌ Fichier .env introuvable ou invalide")
     exit(1)
 
-HA_URL = os.environ.get("HA_URL")
-HA_TOKEN = os.environ.get("HA_TOKEN")
+# 🔑 Récupération des variables
+HA_URL = os.getenv("HA_URL")
+HA_TOKEN = os.getenv("HA_TOKEN")
 
 if not HA_URL or not HA_TOKEN:
     print("❌ HA_URL ou HA_TOKEN manquant")
     exit(1)
 
-# 🌐 Vérification de l’accès à l’API
-if not test_api_connection(HA_URL, HA_TOKEN):
-    print("🛑 Token invalide ou API inaccessible")
-    exit(1)
-
+print(f"🔑 HA_URL = {HA_URL}")
+print(f"🔑 HA_TOKEN = {HA_TOKEN}")
 print("🚀 detect.py lancé")
 
-# 🔍 Récupération des entités énergétiques
-entities = get_energy_entities(HA_URL, HA_TOKEN)
-if not entities:
-    print("⚠️ Aucune entité énergétique détectée")
+# 🔍 Test de connexion à l'API
+if not test_api_connection(HA_URL, HA_TOKEN):
+    print("❌ Connexion à Home Assistant échouée")
     exit(1)
 
+# 🔋 Récupération des entités énergétiques
+entities = get_energy_entities(HA_URL, HA_TOKEN)
 print(f"🔋 {len(entities)} entités énergétiques détectées")
 
-# 💶 Chargement des tarifs
-tarifs = load_tarifs(TARIF_PATH)
-if not tarifs:
-    print("❌ Tarifs non disponibles")
-    exit(1)
-
-# 🧮 Calcul des coûts
-resultats = []
-for entity in entities:
-    cout = calculer_cout(entity, tarifs)
-    if cout:
-        resultats.append(cout)
-
-# 🕰️ Ajout de la date
-date_str = datetime.now().strftime("%Y-%m-%d")
-output = {
-    "date": date_str,
-    "resultats": resultats
-}
-
-# 📁 Sauvegarde du fichier de coût estimé
+# 💾 Sauvegarde des capteurs détectés
 try:
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
-    print(f"📁 Coût estimé enregistré dans {OUTPUT_PATH}")
+    with open(CAPTEURS_PATH, "w") as f:
+        json.dump(entities, f, indent=2)
+        print(f"✅ Fichier capteurs détectés sauvegardé : {CAPTEURS_PATH}")
 except Exception as e:
-    print(f"❌ Erreur lors de l’écriture du fichier : {e}")
+    print(f"❌ Erreur lors de la sauvegarde des capteurs : {e}")
 
-# 🗂️ Mise à jour de l’historique
-total_ttc = sum(r["total_ttc"] for r in resultats)
-energie_kwh = sum(r["energie_kwh"] for r in resultats)
+# 💰 Chargement des tarifs
+try:
+    tarifs = load_tarifs(TARIF_PATH)
+    print(f"💶 Tarifs chargés : {tarifs}")
+except FileNotFoundError:
+    print(f"❌ Fichier tarif introuvable : {TARIF_PATH}")
+    tarifs = None
 
-update_historique(HISTO_PATH, total_ttc, energie_kwh)
+# 📊 Calcul du coût estimé
+resultats = []
+if tarifs:
+    for entity in entities:
+        try:
+            cout = calculer_cout(entity, tarifs)
+            if cout:
+                resultats.append(cout)
+        except Exception as e:
+            print(f"⚠️ Ignoré {entity.get('entity_id', 'inconnu')} → {e}")
+
+    # 🧮 Résumé global
+    total_ttc = sum(r["total_ttc"] for r in resultats)
+    energie_kwh = sum(r["energie_kwh"] for r in resultats)
+
+    output = {
+        "date": datetime.now().strftime("%Y-%m-%d"),
+        "total_kwh": round(energie_kwh, 2),
+        "total_ttc": round(total_ttc, 2),
+        "resultats": resultats
+    }
+
+    try:
+        with open(OUTPUT_PATH, "w") as f:
+            json.dump(output, f, indent=2)
+            print(f"✅ Coût estimé sauvegardé : {OUTPUT_PATH}")
+        update_historique(HISTO_PATH, total_ttc, energie_kwh)
+        print(f"📈 Historique mis à jour : {HISTO_PATH}")
+    except Exception as e:
+        print(f"❌ Erreur lors de l’écriture du coût ou de l’historique : {e}")
+else:
+    print("⚠️ Tarifs non disponibles, coût non calculé")
