@@ -1,18 +1,32 @@
+import logging
 import requests
 
-def test_api_connection(url, token):
+_LOGGER = logging.getLogger(__name__)
+
+def test_api_connection(url: str, token: str) -> bool:
+    """Teste la connexion à l'API avec le token fourni."""
     headers = {
         "Authorization": f"Bearer {token.strip()}",
         "Accept": "application/json"
     }
     try:
         response = requests.get(f"{url}/api/", headers=headers, timeout=5)
-        return response.status_code == 200
+        if response.status_code == 200:
+            _LOGGER.info("✅ Connexion API réussie")
+            return True
+        else:
+            _LOGGER.warning(f"⚠️ Échec API : {response.status_code}")
+            return False
     except Exception as e:
-        print(f"❌ Erreur API : {e}")
+        _LOGGER.error(f"❌ Erreur API : {e}")
         return False
 
-def get_energy_entities(url, token):
+async def test_api_token(token: str, base_url: str) -> bool:
+    """Wrapper async pour valider le token via config_flow."""
+    return test_api_connection(base_url, token)
+
+def get_energy_entities(url: str, token: str) -> list:
+    """Récupère les entités énergétiques (kWh, Wh) depuis l'API HA."""
     headers = {
         "Authorization": f"Bearer {token.strip()}",
         "Content-Type": "application/json"
@@ -20,8 +34,9 @@ def get_energy_entities(url, token):
     try:
         response = requests.get(f"{url}/api/states", headers=headers, timeout=10)
         if response.status_code != 200:
-            print(f"❌ Erreur API /states : {response.status_code}")
+            _LOGGER.warning(f"❌ Erreur API /states : {response.status_code}")
             return []
+
         entities = response.json()
         filtered = []
         for e in entities:
@@ -37,7 +52,10 @@ def get_energy_entities(url, token):
                     "unit": attrs.get("unit_of_measurement"),
                     "friendly_name": attrs.get("friendly_name", "")
                 })
+
+        _LOGGER.info(f"🔍 {len(filtered)} entités énergétiques détectées")
         return filtered
+
     except Exception as e:
-        print(f"❌ Erreur récupération entités : {e}")
+        _LOGGER.error(f"❌ Erreur récupération entités : {e}")
         return []

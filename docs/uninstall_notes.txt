@@ -1,0 +1,41 @@
+🧼 Documentation — Script de désinstallation Suivi Élec
+
+📌 Objectif :
+Permettre à l’utilisateur de désinstaller proprement l’intégration Suivi Élec, avec options de sauvegarde, suppression partielle ou complète, et un mode expert caché pour les utilisateurs avancés.
+
+✅ Script : uninstall_suivi_elec.sh
+
+📍 Emplacement :
+/config/suivi_elec/uninstall_suivi_elec.sh
+
+🎯 Fonction :
+- Propose une désinstallation complète ou partielle
+- Sauvegarde les entités avant suppression
+- Supprime les entités, le dossier custom_components, et suggère la suppression manuelle des cartes Lovelace
+- Analyse le fichier configuration.yaml sans le modifier automatiquement
+- Active un mode expert caché pour les utilisateurs initiés
+
+🧠 Mode expert :
+
+🔐 Activation :
+- En lançant le script avec l’argument : `--unlock-yaml`
+- Ou en tapant le mot-clé : `je_suis_le_maître_du_yaml`
+
+🎭 Comportement :
+- Affiche un message humoristique
+- Propose une sauvegarde du fichier configuration.yaml
+- Demande une confirmation explicite
+- Exécute la suppression automatique des blocs YAML liés à suivi_elec
+
+🥚 Easter Egg :
+> "Un bon YAML est comme un bon café : trop fort, ça te réveille... trop mal dosé, ça te crashe Home Assistant."
+
+📜 Affiche le parchemin secret : `expert_mode_notes.txt`
+
+🧠 Philosophie :
+- Le script ne modifie jamais les fichiers utilisateur sans accord explicite
+- Toute suppression est précédée d’une sauvegarde et d’une confirmation
+- L’utilisateur reste maître de sa configuration
+
+📂 Fichier créé :
+/config/suivi_elec/docs/uninstall_notes.txt

@@ -1,0 +1,31 @@
+📤 Documentation — Export des entités Suivi Élec
+
+📌 Objectif :
+Permettre l’export des entités liées à l’intégration `suivi_elec` dans un fichier `.json` pour archivage, audit ou analyse externe.
+
+✅ Script : export_suivi_elec_entities.sh
+
+📍 Emplacement :
+/config/suivi_elec/export_suivi_elec_entities.sh
+
+🎯 Fonction :
+- Identifie toutes les entités contenant `suivi_elec`
+- Récupère leur état et leurs attributs
+- Génère un fichier JSON structuré dans `/config/suivi_elec/backups/`
+
+📦 Usage :
+```bash
+bash /config/suivi_elec/export_suivi_elec_entities.sh
+📁 Fichier généré :
+/config/suivi_elec/backups/entities_export.json
+
+🧠 Notes :
+
+•  Ce script est non destructif : il ne modifie ni supprime rien
+•  Utile pour :
+  ⁠◦  Comparer des états entre deux installations
+  ⁠◦  Archiver des données avant mise à jour ou désinstallation
+  ⁠◦  Analyser les entités créées pour debug ou optimisation
+
+📂 Fichier créé :
+/config/suivi_elec/docs/export_notes.txt

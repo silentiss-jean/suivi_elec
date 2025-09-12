@@ -1,0 +1,263 @@
+logger:
+  default: info
+  logs:
+    custom_components.suivi_elec: debug
+
+suivi_elec:
+
+# Loads default set of integrations. Do not remove.
+default_config:
+# Example configuration.yaml entry
+zeroconf:
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+  extra_module_url:
+    - /config/www/community/lovelace-card-mod/card-mod.js
+
+lovelace:
+ resources:
+  - url: /config/www/community/dual-gauge-card/dual-gauge-card.js
+    type: module
+    
+homeassistant:
+  packages: !include_dir_named packages
+
+automation: !include_dir_merge_list automations
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+template: !include_dir_merge_list templates/
+
+cloud:
+
+input_number:
+  auto_energy_cost:
+    name: Coût du Kwh
+    mode: box
+    min: 0
+    max: 100
+    unit_of_measurement: "€/kWh"
+    icon: mdi:currency-eur
+
+#serial:
+#    port: 'tcp://192.168.3.197:20108'
+#    adapter: ezsp
+
+media_player:
+  - platform: liveboxtvuhd
+    name: Livebox
+    host: 192.168.2.127
+    port: 8080
+    scan_interval: 30
+    country: france
+
+remote:
+  - platform: liveboxtvuhd
+    name: Livebox remote
+    host: 192.168.2.127
+    port: 8080
+    scan_interval: 30
+    country: france
+ 
+powercalc:
+  sensors:
+    - create_group: all lights
+      create_energy_sensor: true
+      force_calculate_group_energy: true
+      entities:
+        - create_group: lumiere Bureau
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.bureau_color_lamp_14
+            - entity_id: light.bureau_color_lamp_15
+            - entity_id: light.bureau_lightstrip_plus_3
+            - entity_id: light.hue_color_lamp_1_5
+        - create_group: lumiere salle de bain
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.sdb_color_candle_3
+        - create_group: lumiere alex
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.hue_color_lamp_1_2
+        - create_group: lumiere Couloir
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.couloir_hue_color_lamp_4
+        - create_group: lumiere Cuisine
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.cuisine_color_spot_1
+            - entity_id: light.cuisine_lightstrip_plus_1
+            - entity_id: light.cuisine_color_spot_4
+            - entity_id: light.cuisine_color_spot_2
+            - entity_id: light.hue_color_spot_1
+        - create_group: lumiere Buanderie
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.buanderie_white_lamp_4
+            - entity_id: light.buanderie_ambiance_lamp_2
+            - entity_id: light.buanderie_ambiance_lamp_1
+        - create_group: lumiere Chambre
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.chambre_color_candle_4
+            - entity_id: light.chambre_color_lamp_7
+            - entity_id: light.chambre_color_candle_1
+            - entity_id: light.chambre_color_candle_2
+        - create_group: lumiere Salon
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.salon_color_lamp_9
+            - entity_id: light.salon_hue_color_lamp_1
+            - entity_id: light.hue_color_lamp_1
+            - entity_id: light.hue_color_lamp_1_6
+            - entity_id: light.hue_lightstrip_plus_1
+        - create_group: lumiere Toilette
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.toilettes_white_lamp_2
+        - create_group: lumiere chambre emma
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.emma_hue_play_2
+            - entity_id: light.emma_hue_play_1
+            - entity_id: light.hue_color_lamp_1_4
+            - entity_id: light.hue_go_1
+        - create_group: lumiere Terrasse
+          create_energy_sensor: true
+          entities:
+            - entity_id: light.hue_discover_outdoor_wall_2
+            - entity_id: light.hue_discover_outdoor_wall_4
+            - entity_id: light.hue_lightstrip_outdoor_3
+            - entity_id: light.hue_lightstrip_outdoor_4
+            - entity_id: light.hue_lightstrip_outdoor_5
+            - entity_id: light.hue_color_lamp_1_3
+#sensor:
+
+  
+#  - platform: atome
+#    username: energie@ftoure.net
+#    password: nykmu6-Jevmyn-zoqhes
+
+#ecovacs: no more needed
+#  username: ecovacs@ftoure.net
+#  password: zanmocqeska7dyDvav
+#  country: fr
+#  continent: eu
+
+#media_player: dont work for me now 
+# - platform: onkyo
+#   host: 192.168.3.88
+#   name: receiver
+#   sources:
+#     pc: "HTPC"
+
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: homeassistant
+  password: mypassword
+  max_retries: 3
+  default_measurement: state
+
+
+switch:
+  - platform: template
+    switches:    
+      tv_activity:
+        friendly_name: La tele
+        value_template: "{{ is_state_attr('remote.harmony_hub', 'current_activity', 'La tele') }}"
+        turn_on:
+        - service: remote.turn_on
+          target:
+            entity_id: remote.harmony_hub
+          data:
+            activity: La tele
+        turn_off:
+        - service: remote.turn_on
+          target:
+            entity_id: remote.harmony_hub
+          data:
+            activity: PowerOff
+  - platform: template
+    switches:    
+      apptv_activity:
+        friendly_name: Apple TV
+        value_template: "{{ is_state_attr('remote.harmony_hub', 'current_activity', 'Apple tv') }}"
+        turn_on:
+        - service: remote.turn_on
+          target:
+            entity_id: remote.harmony_hub
+          data:
+            activity: Apple tv
+        turn_off:
+        - service: remote.turn_on
+          target:
+            entity_id: remote.harmony_hub
+          data:
+            activity: PowerOff
+  - platform: template
+    switches:    
+      offtv_activity:
+        friendly_name: PowerOff
+        value_template: "{{ is_state_attr('remote.harmony_hub', 'current_activity', 'PowerOff') }}"
+        turn_on:
+        - service: remote.turn_on
+          target:
+            entity_id: remote.harmony_hub
+          data:
+            activity: PowerOff
+        turn_off:
+        - service: remote.turn_on
+          target:
+            entity_id: remote.harmony_hub
+          data:
+            activity: PowerOff
+            
+smartir:                                                                                                                           
+  check_updates: false
+
+climate:                                                                                                                           
+  - platform: smartir                                                                                                              
+    name: Clim Chambre                                                                                                             
+    unique_id: clim_chambre                                                                                                        
+    device_code: 9999                                                                                                              
+    controller_data: remote.chambre_universal_remote                                                                               
+    temperature_sensor: sensor.chambre_temperature_moyenne                                                                      
+    humidity_sensor: sensor.chambre_universal_remote_humidite                                                                      
+#    power_sensor: binary_sensor.ac_power                                                                                           
+  - platform: smartir                                                                                                              
+    name: Clim Salon                                                                                                               
+    unique_id: clim_salon                                                                                                          
+    device_code: 9999                                                                                                              
+    controller_data: remote.salon_wi_fi_universal_remote                                                                                 
+    temperature_sensor: sensor.salon_temperature_moyenne                                                                           
+    humidity_sensor: sensor.salon_wi_fi_universal_remote_humidite                                                                        
+#    power_sensor: binary_sensor.ac_power                                                                                           
+  - platform: smartir                                                                                                              
+    name: Clim Bureau                                                                                                              
+    unique_id: clim_bureau                                                                                                         
+    device_code: 1062                                                                                                              
+    controller_data: remote.bureau_universal_remote                                                                                
+    temperature_sensor: sensor.bureau_4_temperature_temperature                                                                          
+    humidity_sensor: sensor.bureau_universal_remote_humidite                                                                       
+#    power_sensor: binary_sensor.ac_power                                                                                          
+  - platform: smartir                                                                                                              
+    name: Clim Emma                                                                                                                
+    unique_id: clim_emma                                                                                                           
+    device_code: 1062                                                                                                              
+    controller_data: remote.emma_universal_remote                                                                                  
+    temperature_sensor: sensor.chambre_emma_temperature_temperature                                                                        
+    humidity_sensor: sensor.chambre_emma_temperature_humidity                                                                              
+#    power_sensor: binary_sensor.ac_power                                                                                          
+  - platform: smartir                                                                                                              
+    name: Clim Alex                                                                                                                
+    unique_id: clim_alex                                                                                                           
+    device_code: 1062                                                                                                              
+    controller_data: remote.alex_universal_remote                                                                                 
+    temperature_sensor: sensor.chambre_alex_temperature_temperature                                                                        
+    humidity_sensor: sensor.chambre_alex_temperature_humidity                                                                              
+#    power_sensor: binary_sensor.ac_power       

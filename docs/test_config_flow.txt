@@ -1,0 +1,72 @@
+📍 Prérequis :
+- Avoir utilisé et validé partiellement le script de désinstallation `uninstall_suivi_elec.sh`
+- Voir détails dans `docs/uninstall_validation.txt`
+
+🧪 Test d'intégration — config_flow + création dynamique des entités
+
+📌 Objectif :
+Vérifier que l'intégration `suivi_elec` propose un choix de mode (local/cloud), adapte le formulaire, stocke les données correctement, crée les entités activées avec les bons attributs, et génère un sensor de statut dynamique.
+
+---
+
+✅ Étapes de test :
+
+1. 🔁 Synchroniser le code
+   - Lancer le script :
+     bash /config/suivi_elec/sync_to_hacs.sh
+
+2. 🧩 Installation via l’UI
+   - Aller dans Home Assistant > Paramètres > Intégrations
+   - Cliquer sur “+ Ajouter une intégration”
+   - Rechercher “Suivi Élec”
+   - Cliquer dessus
+
+3. 🧠 Choix du mode
+   - Sélectionner : `local` ou `cloud`
+   - Valider
+
+4. 📝 Formulaire conditionnel
+   - Si `local` :
+     - URL par défaut : http://homeassistant.local:8123
+     - Nom utilisateur : admin
+   - Si `cloud` :
+     - URL par défaut : https://api.edf.fr
+     - Clé API à saisir
+
+5. 💾 Vérification des données stockées
+   - Aller dans Développement > Intégrations > Détails
+   - Vérifier que `entry.data` contient :
+     - mode
+     - base_url
+     - api_token ou nom_utilisateur selon le mode
+
+6. ⚙️ Configuration des options
+   - Cliquer sur les trois points > Configurer
+   - Sélectionner les entités à activer
+   - Valider
+
+7. 📊 Vérification des entités créées
+   - Aller dans Développement > États
+   - Rechercher les entités activées (ex: sensor.suivi_elec_conso_jour)
+   - Vérifier les attributs :
+     - friendly_name → contient [Local] ou [Cloud]
+     - source → URL choisie
+
+8. 📈 Vérification du sensor de statut
+   - Rechercher : sensor.suivi_elec_status
+   - Vérifier :
+     - state → exemple : cloud | 3 entités
+     - attributes :
+       - mode
+       - entites_actives
+       - source
+
+9. 🔍 Logs (optionnel)
+   - En SSH :
+     ha core logs | grep -i suivi_elec | tail -n 50
+
+---
+
+🧠 Notes :
+- Ce fichier sert de checklist pour valider le bon fonctionnement de l’intégration
+- Tu peux ajouter des remarques ou observations au fil des tests

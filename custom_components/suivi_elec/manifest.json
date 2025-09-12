@@ -1,8 +1,9 @@
 {
   "domain": "suivi_elec",
   "name": "Suivi Électrique",
-  "version": "0.9.14",
+  "version": "0.9.15",
+  "config_flow": true,
   "requirements": ["requests"],
   "dependencies": [],
-  "config_flow": false
+  "config_flow": true
 }

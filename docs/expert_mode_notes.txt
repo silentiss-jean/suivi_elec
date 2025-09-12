@@ -1,0 +1,38 @@
+🕵️‍♂️ Mode Expert Clandestin — Suivi Élec
+
+📌 Objectif :
+Activer une fonctionnalité cachée pour modifier automatiquement des fichiers sensibles (comme configuration.yaml), tout en gardant la logique officielle sécurisée et non intrusive.
+
+🔐 Activation :
+
+•  En lançant le script avec l’argument : --unlock-yaml
+•  Ou en tapant le mot-clé : je_suis_le_maître_du_yaml
+
+🎭 Comportement :
+
+•  Affiche un message humoristique
+•  Propose une sauvegarde du fichier configuration.yaml
+•  Demande une confirmation explicite
+•  Exécute la suppression automatique des blocs YAML liés à suivi_elec
+
+🥚 Easter Egg :
+"Un bon YAML est comme un bon café : trop fort, ça te réveille... trop mal dosé, ça te crashe Home Assistant."
+📜 Affiche le parchemin secret : expert_mode_notes.txt
+
+🧠 Philosophie :
+“On ne touche pas aux fichiers de l’utilisateur… sauf si l’utilisateur est un sorcier du YAML et qu’il sait ce qu’il fait.”
+📂 Fichier créé :
+/config/suivi_elec/docs/expert_mode_notes.txt
+
+🧠 [12 sept. 2025 — 11h20] Ajout du marquage des entités Suivi Élec
+
+Toutes les entités créées dynamiquement via `hass.states.async_set` dans `custom_components/suivi_elec/__init__.py` sont désormais marquées avec :
+
+  integration: suivi_elec
+
+Cela permet de filtrer facilement dans Home Assistant via :
+
+  attributes.integration: suivi_elec
+
+Ce marquage est injecté dans le dictionnaire `base_attrs` au moment de la création de chaque entité.
+

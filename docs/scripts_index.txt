@@ -1,0 +1,44 @@
+📂 Index des scripts — Intégration Suivi Élec
+
+Ce fichier répertorie tous les scripts disponibles dans le dossier `/config/suivi_elec/`, avec leur fonction principale et instructions d’usage.
+
+---
+
+🧼 uninstall_suivi_elec.sh
+
+📍 Emplacement :
+/config/suivi_elec/uninstall_suivi_elec.sh
+
+🎯 Fonction :
+- Désinstallation complète ou partielle de l’intégration
+- Suppression des entités, fichiers, configuration
+- Option de sauvegarde des entités avant suppression
+
+📦 Usage :
+```bash
+bash /config/suivi_elec/uninstall_suivi_elec.sh
+♻️ restore_suivi_elec.sh
+
+📍 Emplacement :
+/config/suivi_elec/restore_suivi_elec.sh
+
+🎯 Fonction :
+
+•  Restauration des entités sauvegardées dans entities_backup.json
+•  Recréation des entités avec leur état et attributs
+•  Ignore les entités déjà existantes pour éviter les doublons
+
+📦 Usage :
+bash /config/suivi_elec/restore_suivi_elec.sh
+🔐 Rendre les scripts exécutables
+
+📦 Commande :
+chmod +x /config/suivi_elec/*.sh
+🧠 Notes :
+
+•  Tous les scripts utilisent l’interface CLI de Home Assistant (ha)
+•  Les fichiers de sauvegarde sont stockés dans /config/suivi_elec/backups/
+•  Ce fichier peut être enrichi avec d’autres scripts (ex: export, migration, debug)
+
+📂 Fichier créé :
+/config/suivi_elec/docs/scripts_index.txt

@@ -1,0 +1,45 @@
+🧾 Documentation — Sauvegarde des entités avant désinstallation
+
+📌 Objectif :
+Permettre à l'utilisateur de sauvegarder les entités créées par l'intégration `suivi_elec` avant leur suppression, pour faciliter la restauration, le debug ou la traçabilité.
+
+---
+
+✅ Pourquoi sauvegarder les entités ?
+
+1. 🧠 Traçabilité : garder une trace de ce qui a été créé
+2. 🛠️ Restauration : pouvoir recréer les entités si besoin
+3. 👥 Multi-profils : utile pour gérer plusieurs résidences ou utilisateurs
+4. 🧪 Audit : analyser les attributs et états des entités
+
+---
+
+📦 Format de sauvegarde
+
+- Fichier `.json` contenant :
+  - Nom de l'entité
+  - État actuel
+  - Attributs
+- Exemple :
+```json
+{
+  "sensor.suivi_elec_conso_jour": {
+    "state": "12.5",
+    "attributes": {
+      "friendly_name": "Conso jour",
+      "unit_of_measurement": "€",
+      "source": "http://homeassistant.local:8123"
+    }
+  }
+}
+🛠️ Intégration dans le script uninstall_suivi_elec.sh
+
+•  Ajout d'une option :
+"Souhaitez-vous sauvegarder les entités avant suppression ? [y/n]"
+•  Si y :
+  ⁠◦  Création du fichier /config/suivi_elec/backups/entities_backup.json
+  ⁠◦  Export des entités sensor.suivi_elec_* avec leurs états et attributs
+📂 Fichier créé :
+/config/suivi_elec/docs/uninstall_backup_notes.txt
+
+🧠 Ce fichier sert de guide pour maintenir et améliorer la logique de sauvegarde dans le processus de désinstallation.

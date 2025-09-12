@@ -1,0 +1,39 @@
+🧭 Bloc de reprise — Suivi Élec (11 septembre 2025, 22h01)
+
+📌 Objectif général :
+Améliorer la désinstallation, le suivi et la traçabilité des entités créées ou détectées par l’intégration Suivi Élec dans Home Assistant.
+
+---
+
+✅ Ce qui a été fait :
+- Création d’un script de désinstallation simplifié (uninstall_suivi_elec.sh)
+- Ajout d’un script pour lister les entités liées à Suivi Élec (list_suivi_elec_entities.sh)
+- Nettoyage des messages d’erreur et clarification des actions dans les scripts
+- Documentation des limites du script (notamment vis-à-vis de HACS)
+- Réflexion sur le marquage des entités pour faciliter leur filtrage dans l’interface HA
+
+---
+
+🧠 Ce qu’il reste à faire :
+
+1. Marquage des entités créées ou exposées par Suivi Élec
+   📍 Ajouter un attribut comme integration: suivi_elec
+   📂 Fichiers à modifier :
+   - groupes_capteurs_energy.py
+   - groupes_capteurs_power.py
+   - (Possiblement __init__.py ou services.py si le service generate_suivi_elec est défini là)
+
+2. Vérifier où les entités sont créées
+   🔍 Retrouver le code exact qui génère les sensors ou groupes
+   🧪 Injecter le marquage dans extra_state_attributes ou équivalent
+
+3. Documenter le marquage dans les fichiers de suivi
+   🗂️ Ajouter une section dans expert_mode_notes.txt ou uninstall_validation.txt pour expliquer le marquage
+
+4. Tester le filtrage dans HA
+   🔎 Vérifier que attributes.integration: suivi_elec fonctionne dans l’interface
+   🧹 Supprimer manuellement les entités via GUI si besoin
+
+---
+
+💤 Fin de session — à reprendre ici

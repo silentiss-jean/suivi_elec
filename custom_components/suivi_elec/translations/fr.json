@@ -1,0 +1,24 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurer Suivi Élec",
+        "description": "Entrez vos identifiants API",
+        "data": {
+          "api_token": "Clé API",
+          "base_url": "URL de l'API"
+        }
+      },
+      "options": {
+        "title": "Options Suivi Élec",
+        "description": "Sélectionnez les entités à activer",
+        "data": {
+          "entites_actives": "Entités à activer"
+        }
+      }
+    },
+    "error": {
+      "invalid_token": "Clé API invalide ou non reconnue"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+🧪 Révision du test config_flow — Étape 3 et suivantes
+
+📌 Contexte :
+Lors du test de l'intégration `suivi_elec`, à l'étape 3 (choix du mode dans le config_flow), plusieurs points ont été identifiés comme à améliorer ou à structurer différemment.
+
+---
+
+✅ Étape 3 — Choix du mode
+
+🔍 Problème :
+- Le titre du formulaire est "Entrez vos identifiants API", ce qui est trompeur si on propose un choix entre `local` et `cloud`.
+
+🛠️ Solution proposée :
+- Remplacer le titre par : "Sélectionnez le type d'accès à l'intégration"
+- Ajouter une description dynamique selon le mode choisi (via `description_placeholders`)
+
+---
+
+✅ Étape 4 — Formulaire conditionnel
+
+✔️ Test validé en mode `local` :
+- Les champs sont bien adaptés
+- Les données sont correctement enregistrées
+
+---
+
+✅ Étape 5 — Vérification des données
+
+🔍 Problème :
+- Pas de vue directe dans l’UI pour `entry.data`
+
+🛠️ Solution proposée :
+- Ajouter temporairement un sensor debug dans `__init__.py` :
+  hass.states.async_set("sensor.suivi_elec_debug", str(entry.data), {...})
+
+---
+
+➕ Réflexion ajoutée à l’étape 5 : désinstallation propre
+
+🎯 Objectif :
+Permettre une désinstallation complète ou partielle de l’intégration, avec choix interactif :
+
+- 🔘 Totale : suppression de tout (entités, sensors, cartes, fichiers modifiés)
+- 🔘 Partielle : choix par type (entités, sensors, cartes Lovelace, YAML)
+
+🛠️ À faire :
+- Créer un script `uninstall_suivi_elec.sh`
+- Poser la question : "Souhaitez-vous conserver les entités créées ?"
+- Nettoyer `configuration.yaml` en supprimant uniquement les blocs liés à `suivi_elec`
+
+---
+
+📂 Fichier créé :
+/config/suivi_elec/docs/revision_test_config_flow.txt
+
+🧠 Ce fichier sert de journal de réflexion et de suivi des ajustements à faire sur le test de l’intégration.

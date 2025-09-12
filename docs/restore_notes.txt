@@ -1,0 +1,30 @@
+♻️ Documentation — Restauration des entités Suivi Élec
+
+📌 Objectif :
+Permettre à l’utilisateur de restaurer les entités sauvegardées via le script d’export ou de désinstallation, sans créer de doublons ni écraser des entités existantes.
+
+✅ Script : restore_suivi_elec.sh
+
+📍 Emplacement :
+/config/suivi_elec/restore_suivi_elec.sh
+
+🎯 Fonction :
+
+•  Lit le fichier de sauvegarde JSON
+•  Vérifie si chaque entité existe déjà
+•  Crée uniquement les entités manquantes
+•  Réapplique les attributs et l’état sauvegardé
+
+📦 Usage :
+bash /config/suivi_elec/restore_suivi_elec.sh
+📁 Fichier attendu :
+/config/suivi_elec/backups/entities_backup.json
+
+🧠 Notes :
+
+•  Ce script est non destructif
+•  Il permet de restaurer après une désinstallation ou un crash
+•  Il peut être utilisé pour migrer vers une autre instance Home Assistant
+
+📂 Fichier créé :
+/config/suivi_elec/docs/restore_notes.txt
