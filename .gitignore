@@ -7,3 +7,4 @@ __pycache__/
 *.pyc
 custom_components/suivi_elec/data/
 custom_components/suivi_elec/.env
+.DS_Store
