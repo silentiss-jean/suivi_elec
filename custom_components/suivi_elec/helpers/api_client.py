@@ -1,61 +1,48 @@
-import logging
 import requests
 
-_LOGGER = logging.getLogger(__name__)
+HEADERS_TEMPLATE = {
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json"
+}
 
-def test_api_connection(url: str, token: str) -> bool:
-    """Teste la connexion à l'API avec le token fourni."""
-    headers = {
-        "Authorization": f"Bearer {token.strip()}",
-        "Accept": "application/json"
-    }
+def test_api_connection(base_url, token):
+    """Teste la connexion à l'API Home Assistant."""
+    url = f"{base_url}/api/"
+    headers = HEADERS_TEMPLATE.copy()
+    headers["Authorization"] = f"Bearer {token}"
+
     try:
-        response = requests.get(f"{url}/api/", headers=headers, timeout=5)
-        if response.status_code == 200:
-            _LOGGER.info("✅ Connexion API réussie")
-            return True
-        else:
-            _LOGGER.warning(f"⚠️ Échec API : {response.status_code}")
-            return False
+        response = requests.get(url, headers=headers, timeout=5)
+        return response.status_code == 200
     except Exception as e:
-        _LOGGER.error(f"❌ Erreur API : {e}")
+        print(f"❌ Erreur de connexion à l'API : {e}")
         return False
 
-async def test_api_token(token: str, base_url: str) -> bool:
-    """Wrapper async pour valider le token via config_flow."""
-    return test_api_connection(base_url, token)
 
-def get_energy_entities(url: str, token: str) -> list:
-    """Récupère les entités énergétiques (kWh, Wh) depuis l'API HA."""
-    headers = {
-        "Authorization": f"Bearer {token.strip()}",
-        "Content-Type": "application/json"
-    }
+def get_energy_entities(base_url, token):
+    """Récupère les entités énergétiques depuis Home Assistant."""
+    url = f"{base_url}/api/states"
+    headers = HEADERS_TEMPLATE.copy()
+    headers["Authorization"] = f"Bearer {token}"
+
     try:
-        response = requests.get(f"{url}/api/states", headers=headers, timeout=10)
-        if response.status_code != 200:
-            _LOGGER.warning(f"❌ Erreur API /states : {response.status_code}")
-            return []
-
-        entities = response.json()
-        filtered = []
-        for e in entities:
-            attrs = e.get("attributes", {})
-            if (
-                e["entity_id"].startswith("sensor.") and
-                attrs.get("unit_of_measurement") in ["kWh", "Wh"] and
-                attrs.get("device_class") == "energy"
-            ):
-                filtered.append({
-                    "entity_id": e["entity_id"],
-                    "state": e["state"],
-                    "unit": attrs.get("unit_of_measurement"),
-                    "friendly_name": attrs.get("friendly_name", "")
-                })
-
-        _LOGGER.info(f"🔍 {len(filtered)} entités énergétiques détectées")
-        return filtered
-
+        response = requests.get(url, headers=headers, timeout=10)
+        response.raise_for_status()
+        all_entities = response.json()
     except Exception as e:
-        _LOGGER.error(f"❌ Erreur récupération entités : {e}")
+        print(f"❌ Erreur lors de la récupération des entités : {e}")
         return []
+
+    # Filtrage des entités énergétiques
+    energy_entities = []
+    for entity in all_entities:
+        entity_id = entity.get("entity_id", "")
+        if entity_id.startswith("sensor.") and "kwh" in str(entity.get("state", "")).lower():
+            energy_entities.append({
+                "entity_id": entity_id,
+                "state": entity.get("state"),
+                "name": entity.get("attributes", {}).get("friendly_name", entity_id),
+                "unit": entity.get("attributes", {}).get("unit_of_measurement", "kWh")
+            })
+
+    return energy_entities
