@@ -24,6 +24,7 @@ FICHIER_CAPTEURS = "data/capteurs_detectes.json"
 FICHIER_NOMS_PERSONNALISES = "settings/noms_personnalises.yaml"
 FICHIER_GROUPES_ENERGY = "data/groupes_capteurs_energy.py"
 FICHIER_GROUPES_POWER = "data/groupes_capteurs_power.py"
+FICHIER_MAPPING_SUIVI_ELEC = "/config/suivi_elec/data/mapping_suivi_elec.json"
 
 # 🧠 Device classes à surveiller
 DEVICE_CLASSES_UTILISEES = settings.get("device_classes_utilisees", ["energy", "power", "current", "voltage"])
