@@ -43,54 +43,26 @@
 ```bash
 cd custom_components/
 git clone https://github.com/silentiss-jean/suivi_elec.git
-
 📁 Structure du projet
-suivi_elec/
-├── custom_components/
-│   └── suivi_elec/
-│       ├── __init__.py
-│       ├── manifest.json
-│       ├── launcher.py
-│       ├── generator.py
-│       ├── helpers/
-│       └── translations/
-├── .github/
-│   └── workflows/
-├── update_git.sh
-├── README.md
-├── docs/
-
+suivi_elec/ ├── custom_components/ │ └── suivi_elec/ │ ├── init.py │ ├── manifest.json │ ├── launcher.py │ ├── generator.py │ ├── helpers/ │ └── translations/ ├── .github/ │ └── workflows/ ├── update_git.sh ├── README.md ├── docs/
 
 📚 Documentation technique
-
-•  Composants principaux
-•  Modules utilitaires (helpers/)
-•  Installation détaillée
-•  Maintenance & mise à jour
-
-🔧 Maintenance
-
-•  Releases automatisées via GitHub Actions
-•  Script local update_git.sh (optionnel)
-•  Nettoyage régulier des fichiers inutilisés
+• Composants principaux
+• Modules utilitaires (helpers/)
+• Installation détaillée
+• Maintenance & mise à jour
 
 ➡️ Voir docs/maintenance.md
 
-🤝 Contribuer
-
-Les contributions sont les bienvenues ! Tu peux :
-
-•  Proposer des améliorations
-•  Corriger des bugs
-•  Ajouter des traductions
-•  Documenter les modules
+🔧 Maintenance
+• Releases automatisées via GitHub Actions
+• Script local update_git.sh (optionnel)
+• Nettoyage régulier des fichiers inutilisés
 
 📄 Licence
-
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus d’informations.
 
 👤 Auteur
-
 Jean · GitHub @silentiss-jean
 
-Dernière mise à jour : 10 septembre 2025
+Dernière mise à jour : 13 septembre 2025
