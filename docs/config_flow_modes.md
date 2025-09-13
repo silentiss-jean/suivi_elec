@@ -1,84 +1,67 @@
-# ⚙️ Configuration multi-mode — `config_flow.py`
+# ⚙️ Configuration — `config_flow.py`
 
-## 🎯 Objectif
-
-Permettre à l'utilisateur de choisir entre :
-
-- 🏠 Mode **local** : instance Home Assistant locale (`http://homeassistant.local:8123`)
-- ☁️ Mode **cloud** : instance distante via API (ex: EDF) avec token
+Ce module gère le formulaire de configuration initial de l’intégration Suivi Élec dans Home Assistant. Il permet de définir le mode de connexion, le type de contrat, les tarifs, et l’abonnement.
 
 ---
 
-## 🧩 Étapes dans le `config_flow`
+## 🧩 Paramètres disponibles
 
-1. L'utilisateur choisit le mode (`local` ou `cloud`)
-2. Le formulaire s'adapte :
-   - **Local** → URL locale + nom utilisateur
-   - **Cloud** → URL distante + clé API
-3. Le mode est stocké dans `entry.data["mode"]` pour usage ultérieur
+| Clé | Description |
+|-----|-------------|
+| `name` | Nom de l’intégration |
+| `mode` | `local` ou `remote` |
+| `token` | Jeton d’accès long-lived |
+| `url` | URL de l’instance Home Assistant (mode remote) |
+| `type_contrat` | `prix_unique` ou `heures_pleines_creuses` |
+| `prix_ht`, `prix_ttc` | Tarifs pour contrat unique |
+| `prix_ht_hp`, `prix_ttc_hp` | Tarifs Heures Pleines |
+| `prix_ht_hc`, `prix_ttc_hc` | Tarifs Heures Creuses |
+| `heure_debut_hp`, `heure_fin_hp` | Plage horaire HP |
+| `abonnement_annuel` | Montant annuel de l’abonnement |
 
 ---
 
-## 🛠️ Exemple de données stockées
+## 🔐 Validation intégrée
+
+- Jeton requis et longueur minimale
+- URL obligatoire en mode `remote`
+- Conversion automatique des champs numériques (`vol.Coerce(float)`)
+
+---
+
+## 🧠 Logique de tarification
+
+- Si `type_contrat = prix_unique` → utilise `prix_ht` et `prix_ttc`
+- Si `type_contrat = heures_pleines_creuses` → détection HP/HC selon l’heure
+- Si `prix_ttc` est vide → calculé automatiquement via `prix_ht * 1.2`
+
+---
+
+## 🧾 Exemple de configuration
 
 ```json
 {
-  "mode": "cloud",
-  "base_url": "https://api.edf.fr",
-  "api_token": "abc123"
-}
-ou
-{
+  "name": "Suivi Électricité",
   "mode": "local",
-  "base_url": "http://homeassistant.local:8123",
-  "nom_utilisateur": "admin"
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+  "type_contrat": "heures_pleines_creuses",
+  "prix_ht_hp": 0.2068,
+  "prix_ttc_hp": 0.2482,
+  "prix_ht_hc": 0.1565,
+  "prix_ttc_hc": 0.1878,
+  "heure_debut_hp": "06:00",
+  "heure_fin_hp": "22:00",
+  "abonnement_annuel": 120.0
 }
-🔁 Utilisation dans `__init__.py`
 
-Le mode est utilisé pour :
+🧪 À tester
 
-•  Adapter les friendly_name des entités ([Local] ou [Cloud])
-•  Ajouter un attribut source avec l’URL utilisée
-•  Permettre des comportements différents selon le contexte
-📁 Fichiers concernés
+•  Mode remote sans URL → erreur url_requise
+•  Jeton vide ou trop court → erreur token_invalide
+•  Contrat prix_unique → champs HP/HC ignorés
+•  Contrat heures_pleines_creuses → détection horaire correcte
+•  Abonnement vide → fallback sur 0
 
-•  custom_components/suivi_elec/config_flow.py
-•  custom_components/suivi_elec/__init__.py
-•  docs/config_flow_modes.md (ce fichier)
----
+📚 Options avancées
 
----
-
-## 🧠 Étape suivante : ajouter `sensor.suivi_elec_status`
-
-Je vais maintenant te générer le code à ajouter dans `__init__.py` pour créer dynamiquement une entité `sensor.suivi_elec_status` qui affiche :
-
-- Le mode actif (`local` ou `cloud`)
-- Le nombre d’entités activées
-
----
-
-## 🛠️ Commande shell pour mettre à jour `__init__.py`
-
-```bash
-cat >> /config/suivi_elec/custom_components/suivi_elec/__init__.py << 'EOF'
-
-    # 🧠 Ajout du sensor de statut
-    hass.states.async_set("sensor.suivi_elec_status", f"{mode} | {len(entites_actives)} entités", {
-        "friendly_name": "Suivi Élec — Statut",
-        "mode": mode,
-        "entites_actives": len(entites_actives),
-        "source": base_url
-    })
-
-🧪 Résultat attendu dans HA
-
-Dans Développement > États, tu verras :
-
-sensor.suivi_elec_status
-→ state: cloud | 3 entités
-→ attributes:
-   - friendly_name: Suivi Élec — Statut
-   - mode: cloud
-   - entites_actives: 3
-   - source: https://api.edf.fr
+Voir le fichier options_flow.py pour la gestion des options post-installation.
