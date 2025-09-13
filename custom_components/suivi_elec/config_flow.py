@@ -1,43 +1,56 @@
-import voluptuous as vol
-from homeassistant import config_entries
-from homeassistant.core import callback
+from __future__ import annotations
 
-DOMAIN = "suivi_elec"
+import logging
+import voluptuous as vol
+
+from homeassistant import config_entries
+from homeassistant.core import HomeAssistant
+from homeassistant.data_entry_flow import FlowResult
+
+from .const import DOMAIN, CONF_API_TOKEN, CONF_BASE_URL
+
+_LOGGER = logging.getLogger(__name__)
 
 class SuiviElecConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+    """Gérer le flux de configuration pour Suivi Élec."""
+
     VERSION = 1
 
-    async def async_step_user(self, user_input=None):
+    async def async_step_user(self, user_input: dict | None = None) -> FlowResult:
+        """Première étape de configuration."""
+        errors = {}
+
         if user_input is not None:
-            # Sauvegarde des données dans entry.data
-            return self.async_create_entry(title="Suivi Élec", data=user_input)
+            # Validation des tarifs
+            try:
+                kwh = float(user_input["kwh"])
+                hp = float(user_input["hp"])
+                hc = float(user_input["hc"])
+            except ValueError:
+                errors["base"] = "invalid_tarif"
 
-        # Schéma du formulaire
-        data_schema = vol.Schema({
-            vol.Required("base_url", default="http://homeassistant.local:8123"): str,
-            vol.Required("ha_token"): str,
-            vol.Optional("is_local", default=True): bool
-        })
+            # Test API token avant d'accepter
+            if not errors:
+                valid = await self._test_api_token(user_input[CONF_API_TOKEN], user_input[CONF_BASE_URL])
+                if valid:
+                    return self.async_create_entry(title="Suivi Élec", data=user_input)
+                else:
+                    errors["base"] = "invalid_token"
 
-        return self.async_show_form(step_id="user", data_schema=data_schema)
+        # Formulaire de configuration
+        return self.async_show_form(
+            step_id="user",
+            data_schema=vol.Schema({
+                vol.Required(CONF_API_TOKEN): str,
+                vol.Required(CONF_BASE_URL, default="https://api.edf.fr"): str,
+                vol.Required("kwh", default=0.15): float,
+                vol.Required("hp", default=0.18): float,
+                vol.Required("hc", default=0.12): float,
+            }),
+            errors=errors,
+        )
 
-    @staticmethod
-    @callback
-    def async_get_options_flow(config_entry):
-        return SuiviElecOptionsFlow(config_entry)
-
-
-class SuiviElecOptionsFlow(config_entries.OptionsFlow):
-    def __init__(self, config_entry):
-        self.config_entry = config_entry
-
-    async def async_step_init(self, user_input=None):
-        if user_input is not None:
-            return self.async_create_entry(title="", data=user_input)
-
-        options_schema = vol.Schema({
-            vol.Optional("auto_add_entities", default=True): bool,
-            vol.Optional("enable_polling", default=True): bool
-        })
-
-        return self.async_show_form(step_id="init", data_schema=options_schema)
+    async def _test_api_token(self, api_token: str, base_url: str) -> bool:
+        """Tester la validité du jeton API."""
+        from .helpers.api_client import test_api_token
+        return await test_api_token(api_token, base_url)

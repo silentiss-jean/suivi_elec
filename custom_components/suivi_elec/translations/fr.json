@@ -6,7 +6,10 @@
         "description": "Entrez vos identifiants API",
         "data": {
           "api_token": "Clé API",
-          "base_url": "URL de l'API"
+          "base_url": "URL de l'API",
+          "kwh": "Tarif par kWh",
+          "hp": "Tarif heures pleines",
+          "hc": "Tarif heures creuses"
         }
       },
       "options": {
@@ -18,7 +21,8 @@
       }
     },
     "error": {
-      "invalid_token": "Clé API invalide ou non reconnue"
+      "invalid_token": "Clé API invalide ou non reconnue",
+      "invalid_tarif": "Veuillez entrer des valeurs numériques valides pour les tarifs."
     }
   }
 }
