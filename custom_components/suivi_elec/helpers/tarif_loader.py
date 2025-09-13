@@ -1,22 +1,26 @@
 import json
+import os
 
-def load_tarifs(filepath):
-    """Charge les tarifs depuis un fichier JSON."""
+def load_tarifs(path):
+    """Charge les tarifs depuis un fichier JSON et valide le format."""
+    if not os.path.exists(path):
+        print(f"❌ Fichier tarif introuvable : {path}")
+        return None
+
     try:
-        with open(filepath, "r") as f:
-            data = json.load(f)
+        with open(path, "r", encoding="utf-8") as f:
+            tarifs = json.load(f)
     except Exception as e:
-        raise FileNotFoundError(f"❌ Erreur de lecture du fichier tarif : {e}")
+        print(f"❌ Erreur lecture tarifs : {e}")
+        return None
 
-    # Validation minimale
-    if not isinstance(data, dict):
-        raise ValueError("❌ Format de tarif invalide : attendu un dictionnaire")
+    if not isinstance(tarifs, dict):
+        print(f"❌ Format de tarif invalide : attendu un dictionnaire → {type(tarifs)}")
+        return None
 
-    # Exemple attendu :
-    # {
-    #   "HP": 0.2068,
-    #   "HC": 0.1565,
-    #   "BASE": 0.1740
-    # }
-
-    return data
+    # Vérification minimale des clés attendues
+    if not any(k in tarifs for k in ["kwh", "hp", "hc"]):
+        print("⚠️ Aucune clé tarifaire standard détectée (kwh, hp, hc)")
+    
+    print(f"💶 Tarifs chargés : {tarifs}")
+    return tarifs
