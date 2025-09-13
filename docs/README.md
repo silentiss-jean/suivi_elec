@@ -49,3 +49,20 @@ Tu peux ajouter ici :
 - Un guide d’installation manuel
 - Des exemples de configuration YAML
 - Des captures d’écran Lovelace
+
+---
+
+## 🧩 Documentation des modules Python
+
+Les modules utilitaires sont regroupés dans `custom_components/suivi_elec/helpers/`.  
+Chaque module est documenté séparément dans le dossier `docs/`.
+
+👉 Voir l’index complet ici : [`index_modules.md`](index_modules.md)
+
+Modules couverts :
+- `api_client.py` : Connexion à l’API Home Assistant
+- `tarif_loader.py` : Chargement des tarifs
+- `calculateur.py` : Calcul des coûts estimés
+- `historique.py` : Mise à jour de l’historique
+
+Cette documentation est utile pour comprendre la logique interne, contribuer au projet ou créer des tests unitaires.

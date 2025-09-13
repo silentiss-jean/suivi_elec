@@ -95,3 +95,21 @@ Cela déclenchera une alerte dans Home Assistant, car l’intégration ne lit pa
 
 Utilisez le script uninstall_suivi_elec.sh pour supprimer proprement les fichiers générés.  
 Consultez docs/uninstall_validation.txt pour vérifier que la suppression est complète.
+
+---
+
+### 🛠️ Script de désinstallation avancée
+
+Un script \`uninstall_suivi_elec.sh\` est fourni pour les utilisateurs avancés.  
+Il permet :
+- Une désinstallation totale ou partielle de l’intégration
+- Le nettoyage des fichiers/dossiers générés
+- La suppression (optionnelle et sécurisée) des traces dans \`configuration.yaml\` (mode expert)
+
+⚠️ **Attention** :  
+Ce script est réservé aux utilisateurs expérimentés.  
+Il ne doit être utilisé que si vous souhaitez nettoyer manuellement des restes de configuration ou automatiser la suppression dans le YAML.
+
+Avant toute modification du YAML, une sauvegarde est proposée.  
+Consultez la documentation technique pour plus de détails sur les options et le mode expert.
+
