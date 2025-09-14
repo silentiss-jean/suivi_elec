@@ -5,5 +5,4 @@
   "config_flow": true,
   "requirements": ["requests"],
   "dependencies": []
-
 }
