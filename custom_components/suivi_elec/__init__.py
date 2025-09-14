@@ -13,22 +13,37 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Configurer l'intégration Suivi Élec à partir d'une entrée de configuration."""
 
-    mode = entry.data.get("mode", "local")
-    base_url = entry.data.get("base_url", "local")
-    token = entry.data.get("token", "")  # ✅ Jeton récupéré
+    data = entry.data
+    options = entry.options
+
+    mode = data.get("mode", "local")
+    base_url = data.get("base_url", "local")
+    token = data.get("token", "")
+    type_contrat = data.get("type_contrat", "prix_unique")
 
     entites_actives = (
-        entry.options.get("entites_actives")
-        or entry.data.get("entites_actives")
+        options.get("entites_actives")
+        or data.get("entites_actives")
         or ENTITES_POTENTIELLES
     )
 
-    tarifs = {
-        "kwh": entry.data.get("prix_ht", 0.15),
-        "hp": entry.data.get("prix_ht_hp", 0.18),
-        "hc": entry.data.get("prix_ht_hc", 0.12),
-    }
+    # 💶 Tarifs selon le contrat
+    if type_contrat == "prix_unique":
+        tarifs = {
+            "kwh": data.get("prix_ht", 0.15),
+            "hp": data.get("prix_ht", 0.15),
+            "hc": data.get("prix_ht", 0.15),
+        }
+    else:
+        tarifs = {
+            "kwh": data.get("prix_ht_hp", 0.18),  # valeur par défaut
+            "hp": data.get("prix_ht_hp", 0.18),
+            "hc": data.get("prix_ht_hc", 0.12),
+        }
 
+    abonnement = data.get("abonnement_annuel", 0.0)
+
+    # 🧱 Création des entités
     for entity_id in entites_actives:
         base_attrs = {
             "unit_of_measurement": "€",
@@ -36,10 +51,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             "source": base_url,
             "integration": DOMAIN,
             "tarifs": tarifs,
-            "token": token  # ✅ Jeton ajouté dans les attributs si besoin
+            "abonnement_annuel": abonnement,
+            "token": token
         }
         hass.states.async_set(entity_id, "0", base_attrs)
 
+    # 📊 Capteur global des tarifs
     hass.states.async_set(
         "sensor.suivi_elec_tarifs",
         "Tarifs configurés",
@@ -47,8 +64,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             "kwh": tarifs["kwh"],
             "hp": tarifs["hp"],
             "hc": tarifs["hc"],
+            "abonnement_annuel": abonnement,
             "friendly_name": "Tarifs Suivi Élec",
-            "token": token  # ✅ Jeton visible ici aussi si utile
+            "token": token
         },
     )
 
