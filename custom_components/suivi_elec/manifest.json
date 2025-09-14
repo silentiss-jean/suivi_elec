@@ -4,6 +4,6 @@
   "version": "0.9.20",
   "config_flow": true,
   "requirements": ["requests"],
-  "dependencies": [],
+  "dependencies": []
 
 }
