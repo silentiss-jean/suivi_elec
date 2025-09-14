@@ -17,7 +17,7 @@ from .const import (
 DEFAULT_MODE = "local"
 CONTRATS = ["prix_unique", "heures_pleines_creuses"]
 
-class SuiviElecOptionsFlow(config_entries.OptionsFlow):
+class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     def __init__(self, config_entry):
         self.config_entry = config_entry
 
