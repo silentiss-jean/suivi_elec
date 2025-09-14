@@ -27,7 +27,7 @@ DEFAULT_NAME = "Suivi Électricité"
 DEFAULT_MODE = "local"
 CONTRATS = ["prix_unique", "heures_pleines_creuses"]
 
-class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+class SuiviElecFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
     VERSION = 1
 
     async def async_step_user(self, user_input=None):
