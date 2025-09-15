@@ -3,6 +3,11 @@
   "name": "Suivi Électrique",
   "version": "0.9.20",
   "config_flow": true,
-  "requirements": ["requests"],
-  "dependencies": []
+  "requirements": ["requests", "PyYAML"],
+  "dependencies": [],
+  "documentation": "https://github.com/silentiss-jean/suivi_elec#readme",
+  "issue_tracker": "https://github.com/silentiss-jean/suivi_elec/issues",
+  "codeowners": ["@silentiss-jean"],
+  "iot_class": "cloud_polling",
+  "integration_type": "hub"
 }
