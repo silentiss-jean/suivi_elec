@@ -113,8 +113,8 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             }
         )
 
-#    @staticmethod
-#    @callback
-#    def async_get_options_flow(config_entry):
-#        from .options_flow import SuiviElecOptionsFlow
-#        return SuiviElecOptionsFlow(config_entry)
+    @staticmethod
+    @callback
+    def async_get_options_flow(config_entry):
+        from .options_flow import SuiviElecOptionsFlow
+        return SuiviElecOptionsFlow(config_entry)
