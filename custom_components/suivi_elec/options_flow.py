@@ -6,7 +6,7 @@ import logging
 from homeassistant import config_entries
 from homeassistant.core import callback
 
-from .const import (
+from .const_toremove import (
     DOMAIN,
     ENTITES_POTENTIELLES,
     CONF_MODE, CONF_URL, CONF_TYPE_CONTRAT,
