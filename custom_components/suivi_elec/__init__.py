@@ -4,7 +4,7 @@
 from homeassistant.core import HomeAssistant
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.helpers.typing import ConfigType
-from .const_toremove import DOMAIN, ENTITES_POTENTIELLES
+from .const import DOMAIN, ENTITES_POTENTIELLES
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Chargement initial (non utilisé ici)."""
