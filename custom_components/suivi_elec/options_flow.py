@@ -20,6 +20,7 @@ from .const import (
 from .helpers.api_client import get_energy_entities
 
 _LOGGER = logging.getLogger(__name__)
+_LOGGER.debug("Import de options_flow.py réussi") 
 
 DEFAULT_MODE = "local"
 CONTRATS = ["prix_unique", "heures_pleines_creuses"]
@@ -31,6 +32,7 @@ class SuiviElecOptionsFlow(config_entries.OptionsFlow):
     async def async_step_init(self, user_input=None):
         """Étape unique pour modifier les options."""
         errors = {}
+        _LOGGER.debug("Chargement de SuiviElecOptionsFlow OK")
         current = self.config_entry.options or self.config_entry.data
 
         # 🔍 Récupération des entités disponibles
