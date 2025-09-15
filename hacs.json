@@ -1,8 +1,10 @@
-echo '{
-    "name": "Suivi Élec",
-    "content_in_root": false,
-    "domain": "suivi_elec",
-    "country": "FR",
-    "codeowners": ["@silentiss-jean"],
-    "version": "0.9.0-dev"
-  }' > /config/suivi_elec/hacs.json
+{
+  "name": "Suivi Élec",
+  "content_in_root": false,
+  "domain": "suivi_elec",
+  "country": "FR",
+  "codeowners": ["@silentiss-jean"],
+  "version": "0.9.0-dev",
+  "homeassistant": "2023.0.0",
+  "render_readme": true
+}
