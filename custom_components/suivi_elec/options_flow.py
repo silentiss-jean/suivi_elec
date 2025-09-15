@@ -36,7 +36,7 @@ class SuiviElecOptionsFlow(config_entries.OptionsFlow):
         # 🔍 Récupération des entités disponibles
         mode = current.get(CONF_MODE, DEFAULT_MODE)
         base_url = current.get(CONF_URL, "local")
-        token = current.get("token", "")
+        token = current.get(CONF_TOKEN, "")
 
         entites_detectees = ENTITES_POTENTIELLES
         if mode == "remote":
@@ -65,6 +65,7 @@ class SuiviElecOptionsFlow(config_entries.OptionsFlow):
             vol.Optional(CONF_HEURE_DEBUT_HP, default=current.get(CONF_HEURE_DEBUT_HP, "06:00")): str,
             vol.Optional(CONF_HEURE_FIN_HP, default=current.get(CONF_HEURE_FIN_HP, "22:00")): str,
             vol.Optional(CONF_ABONNEMENT_ANNUEL, default=current.get(CONF_ABONNEMENT_ANNUEL, 0.0)): vol.Coerce(float),
+            vol.Optional(CONF_ENTITES_ACTIVES, default=entite_ids): vol.All([str]),
         })
 
         return self.async_show_form(
