@@ -5,7 +5,7 @@ import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.core import callback
 from .const import DOMAIN
-from .api_client import test_api_connection
+from .helpers.api_client import test_api_connection
 
 # 🔑 Clés de configuration
 CONF_NAME = "name"
@@ -84,8 +84,11 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             base_url = user_input.get(CONF_URL, "local")
 
             # 🔐 Validation API si mode distant
-            if mode == "remote" and not test_api_connection(base_url, token):
-                errors[CONF_TOKEN] = "token_invalide"
+            try:
+                if mode == "remote" and not test_api_connection(base_url, token):
+                    errors[CONF_TOKEN] = "token_invalide"
+            except Exception:
+                errors[CONF_TOKEN] = "erreur_connexion"
 
             if not errors:
                 data = {**self.config_data, **user_input}

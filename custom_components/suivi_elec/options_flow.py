@@ -2,10 +2,13 @@
 """Options Flow pour Suivi Élec — modification post-installation."""
 
 import voluptuous as vol
+import logging
 from homeassistant import config_entries
 from homeassistant.core import callback
 
 from .const import (
+    DOMAIN,
+    ENTITES_POTENTIELLES,
     CONF_MODE, CONF_URL, CONF_TYPE_CONTRAT,
     CONF_PRIX_HT, CONF_PRIX_TTC,
     CONF_PRIX_HT_HP, CONF_PRIX_TTC_HP,
@@ -14,21 +17,42 @@ from .const import (
     CONF_ABONNEMENT_ANNUEL
 )
 
+from .helpers.api_client import get_energy_entities
+
+_LOGGER = logging.getLogger(__name__)
+
 DEFAULT_MODE = "local"
 CONTRATS = ["prix_unique", "heures_pleines_creuses"]
 
-class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+class SuiviElecOptionsFlow(config_entries.OptionsFlow):
     def __init__(self, config_entry):
         self.config_entry = config_entry
 
     async def async_step_init(self, user_input=None):
+        """Étape unique pour modifier les options."""
         errors = {}
         current = self.config_entry.options or self.config_entry.data
+
+        # 🔍 Récupération des entités disponibles
+        mode = current.get(CONF_MODE, DEFAULT_MODE)
+        base_url = current.get(CONF_URL, "local")
+        token = current.get("token", "")
+
+        entites_detectees = ENTITES_POTENTIELLES
+        if mode == "remote":
+            try:
+                entites_detectees = get_energy_entities(base_url, token) or ENTITES_POTENTIELLES
+            except Exception as e:
+                _LOGGER.warning("Échec récupération des entités via API : %s", e)
+                entites_detectees = ENTITES_POTENTIELLES
+
+        entite_ids = [e["entity_id"] if isinstance(e, dict) else e for e in entites_detectees]
 
         if user_input is not None:
             return self.async_create_entry(title="", data=user_input)
 
         data_schema = vol.Schema({
+            vol.Optional("entites_actives", default=entite_ids): vol.All([str]),
             vol.Required(CONF_MODE, default=current.get(CONF_MODE, DEFAULT_MODE)): vol.In(["local", "remote"]),
             vol.Optional(CONF_URL, default=current.get(CONF_URL, "")): str,
             vol.Required(CONF_TYPE_CONTRAT, default=current.get(CONF_TYPE_CONTRAT, "prix_unique")): vol.In(CONTRATS),
@@ -46,5 +70,8 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         return self.async_show_form(
             step_id="init",
             data_schema=data_schema,
-            errors=errors
+            errors=errors,
+            description_placeholders={
+                "entites_actives": "Sélectionnez les capteurs à suivre"
+            }
         )

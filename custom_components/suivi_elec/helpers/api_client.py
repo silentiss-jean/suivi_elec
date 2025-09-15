@@ -1,43 +1,29 @@
 # -*- coding: utf-8 -*-
-"""Options Flow pour Suivi Élec : permet de modifier les entités actives et les tarifs."""
+"""Client API pour Suivi Élec : test de connexion et récupération des entités énergétiques."""
 
-import voluptuous as vol
-from homeassistant import config_entries
-from homeassistant.core import callback
-from .const import DOMAIN, ENTITES_POTENTIELLES
-from .api_client import get_energy_entities
+import requests
+from requests.exceptions import RequestException, Timeout
 
-class SuiviElecOptionsFlow(config_entries.OptionsFlow):
-    def __init__(self, config_entry):
-        self.config_entry = config_entry
+DEFAULT_TIMEOUT = 5  # secondes
 
-    async def async_step_init(self, user_input=None):
-        """Étape unique pour modifier les options."""
-        errors = {}
+def test_api_connection(base_url: str, token: str) -> bool:
+    """Teste la connexion à l'API distante avec le jeton fourni."""
+    try:
+        headers = {"Authorization": f"Bearer {token}"}
+        response = requests.get(f"{base_url}/ping", headers=headers, timeout=DEFAULT_TIMEOUT)
+        return response.status_code == 200
+    except (RequestException, Timeout):
+        return False
 
-        # 🔍 Récupération des entités disponibles
-        mode = self.config_entry.data.get("mode", "local")
-        base_url = self.config_entry.data.get("base_url", "local")
-        token = self.config_entry.data.get("token", "")
-
-        entites_detectees = ENTITES_POTENTIELLES
-        if mode == "remote":
-            entites_detectees = get_energy_entities(base_url, token) or ENTITES_POTENTIELLES
-
-        entite_ids = [e["entity_id"] if isinstance(e, dict) else e for e in entites_detectees]
-
-        if user_input is not None:
-            return self.async_create_entry(title="", data=user_input)
-
-        data_schema = vol.Schema({
-            vol.Optional("entites_actives", default=entite_ids): vol.All([str])
-        })
-
-        return self.async_show_form(
-            step_id="init",
-            data_schema=data_schema,
-            errors=errors,
-            description_placeholders={
-                "entites_actives": "Sélectionnez les capteurs à suivre"
-            }
-        )
+def get_energy_entities(base_url: str, token: str):
+    """Récupère les entités énergétiques disponibles via l'API distante."""
+    try:
+        headers = {"Authorization": f"Bearer {token}"}
+        response = requests.get(f"{base_url}/entities", headers=headers, timeout=DEFAULT_TIMEOUT)
+        if response.status_code == 200:
+            data = response.json()
+            # On attend une liste de dicts avec une clé 'entity_id'
+            return [e for e in data if "entity_id" in e]
+        return None
+    except (RequestException, Timeout, ValueError):
+        return None
