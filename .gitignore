@@ -9,3 +9,13 @@ custom_components/suivi_elec/data/
 custom_components/suivi_elec/.env
 .DS_Store
 custom_components/suivi_elec/helpers/inutil_*.py
+
+# 🚫 Fichiers inutiles ou temporaires
+custom_components/suivi_elec/helpers/inutil_*.py
+*.csv
+*.json
+*.bak
+*.tmp
+*.log
+.DS_Store
+__pycache__/
