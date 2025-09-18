@@ -9,7 +9,7 @@ Script principal complet pour Suivi Élec :
 
 import os
 from datetime import datetime
-from groupes_capteurs_energy import groupes  # remplacer par groupes_capteurs_power si besoin
+from .groupes_capteurs_energy import groupes  # remplacer par groupes_capteurs_power si besoin
 mode = "energy"  # ou 'power'
 
 def normalize_name(entity_id: str) -> str:
