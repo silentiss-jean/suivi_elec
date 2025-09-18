@@ -1,0 +1,53 @@
+===========================
+📌 SYNTHÈSE DU PROJET SUIVI ÉLEC
+===========================
+
+🎯 OBJECTIF
+Créer une intégration Home Assistant qui détecte automatiquement les capteurs d’énergie, les regroupe, et les affiche dans une carte Lovelace.
+
+---------------------------
+✅ CE QUI FONCTIONNE
+---------------------------
+• Le formulaire d’options (`options_flow.py`) est opérationnel.
+• L’entité `input_text.suivi_elec_entites_detectees` existe et peut être mise à jour manuellement ou via automatisation.
+• L’automatisation de test injecte une liste d’entités simulées dans ce champ.
+
+---------------------------
+❌ CE QUI NE FONCTIONNE PAS ENCORE
+---------------------------
+• La détection automatique des entités via `detect.py` n’a pas été validée.
+• La mise à jour de `input_text.suivi_elec_entites_detectees` avec les entités réellement détectées n’est pas en place.
+• La création dynamique de groupes Home Assistant par l’intégration n’est pas confirmée.
+• La carte Lovelace ne parvient pas à afficher dynamiquement les entités listées dans `input_text`.
+
+---------------------------
+🧭 CE QU’IL FAUT FAIRE MAINTENANT
+---------------------------
+
+1. 🔍 **Vérifier que `detect.py` est bien exécuté**
+   • Est-il appelé dans `__init__.py`, `setup_entry`, ou via un service ?
+   • Est-ce qu’il logue quelque chose dans le journal (`logger.debug`) ?
+
+2. 🧠 **Analyser ce que `detect.py` fait**
+   • Retourne-t-il une liste d’entités ?
+   • Les stocke-t-il dans `config_entry.options["entites_detectees"]` ?
+   • Crée-t-il un groupe ou met-il à jour une entité visible ?
+
+3. 📤 **Exposer les entités détectées dans une entité visible**
+   • Soit via `input_text` (déjà en place)
+   • Soit via un `template sensor` ou un `group` (à automatiser)
+
+4. 📊 **Créer une carte Lovelace fiable**
+   • Afficher les entités détectées via un groupe ou une liste statique
+   • Éviter les templates complexes dans `auto-entities` tant que la détection n’est pas validée
+
+---------------------------
+🛠️ PROCHAINE ACTION CONCRÈTE
+---------------------------
+👉 Relire et tester `detect.py` pour confirmer qu’il détecte bien les entités et les expose.
+👉 Une fois validé, automatiser la mise à jour de `input_text` ou d’un groupe.
+👉 Ensuite, créer une carte Lovelace simple pour afficher les entités détectées.
+
+===========================
+💬 Tu peux me coller ton `detect.py` ici si tu veux qu’on le relise ensemble.
+===========================
