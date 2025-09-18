@@ -1,68 +1,47 @@
-# ⚡ Suivi Élec – Intégration Home Assistant
+# Suivi Élec – Intégration Home Assistant ⚡
 
-**Suivi Élec** est une intégration personnalisée pour Home Assistant permettant de suivre votre consommation électrique, vos tarifs, et vos historiques de manière automatisée et intelligente.
+Suivi Élec est une intégration personnalisée pour Home Assistant permettant de suivre la consommation énergétique, calculer les coûts, et générer des cartes Lovelace dynamiques.
 
 ---
 
-## 📑 Sommaire
+## 📁 Organisation du projet
 
-- [Fonctionnalités](#fonctionnalités)
-- [Installation](#installation)
-- [Structure du projet](#structure-du-projet)
-- [Documentation technique](#documentation-technique)
-- [Maintenance](#maintenance)
-- [Historique des versions](docs/changelog.md)
-- [Contribuer](#contribuer)
-- [Feuille de route du projet](docs/roadmap.md)
-- [Licence](#licence)
-- [Auteur](#auteur)
+- `custom_components/suivi_elec/helpers/` → scripts principaux
+- `organisation/structure.md` → documentation des scripts
+- `organisation/flux_fonctionnel.md` → schéma des interactions
 
 ---
 
 ## 🚀 Fonctionnalités
 
-- Détection automatique des entités liées à l’électricité
-- Connexion à l’API fournisseur (ex. EDF)
-- Calcul des coûts énergétiques en fonction des tarifs
-- Mise à jour de l’historique de consommation
-- Traductions intégrées pour l’interface Home Assistant
+- Connexion API Home Assistant
+- Détection automatique des entités énergétiques
+- Calcul du coût selon contrat (prix unique ou HP/HC)
+- Historique de consommation
+- Génération de fichiers YAML + Lovelace
+- Export CSV des résultats
+- Simulation d’entités pour test
 
 ---
 
-## 🛠️ Installation
+## 📚 Pour commencer
 
-### Via HACS (recommandé)
+1. Crée un fichier `.env` avec `HA_URL` et `HA_TOKEN`
+2. Lance `detect.py` pour générer les résultats
+3. Utilise `generation.py` pour créer les fichiers YAML
+4. Consulte les fichiers dans `organisation/` pour comprendre la structure
 
-1. Ajouter ce dépôt comme dépôt personnalisé dans HACS
-2. Installer l’intégration `suivi_elec`
-3. Redémarrer Home Assistant
-4. Configurer via l’interface ou fichier YAML
+---
 
-### Manuellement via Git
+## 🧠 Documentation
 
-```bash
-cd custom_components/
-git clone https://github.com/silentiss-jean/suivi_elec.git
-📁 Structure du projet
-suivi_elec/ ├── custom_components/ │ └── suivi_elec/ │ ├── init.py │ ├── manifest.json │ ├── launcher.py │ ├── generator.py │ ├── helpers/ │ └── translations/ ├── .github/ │ └── workflows/ ├── update_git.sh ├── README.md ├── docs/
+- [structure.md](organisation/structure.md) → rôle de chaque script
+- [flux_fonctionnel.md](organisation/flux_fonctionnel.md) → interactions entre modules
 
-📚 Documentation technique
-• Composants principaux
-• Modules utilitaires (helpers/)
-• Installation détaillée
-• Maintenance & mise à jour
+---
 
-➡️ Voir docs/maintenance.md
+## 🛠️ À venir
 
-🔧 Maintenance
-• Releases automatisées via GitHub Actions
-• Script local update_git.sh (optionnel)
-• Nettoyage régulier des fichiers inutilisés
-
-📄 Licence
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus d’informations.
-
-👤 Auteur
-Jean · GitHub @silentiss-jean
-
-Dernière mise à jour : 13 septembre 2025
+- Interface UI pour configuration
+- Intégration automatique dans Lovelace
+- Support multi-utilisateur
