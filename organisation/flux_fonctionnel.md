@@ -51,3 +51,9 @@ export_csv.py → transforme en cout_estime.csv
 - `check_env.py`
 - `check_token_direct.py`
 - `config_flow_toremove.py`
+## 🔄 Mise à jour - Septembre 2025
+
+- Ajout d’un fichier `.env` dans `custom_components/suivi_elec/` pour stocker `HA_URL` et `HA_TOKEN`
+- Chargement automatique des variables via `tests/conftest.py`
+- Simulation des appels API Home Assistant avec `requests-mock` dans les tests
+- Validation des entités énergétiques sans dépendance réseau

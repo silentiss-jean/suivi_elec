@@ -8,3 +8,12 @@ def test_generate_yaml_config_basic():
     assert "input_number:" in yaml
     assert "template:" in yaml
     assert "Prix du kWh" in yaml
+
+def test_yaml_contains_main_sections():
+    """Vérifie que le YAML généré contient les sections essentielles."""
+    from custom_components.suivi_elec.helpers.generation import generate_yaml_config
+    capteurs = ["sensor.tv_power", "sensor.frigo_power"]
+    yaml = generate_yaml_config(capteurs)
+    assert "input_number:" in yaml
+    assert "sensor:" in yaml
+    assert "template:" in yaml

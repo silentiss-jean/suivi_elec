@@ -79,3 +79,12 @@ Permettre à un utilisateur Home Assistant de :
 - Documenter les fichiers dans `organisation/`
 
 ---
+
+## 🔄 Mise à jour - Septembre 2025
+
+- Ajout de tests unitaires sur :
+  - `detect_utils.py` : détection du contrat (HP/HC ou prix unique)
+  - `generation.py` : structure du YAML généré
+  - `api_client.py` : simulation d’appel API avec `requests-mock`
+- Utilisation de `.env` pour sécuriser les accès API
+- Couverture des fonctions critiques sans modifier le code métier

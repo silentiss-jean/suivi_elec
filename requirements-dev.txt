@@ -9,3 +9,4 @@ requests>=2.31
 voluptuous>=0.13
 homeassistant>=2024.6.0
 python-dotenv>=1.0
+requests-mock>=1.11

@@ -29,3 +29,8 @@ Ce fichier recense les modules présents dans `helpers/` qui sont redondants, ob
 - Renommer les fichiers inutilisés avec le préfixe `inutil_` pour les exclure du flux principal
 - Ajouter un `.gitignore` si certains fichiers ne doivent pas être versionnés
 - Documenter dans `README.md` que ces fichiers sont conservés à des fins de test ou d’archivage
+
+## 🔄 Mise à jour - Septembre 2025
+
+- Le module `groupes_capteurs_energy.py` est désormais utilisé par `generation.py` → à retirer de la liste des fichiers non utilisés
+- La fonction `get_energy_entities()` est maintenant testée → ne plus considérer comme non couverte

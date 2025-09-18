@@ -48,3 +48,12 @@ Ce fichier décrit le rôle de chaque script présent dans `custom_components/su
 - Ajouter un fichier `flux_fonctionnel.md` pour visualiser les interactions entre modules
 
 ---
+
+## 🔄 Mise à jour - Septembre 2025
+
+- Ajout du fichier `__init__.py` dans `custom_components/suivi_elec/helpers/` pour déclarer le package Python
+- Ajout du fichier `pytest.ini` à la racine du projet pour limiter la détection des tests à `tests/`
+- Séparation claire entre :
+  - Code métier : `custom_components/suivi_elec/`
+  - Tests unitaires : `tests/`
+  - Configuration : `.env`, `conftest.py`
