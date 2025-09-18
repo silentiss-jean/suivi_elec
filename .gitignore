@@ -8,3 +8,4 @@ __pycache__/
 custom_components/suivi_elec/data/
 custom_components/suivi_elec/.env
 .DS_Store
+custom_components/suivi_elec/helpers/inutil_*.py
