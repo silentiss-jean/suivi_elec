@@ -1,80 +1,76 @@
-import os
-import json
+# -*- coding: utf-8 -*-
+"""Détection automatique des entités énergétiques à l'installation."""
+
 import logging
 from datetime import datetime
-from homeassistant.core import HomeAssistant
 
-from .helpers.env_loader import load_env
-from .helpers.api_client import test_api_connection, get_energy_entities
-from .helpers.tarif_loader import load_tarifs
+from .helpers.api_client import get_energy_entities
 from .helpers.calculateur import calculer_cout
 from .helpers.historique import update_historique
 
 _LOGGER = logging.getLogger(__name__)
 
-async def async_detect_and_store(hass: HomeAssistant, env_path: str, data_dir: str):
-    if not load_env(env_path):
-        _LOGGER.error("Fichier .env introuvable ou invalide")
-        return
+async def run_detect_async(hass, entry):
+    _LOGGER.info("🔍 Lancement de la détection automatique (detect_async.py)")
 
-    ha_url = os.getenv("HA_URL")
-    ha_token = os.getenv("HA_TOKEN")
+    base_url = entry.data.get("base_url", "http://homeassistant.local:8123")
+    token = entry.data.get("token", "")
+    mode = entry.data.get("mode", "local")
 
-    if not ha_url or not ha_token:
-        _LOGGER.error("HA_URL ou HA_TOKEN manquant")
-        return
+    tarifs = {
+        "type_contrat": entry.data.get("type_contrat", "prix_unique"),
+        "prix_ht": entry.data.get("prix_ht", 0.25),
+        "prix_ttc": entry.data.get("prix_ttc", 0.30),
+        "abonnement_annuel": entry.data.get("abonnement_annuel", 120.0)
+    }
 
-    _LOGGER.info(f"Connexion à Home Assistant : {ha_url}")
-
-    if not test_api_connection(ha_url, ha_token):
-        _LOGGER.error("Connexion à Home Assistant échouée")
-        return
-
-    entities = get_energy_entities(ha_url, ha_token)
-    entity_ids = [e["entity_id"] for e in entities]
-    _LOGGER.info(f"{len(entity_ids)} entités énergétiques détectées")
-
-    hass.states.async_set("input_text.suivi_elec_entites_detectees", ",".join(entity_ids))
-
-    capteurs_path = os.path.join(data_dir, "capteurs_detectes.json")
-    with open(capteurs_path, "w") as f:
-        json.dump(entities, f, indent=2)
-        _LOGGER.info(f"Capteurs sauvegardés dans {capteurs_path}")
-
-    tarif_path = os.path.join(data_dir, "tarif.json")
     try:
-        tarifs = load_tarifs(tarif_path)
-    except FileNotFoundError:
-        _LOGGER.warning(f"Fichier tarif introuvable : {tarif_path}")
-        tarifs = None
+        entites = await get_energy_entities(base_url, token)
+        _LOGGER.info("✅ %d entités énergétiques détectées", len(entites))
+    except Exception as e:
+        _LOGGER.error("❌ Échec de récupération des entités : %s", e)
+        entites = []
 
-    resultats = []
-    if tarifs:
-        for entity in entities:
-            try:
-                cout = calculer_cout(entity, tarifs)
-                if cout:
-                    resultats.append(cout)
-            except Exception as e:
-                _LOGGER.warning(f"Ignoré {entity.get('entity_id', 'inconnu')} → {e}")
+    couts = []
+    for entity in entites:
+        try:
+            result = calculer_cout(entity, tarifs)
+            if result:
+                couts.append(result)
+        except Exception as e:
+            _LOGGER.warning("⚠️ Erreur calcul coût pour %s : %s", entity.get("entity_id"), e)
 
-        total_ttc = sum(r["total_ttc"] for r in resultats)
-        energie_kwh = sum(r["energie_kwh"] for r in resultats)
+    _LOGGER.info("💰 Coûts estimés calculés pour %d entités", len(couts))
 
-        output = {
-            "date": datetime.now().strftime("%Y-%m-%d"),
-            "total_kwh": round(energie_kwh, 2),
-            "total_ttc": round(total_ttc, 2),
-            "resultats": resultats
-        }
+    for cout in couts:
+        try:
+            update_historique("data/historique.json", cout["total_ttc"], cout["energie_kwh"])
+        except Exception as e:
+            _LOGGER.warning("⚠️ Erreur update historique pour %s : %s", cout["entity_id"], e)
 
-        output_path = os.path.join(data_dir, "cout_estime.json")
-        with open(output_path, "w") as f:
-            json.dump(output, f, indent=2)
-            _LOGGER.info(f"Coût estimé sauvegardé dans {output_path}")
+    try:
+        hass.states.async_set("sensor.suivi_elec_status", f"{mode} | {len(entites)} entités", {
+            "mode": mode,
+            "source": base_url,
+            "entites_actives": [e.get("entity_id") for e in entites],
+            "last_update": datetime.now().isoformat()
+        })
+        _LOGGER.info("🟢 Capteur sensor.suivi_elec_status mis à jour")
+    except Exception as e:
+        _LOGGER.error("❌ Impossible de créer le capteur de statut : %s", e)
 
-        histo_path = os.path.join(data_dir, "historique_cout.json")
-        update_historique(histo_path, total_ttc, energie_kwh)
-        _LOGGER.info(f"Historique mis à jour dans {histo_path}")
-    else:
-        _LOGGER.warning("Tarifs non disponibles, coût non calculé")
+    # 📤 Mise à jour de input_text avec les entités détectées
+    try:
+        entite_str = ",".join([e.get("entity_id") for e in entites])
+        await hass.services.async_call(
+            "input_text",
+            "set_value",
+            {
+                "entity_id": "input_text.suivi_elec_entites_detectees",
+                "value": entite_str
+            },
+            blocking=True
+        )
+        _LOGGER.info("📤 input_text.suivi_elec_entites_detectees mis à jour avec : %s", entite_str)
+    except Exception as e:
+        _LOGGER.error("❌ Erreur mise à jour input_text : %s", e)

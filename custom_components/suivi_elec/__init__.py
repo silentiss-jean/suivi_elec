@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 """Initialisation de l'intégration Suivi Élec."""
 
-import os
 from homeassistant.core import HomeAssistant
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.helpers.typing import ConfigType
 from .const import DOMAIN, ENTITES_POTENTIELLES
-from .detect_async import async_detect_and_store
+from .detect_async import run_detect_async
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Chargement initial (non utilisé ici)."""
@@ -70,9 +69,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     )
 
     # 🚀 Détection automatique des entités énergétiques
-    env_path = os.path.join(os.path.dirname(__file__), ".env")
-    data_dir = os.path.join(os.path.dirname(__file__), "data")
-    await async_detect_and_store(hass, env_path, data_dir)
+    await run_detect_async(hass, entry)
 
     return True
 

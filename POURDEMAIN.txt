@@ -10,15 +10,15 @@ Créer une intégration Home Assistant qui détecte automatiquement les capteurs
 ---------------------------
 • Le formulaire d’options (`options_flow.py`) est opérationnel.
 • L’entité `input_text.suivi_elec_entites_detectees` existe et peut être mise à jour manuellement ou via automatisation.
-• L’automatisation de test injecte une liste d’entités simulées dans ce champ.
 • La détection simulée via `get_energy_entities()` est testée et validée avec `requests-mock`.
-• Les tests unitaires sont en place pour `detect_utils.py`, `generation.py`, et `api_client.py`.
+• Les tests unitaires sont en place pour `detect_utils.py`, `generation.py`, `api_client.py`, `calculateur.py`, `detect_async.py`, et `env_loader.py`.
 • Le fichier `.env` est utilisé pour sécuriser les accès API.
+• Le capteur `sensor.suivi_elec_status` est créé automatiquement avec les entités détectées.
+• L’historique est mis à jour dynamiquement via `update_historique()`.
 
 ---------------------------
 ❌ CE QUI NE FONCTIONNE PAS ENCORE
 ---------------------------
-• La détection automatique des entités via `detect.py` n’est pas encore intégrée dans le flux Home Assistant.
 • La mise à jour de `input_text.suivi_elec_entites_detectees` avec les entités réellement détectées n’est pas automatisée.
 • La création dynamique de groupes Home Assistant par l’intégration n’est pas confirmée.
 • La carte Lovelace ne parvient pas à afficher dynamiquement les entités listées dans `input_text`.
@@ -27,18 +27,17 @@ Créer une intégration Home Assistant qui détecte automatiquement les capteurs
 🧭 CE QU’IL FAUT FAIRE MAINTENANT
 ---------------------------
 
-1. 🔍 **Vérifier que `detect.py` est bien exécuté**
-   • Est-il appelé dans `__init__.py`, `setup_entry`, ou via un service ?
-   • Est-ce qu’il logue quelque chose dans le journal (`logger.debug`) ?
-
-2. 🧠 **Analyser ce que `detect.py` fait**
-   • Retourne-t-il une liste d’entités ?
-   • Les stocke-t-il dans `config_entry.options["entites_detectees"]` ?
-   • Crée-t-il un groupe ou met-il à jour une entité visible ?
-
-3. 📤 **Exposer les entités détectées dans une entité visible**
+1. 📤 **Exposer les entités détectées dans une entité visible**
    • Soit via `input_text` (déjà en place)
-   • Soit via un `template sensor` ou un `group` (à automatiser)
+   • Soit via un `group` ou un `template sensor` (à automatiser)
+
+2. 🧠 **Automatiser la mise à jour de `input_text`**
+   • Ajouter dans `detect_async.py` un appel à `hass.services.async_call()` pour mettre à jour `input_text.suivi_elec_entites_detectees`
+   • Format recommandé : liste JSON ou chaîne séparée par des virgules
+
+3. 🧪 **Créer un groupe dynamique**
+   • Utiliser `group.set` ou `group.reload` pour créer un groupe avec les entités détectées
+   • Vérifier que le groupe est visible dans l’interface
 
 4. 📊 **Créer une carte Lovelace fiable**
    • Afficher les entités détectées via un groupe ou une liste statique
@@ -47,9 +46,10 @@ Créer une intégration Home Assistant qui détecte automatiquement les capteurs
 ---------------------------
 🛠️ PROCHAINE ACTION CONCRÈTE
 ---------------------------
-👉 Intégrer `detect.py` dans le flux Home Assistant (`setup_entry`, service, ou automatisation)
-👉 Automatiser la mise à jour de `input_text` ou d’un groupe avec les entités détectées
+👉 Ajouter dans `detect_async.py` la mise à jour de `input_text.suivi_elec_entites_detectees`
+👉 Tester la création dynamique d’un groupe Home Assistant avec les entités détectées
 👉 Créer une carte Lovelace simple pour afficher dynamiquement les entités détectées
 
 ===========================
-💬 Tu peux me coller ton `detect.py` ici si tu veux qu’on le relise ensemble.
+📦 Tous les tests unitaires sont passés ✅
+===========================

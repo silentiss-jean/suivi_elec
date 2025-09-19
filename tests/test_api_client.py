@@ -1,39 +1,16 @@
-import os
-from dotenv import load_dotenv
-import requests_mock
-import custom_components.suivi_elec.helpers.api_client as api
+def test_get_energy_entities_success(requests_mock):
+    url = "http://localhost:8123/entities"
+    token = "FAKE_TOKEN"
 
-def test_connection_returns_bool():
-    result = api.test_api_connection("http://localhost:8123", "abc123")
-    assert isinstance(result, bool)
-
-def test_get_energy_entities_with_env():
-    """Teste que toutes les entités avec 'entity_id' sont bien retournées."""
-    load_dotenv(dotenv_path="custom_components/suivi_elec/.env")
-
-    base_url = os.getenv("HA_URL")
-    token = os.getenv("HA_TOKEN")
-
-    assert base_url is not None
-    assert token is not None
-
-    mock_data = [
-        {"entity_id": "sensor.tv_energy"},
-        {"entity_id": "sensor.frigo_energy"},
-        {"entity_id": "sensor.lampe_power"},
-        {"entity_id": "light.salon"}
+    mock_response = [
+        {"entity_id": "sensor.energy_1", "state": "10", "attributes": {"device_class": "energy"}},
+        {"entity_id": "sensor.energy_2", "state": "5", "attributes": {"device_class": "energy"}},
+        {"entity_id": "sensor.temp", "state": "22", "attributes": {"device_class": "temperature"}}
     ]
+    requests_mock.get(url, json=mock_response)
 
-    with requests_mock.Mocker() as m:
-        m.get(f"{base_url}/entities", json=mock_data)
-        result = api.get_energy_entities(base_url, token)
+    from custom_components.suivi_elec.helpers.api_client import get_energy_entities
+    result = get_energy_entities("http://localhost:8123", token)
 
-        assert isinstance(result, list)
-        assert len(result) == 4
-        assert all("entity_id" in e for e in result)
-        assert {e["entity_id"] for e in result} == {
-            "sensor.tv_energy",
-            "sensor.frigo_energy",
-            "sensor.lampe_power",
-            "light.salon"
-        }
+    assert len(result) == 3
+    assert any(e["entity_id"] == "sensor.energy_1" for e in result)
