@@ -57,3 +57,18 @@ Ce fichier décrit le rôle de chaque script présent dans `custom_components/su
   - Code métier : `custom_components/suivi_elec/`
   - Tests unitaires : `tests/`
   - Configuration : `.env`, `conftest.py`
+
+## 📁 Scripts racine de l’intégration
+
+| Fichier                    | Rôle principal                                                  | Utilisé dans             |
+|----------------------------|------------------------------------------------------------------|---------------------------|
+| `config_flow.py`           | Flux de configuration UI (mode, contrat, tarifs)                | Interface Home Assistant |
+| `generateur_entities.py`   | Génère des entités simulées et un capteur de statut             | Script manuel            |
+| `launcher.py`              | Lance le chargement des groupes de capteurs via `loader.py`     | Script manuel            |
+| `generator.py`             | Génère le package YAML, cartes Lovelace et capteurs de coût     | Script manuel            |
+| `config.py`               | Charge les paramètres généraux depuis `settings.yaml`            | Modules internes         |
+| `groupes_capteurs_energy.py` | Définition statique des groupes de capteurs énergétiques       | Utilisé par `loader.py`  |
+| `options_flow.py`          | Gère les options modifiables après installation (mode, contrat) | Interface Home Assistant |
+| `settings.yaml`           | Fichier de configuration central (URL, token, regroupement)      | Utilisé par `config.py`  |
+| `services.yaml`           | Déclare le service `generate_suivi_elec` pour lancer la génération | Interface Home Assistant |
+

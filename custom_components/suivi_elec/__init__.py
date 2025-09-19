@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 """Initialisation de l'intégration Suivi Élec."""
 
+import os
 from homeassistant.core import HomeAssistant
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.helpers.typing import ConfigType
 from .const import DOMAIN, ENTITES_POTENTIELLES
+from .detect_async import async_detect_and_store
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     """Chargement initial (non utilisé ici)."""
@@ -27,7 +29,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         or ENTITES_POTENTIELLES
     )
 
-    # 💶 Tarifs selon le contrat
     if type_contrat == "prix_unique":
         tarifs = {
             "kwh": data.get("prix_ht", 0.15),
@@ -36,14 +37,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         }
     else:
         tarifs = {
-            "kwh": data.get("prix_ht_hp", 0.18),  # valeur par défaut
+            "kwh": data.get("prix_ht_hp", 0.18),
             "hp": data.get("prix_ht_hp", 0.18),
             "hc": data.get("prix_ht_hc", 0.12),
         }
 
     abonnement = data.get("abonnement_annuel", 0.0)
 
-    # 🧱 Création des entités
     for entity_id in entites_actives:
         base_attrs = {
             "unit_of_measurement": "€",
@@ -56,7 +56,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         }
         hass.states.async_set(entity_id, "0", base_attrs)
 
-    # 📊 Capteur global des tarifs
     hass.states.async_set(
         "sensor.suivi_elec_tarifs",
         "Tarifs configurés",
@@ -70,8 +69,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         },
     )
 
+    # 🚀 Détection automatique des entités énergétiques
+    env_path = os.path.join(os.path.dirname(__file__), ".env")
+    data_dir = os.path.join(os.path.dirname(__file__), "data")
+    await async_detect_and_store(hass, env_path, data_dir)
+
     return True
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
-    """Déchargement de l'intégration."""
+    """Déchargement de l’intégration."""
     return True

@@ -1,63 +1,136 @@
-# Suivi Élec – Intégration Home Assistant ⚡
+# 🔌 Suivi Élec — Intégration Home Assistant
 
-Suivi Élec est une intégration personnalisée pour Home Assistant permettant de suivre la consommation énergétique, calculer les coûts, et générer des cartes Lovelace dynamiques.
-
----
-
-## 📁 Organisation du projet
-
-- `custom_components/suivi_elec/helpers/` → scripts principaux
-- `custom_components/suivi_elec/.env` → variables d’environnement (`HA_URL`, `HA_TOKEN`)
-- `tests/` → tests unitaires avec `pytest` et `requests-mock`
-- `organisation/structure.md` → documentation des scripts
-- `organisation/flux_fonctionnel.md` → schéma des interactions
-- `organisation/validation_fonctionnelle.md` → couverture des tests
-- `organisation/inutilisés.md` → modules non exploités ou en cours d’intégration
+Suivi Élec est une intégration personnalisée pour Home Assistant permettant de suivre la consommation énergétique, estimer les coûts, et générer automatiquement des entités et des cartes dynamiques à partir des capteurs disponibles.
 
 ---
 
-## 🚀 Fonctionnalités
+## 🚀 Installation via HACS
 
-- Connexion API Home Assistant
-- Détection automatique des entités énergétiques
-- Calcul du coût selon contrat (prix unique ou HP/HC)
-- Historique de consommation
-- Génération de fichiers YAML + Lovelace
-- Export CSV des résultats
-- Simulation d’entités pour test
-- Tests unitaires avec simulation d’API
+### 1. Ajouter le dépôt personnalisé
+
+1. Ouvrez Home Assistant à `http://homeassistant.local:8123`
+2. Allez dans **HACS > Intégrations > ⋮ > Dépôts personnalisés**
+3. Ajoutez ce dépôt :  
+   https://github.com/silentiss-jean/suivi_elec.git  
+4. Type : **Intégration**
+5. Cliquez sur **Ajouter**
 
 ---
 
-## 📚 Pour commencer
+### 2. Télécharger l’intégration
 
-1. Crée un fichier `.env` dans `custom_components/suivi_elec/` avec :
-HA_URL=http://localhost:8123
-HA_TOKEN=your_long_lived_token
-2. Lance `detect.py` pour générer les résultats
-3. Utilise `generation.py` pour créer les fichiers YAML
-4. Consulte les fichiers dans `organisation/` pour comprendre la structure
-5. Lance les tests avec :
+1. Allez dans **HACS > Intégrations**
+2. Cliquez sur **+ Explorer et ajouter des intégrations**
+3. Recherchez **Suivi Élec**
+4. Cliquez sur **Télécharger**
+5. Laissez les valeurs par défaut et validez
 
-```bash
-python -m pytest -v
-🧪 Tests unitaires
+📌 À la fin du téléchargement, une alerte “1 Correction” apparaîtra dans **Paramètres > 1 Correction**  
+Cliquez sur **Configurer l’intégration** pour lancer le formulaire de configuration
 
-•  test_detect_utils.py → détection du contrat (HP/HC ou prix unique)
-•  test_generation.py → structure du YAML généré
-•  test_api_client.py → simulation d’appel API avec requests-mock
-•  Chargement automatique des variables via conftest.py
-•  Configuration des tests via pytest.ini
+---
 
-🧠 Documentation
+### 3. Configuration via l’interface graphique
 
-•  structure.md → rôle de chaque script
-•  flux_fonctionnel.md → interactions entre modules
-•  validation_fonctionnelle.md → couverture des tests
-•  inutilisés.md → modules non exploités
-🛠️ À venir
+L’intégration se configure via un formulaire simple :
 
-•  Interface UI pour configuration
-•  Intégration automatique dans Lovelace
-•  Support multi-utilisateur
-•  Tests d’intégration complets
+- **URL de l’instance Home Assistant**  
+  Exemple : `http://homeassistant.local:8123` ou `https://monha.duckdns.org`
+
+- **Jeton d’accès long-lived**  
+  À générer depuis votre profil utilisateur Home Assistant (`/profile`)
+
+- **Instance locale ou distante** *(case à cocher)*  
+  Permet d’identifier visuellement les entités comme locales ou distantes
+
+📌 Aucun paramètre ne doit être ajouté dans le fichier `configuration.yaml`.
+
+---
+
+## 🧠 Fonctionnement technique
+
+L’intégration repose sur un flux fonctionnel automatisé :
+
+- Détection des entités énergétiques (`detect_async.py`)
+- Calcul des coûts (`calculateur.py`, `tarif_loader.py`)
+- Mise à jour de l’historique (`historique.py`)
+- Génération des fichiers YAML (`generator.py`)
+- Création d’un capteur de statut (`sensor.suivi_elec_status`)
+- Configuration via UI (`config_flow.py`, `options_flow.py`)
+- Relance manuelle possible via le service `generate_suivi_elec`
+
+📁 La documentation technique est disponible dans le dossier [`organisation/`](organisation/) :
+- [`structure.md`](organisation/structure.md) : rôle de chaque script
+- [`flux_fonctionnel.md`](organisation/flux_fonctionnel.md) : diagramme du flux complet
+- [`validation_fonctionnelle.md`](organisation/validation_fonctionnelle.md) : tests et vérifications
+
+---
+
+## 🧠 Mode local vs distant
+
+Ce paramètre ne modifie pas le fonctionnement technique, mais il permet :
+
+- D’ajouter un tag `[Local]` ou `[Distant]` dans le `friendly_name` des entités
+- De filtrer les entités dans les dashboards
+- De suivre l’état global via le capteur `sensor.suivi_elec_status`
+
+### Exemple :
+```yaml
+sensor.suivi_elec_status:
+  state: "local | 3 entités"
+  attributes:
+    mode: "local"
+    entites_actives:
+      - sensor.suivi_elec_conso_jour
+      - sensor.suivi_elec_tarif_hp
+      - sensor.suivi_elec_tarif_hc
+    source: "http://homeassistant.local:8123"
+    last_update: "2025-09-12T21:49:00"
+
+⚙️ Options système
+
+Accessible via Paramètres > Intégrations > ⋮ > Options système
+
+🧪 Vérifications post-installation
+
+1.  Données stockées  
+Allez dans Développement > Intégrations > Détails  
+Vérifiez que entry.data contient :
+  ⁠◦  base_url
+  ⁠◦  ha_token
+  ⁠◦  is_local
+2.  Entités créées  
+Allez dans Développement > États  
+Recherchez les entités activées  
+Vérifiez les attributs (friendly_name, source, unit_of_measurement)
+3.  Capteur de statut  
+Recherchez : sensor.suivi_elec_status  
+Vérifiez :
+  ⁠◦  state → "local | 3 entités"
+  ⁠◦  attributes → mode, source, entites_actives, last_update
+
+🚫 À ne pas faire
+
+Ne pas ajouter de section suivi_elec: dans le fichier configuration.yaml.  
+Cela déclenchera une alerte dans Home Assistant, car l’intégration ne lit pas ce fichier.
+
+🛠️ Désinstallation propre
+
+Utilisez le script uninstall_suivi_elec.sh pour supprimer proprement les fichiers générés.  
+Consultez docs/uninstall_validation.txt pour vérifier que la suppression est complète.
+
+🧨 Script de désinstallation avancée
+
+Un script uninstall_suivi_elec.sh est fourni pour les utilisateurs avancés.  
+Il permet :
+
+•  Une désinstallation totale ou partielle de l’intégration
+•  Le nettoyage des fichiers/dossiers générés
+•  La suppression (optionnelle et sécurisée) des traces dans configuration.yaml (mode expert)
+
+⚠️ Attention :  
+Ce script est réservé aux utilisateurs expérimentés.  
+Il ne doit être utilisé que si vous souhaitez nettoyer manuellement des restes de configuration ou automatiser la suppression dans le YAML.
+
+Avant toute modification du YAML, une sauvegarde est proposée.  
+Consultez la documentation technique pour plus de détails sur les options et le mode expert.

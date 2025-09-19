@@ -11,12 +11,15 @@ Créer une intégration Home Assistant qui détecte automatiquement les capteurs
 • Le formulaire d’options (`options_flow.py`) est opérationnel.
 • L’entité `input_text.suivi_elec_entites_detectees` existe et peut être mise à jour manuellement ou via automatisation.
 • L’automatisation de test injecte une liste d’entités simulées dans ce champ.
+• La détection simulée via `get_energy_entities()` est testée et validée avec `requests-mock`.
+• Les tests unitaires sont en place pour `detect_utils.py`, `generation.py`, et `api_client.py`.
+• Le fichier `.env` est utilisé pour sécuriser les accès API.
 
 ---------------------------
 ❌ CE QUI NE FONCTIONNE PAS ENCORE
 ---------------------------
-• La détection automatique des entités via `detect.py` n’a pas été validée.
-• La mise à jour de `input_text.suivi_elec_entites_detectees` avec les entités réellement détectées n’est pas en place.
+• La détection automatique des entités via `detect.py` n’est pas encore intégrée dans le flux Home Assistant.
+• La mise à jour de `input_text.suivi_elec_entites_detectees` avec les entités réellement détectées n’est pas automatisée.
 • La création dynamique de groupes Home Assistant par l’intégration n’est pas confirmée.
 • La carte Lovelace ne parvient pas à afficher dynamiquement les entités listées dans `input_text`.
 
@@ -44,10 +47,9 @@ Créer une intégration Home Assistant qui détecte automatiquement les capteurs
 ---------------------------
 🛠️ PROCHAINE ACTION CONCRÈTE
 ---------------------------
-👉 Relire et tester `detect.py` pour confirmer qu’il détecte bien les entités et les expose.
-👉 Une fois validé, automatiser la mise à jour de `input_text` ou d’un groupe.
-👉 Ensuite, créer une carte Lovelace simple pour afficher les entités détectées.
+👉 Intégrer `detect.py` dans le flux Home Assistant (`setup_entry`, service, ou automatisation)
+👉 Automatiser la mise à jour de `input_text` ou d’un groupe avec les entités détectées
+👉 Créer une carte Lovelace simple pour afficher dynamiquement les entités détectées
 
 ===========================
 💬 Tu peux me coller ton `detect.py` ici si tu veux qu’on le relise ensemble.
-===========================
