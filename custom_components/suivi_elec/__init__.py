@@ -28,20 +28,23 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         or ENTITES_POTENTIELLES
     )
 
+    # 💰 Lecture des tarifs selon le type de contrat
     if type_contrat == "prix_unique":
         tarifs = {
-            "kwh": data.get("prix_ht", 0.15),
-            "hp": data.get("prix_ht", 0.15),
-            "hc": data.get("prix_ht", 0.15),
+            "kwh": data.get("prix_kwh_ht", 0.15),
+            "hp": data.get("prix_kwh_ht", 0.15),
+            "hc": data.get("prix_kwh_ht", 0.15)
         }
     else:
         tarifs = {
-            "kwh": data.get("prix_ht_hp", 0.18),
-            "hp": data.get("prix_ht_hp", 0.18),
-            "hc": data.get("prix_ht_hc", 0.12),
+            "kwh": data.get("prix_hp_ht", 0.18),
+            "hp": data.get("prix_hp_ht", 0.18),
+            "hc": data.get("prix_hc_ht", 0.12)
         }
 
-    abonnement = data.get("abonnement_annuel", 0.0)
+    # 📆 Conversion de l’abonnement mensuel HT en annuel
+    abonnement_mensuel_ht = data.get("abonnement_ht", 0.0)
+    abonnement_annuel = round(abonnement_mensuel_ht * 12, 2)
 
     for entity_id in entites_actives:
         base_attrs = {
@@ -50,8 +53,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             "source": base_url,
             "integration": DOMAIN,
             "tarifs": tarifs,
-            "abonnement_annuel": abonnement
-            # ❌ token supprimé pour éviter l'exposition
+            "abonnement_annuel": abonnement_annuel
         }
         hass.states.async_set(entity_id, "0", base_attrs)
 
@@ -62,9 +64,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             "kwh": tarifs["kwh"],
             "hp": tarifs["hp"],
             "hc": tarifs["hc"],
-            "abonnement_annuel": abonnement,
+            "abonnement_annuel": abonnement_annuel,
             "friendly_name": "Tarifs Suivi Élec",
-            "mode": mode  # ✅ Ajout explicite du mode ici aussi
+            "mode": mode
         },
     )
 
