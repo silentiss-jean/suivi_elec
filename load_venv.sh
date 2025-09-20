@@ -11,6 +11,14 @@ if [ ! -d "$VENV_DIR" ]; then
     echo "✅ Environnement virtuel créé dans $VENV_DIR"
 fi
 
+# Vérifier si le script est bien sourcé
+if [ "$0" = "$BASH_SOURCE" ] || [ "$0" = "$ZSH_NAME" ]; then
+    echo "⚠️  Tu dois lancer ce script avec :"
+    echo "   source load_venv.sh"
+    echo "   ou . load_venv.sh"
+    exit 1
+fi
+
 # Activer le venv
 source "$VENV_DIR/bin/activate"
 echo "🚀 Environnement virtuel activé."

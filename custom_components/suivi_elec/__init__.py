@@ -50,8 +50,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             "source": base_url,
             "integration": DOMAIN,
             "tarifs": tarifs,
-            "abonnement_annuel": abonnement,
-            "token": token
+            "abonnement_annuel": abonnement
+            # ❌ token supprimé pour éviter l'exposition
         }
         hass.states.async_set(entity_id, "0", base_attrs)
 
@@ -64,7 +64,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             "hc": tarifs["hc"],
             "abonnement_annuel": abonnement,
             "friendly_name": "Tarifs Suivi Élec",
-            "token": token
+            "mode": mode  # ✅ Ajout explicite du mode ici aussi
         },
     )
 
